@@ -13,5 +13,7 @@ namespace ozzy_mvc.Data
         public DbSet<Equipment> Equipment { get; set; }
 
         public DbSet<ozzy_mvc.Models.Student> Student { get; set; }
+
+        public DbSet<ozzy_mvc.Models.Booking> Booking { get; set; }
     }
 }
