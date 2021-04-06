@@ -1,0 +1,11 @@
+## Binary
+bin/
+
+## Obj
+obj/
+
+## Migrations
+Migrations/
+
+## SQLite
+*.db
