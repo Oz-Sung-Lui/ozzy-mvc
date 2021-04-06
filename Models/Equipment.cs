@@ -6,8 +6,7 @@ namespace ozzy_mvc.Models
     public class Equipment
     {
         public Guid EquipmentID { get; set; }
-        public String Name { get; set; }
-        public int RemainAmount { get; set; }
-        public int LabNo  { get; set; }
+        public String EquipmentName { get; set; }
+        public int LabName  { get; set; }
     }
 }

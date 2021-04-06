@@ -10,6 +10,6 @@ namespace ozzy_mvc.Models
         public String Firstname { get; set; }
         public String Lastname { get; set; }
         public String Password { get; set; }
-        public Boolean isBlacklisted {get; set; }
+        public Boolean IsBlacklisted {get; set; }
     }
 }
