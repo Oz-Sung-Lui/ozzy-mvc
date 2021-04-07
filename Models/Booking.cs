@@ -9,10 +9,8 @@ namespace ozzy_mvc.Models
 
         [ForeignKey("Student")]
         public Guid StudentID { get; set; }
-
-        [ForeignKey("Equipment")]
         public Guid EquipmentID { get; set; }
-
+        public Equipment Equipment { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public int Amount { get; set; }
