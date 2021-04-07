@@ -13,19 +13,14 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="EquipmentName" class="control-label"></label>
+                <input asp-for="EquipmentName" class="form-control" />
+                <span asp-validation-for="EquipmentName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RemainAmount" class="control-label"></label>
-                <input asp-for="RemainAmount" class="form-control" />
-                <span asp-validation-for="RemainAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LabNo" class="control-label"></label>
-                <input asp-for="LabNo" class="form-control" />
-                <span asp-validation-for="LabNo" class="text-danger"></span>
+                <label asp-for="LabName" class="control-label"></label>
+                <input asp-for="LabName" class="form-control" />
+                <span asp-validation-for="LabName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

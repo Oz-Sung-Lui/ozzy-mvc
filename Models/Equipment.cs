@@ -1,5 +1,5 @@
 using System;
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ozzy_mvc.Models
 {
@@ -8,5 +8,6 @@ namespace ozzy_mvc.Models
         public Guid EquipmentID { get; set; }
         public String EquipmentName { get; set; }
         public int LabName  { get; set; }
+        public Booking Booking { get; set; }
     }
 }
