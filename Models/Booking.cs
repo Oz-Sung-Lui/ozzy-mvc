@@ -11,8 +11,8 @@ namespace ozzy_mvc.Models
         public Guid StudentID { get; set; }
         public Guid EquipmentID { get; set; }
         public Equipment Equipment { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public int TimeSlot { get; set; }
+        public DateTime Date { get; set; }
         public int Amount { get; set; }
     }
 }

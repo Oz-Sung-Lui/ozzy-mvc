@@ -57,7 +57,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,StartTime,EndTime,Amount")] Booking booking)
+        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date,Amount")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("BookingID,StudentID,EquipmentID,StartTime,EndTime,Amount")] Booking booking)
+        public async Task<IActionResult> Edit(Guid id, [Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date,Amount")] Booking booking)
         {
             if (id != booking.BookingID)
             {
