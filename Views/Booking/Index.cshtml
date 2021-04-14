@@ -16,16 +16,13 @@
                 @Html.DisplayNameFor(model => model.StudentID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EquipmentID)
+                @Html.DisplayNameFor(model => model.Equipment)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StartTime)
+                @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EndTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
+                @Html.DisplayNameFor(model => model.Date)
             </th>
             <th></th>
         </tr>
@@ -37,16 +34,13 @@
                 @Html.DisplayFor(modelItem => item.StudentID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EquipmentID)
+                @Html.DisplayFor(modelItem => item.Equipment.EquipmentID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
+                @Html.DisplayFor(modelItem => item.TimeSlot)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EndTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |

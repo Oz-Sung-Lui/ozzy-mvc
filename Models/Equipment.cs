@@ -1,13 +1,13 @@
 using System;
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ozzy_mvc.Models
 {
     public class Equipment
     {
         public Guid EquipmentID { get; set; }
-        public String Name { get; set; }
-        public int RemainAmount { get; set; }
-        public int LabNo  { get; set; }
+        public String EquipmentName { get; set; }
+        public String LabName  { get; set; }
+        public Booking Booking { get; set; }
     }
 }

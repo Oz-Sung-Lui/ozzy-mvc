@@ -22,7 +22,8 @@ namespace ozzy_mvc.Controllers
         // GET: Booking
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Booking.ToListAsync());
+            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment);
+            return View(await ozzyMvcContext.ToListAsync());
         }
 
         // GET: Booking/Details/5
@@ -34,6 +35,7 @@ namespace ozzy_mvc.Controllers
             }
 
             var booking = await _context.Booking
+                .Include(b => b.Equipment)
                 .FirstOrDefaultAsync(m => m.BookingID == id);
             if (booking == null)
             {
@@ -46,6 +48,7 @@ namespace ozzy_mvc.Controllers
         // GET: Booking/Create
         public IActionResult Create()
         {
+            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,StartTime,EndTime,Amount")] Booking booking)
+        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +66,7 @@ namespace ozzy_mvc.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
             return View(booking);
         }
 
@@ -79,6 +83,7 @@ namespace ozzy_mvc.Controllers
             {
                 return NotFound();
             }
+            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
             return View(booking);
         }
 
@@ -87,7 +92,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("BookingID,StudentID,EquipmentID,StartTime,EndTime,Amount")] Booking booking)
+        public async Task<IActionResult> Edit(Guid id, [Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date")] Booking booking)
         {
             if (id != booking.BookingID)
             {
@@ -114,6 +119,7 @@ namespace ozzy_mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
             return View(booking);
         }
 
@@ -126,6 +132,7 @@ namespace ozzy_mvc.Controllers
             }
 
             var booking = await _context.Booking
+                .Include(b => b.Equipment)
                 .FirstOrDefaultAsync(m => m.BookingID == id);
             if (booking == null)
             {
