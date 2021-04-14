@@ -13,6 +13,5 @@ namespace ozzy_mvc.Models
         public Equipment Equipment { get; set; }
         public int TimeSlot { get; set; }
         public DateTime Date { get; set; }
-        public int Amount { get; set; }
     }
 }
