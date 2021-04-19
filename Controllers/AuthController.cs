@@ -63,7 +63,8 @@ namespace ozzy_mvc.Controllers
             }
 
             CookieOptions cookieOptions = new CookieOptions();            
-            HttpContext.Response.Cookies.Append("StudentID", student.StudentID.ToString(), cookieOptions);
+            HttpContext.Response.Cookies.Append("CurrentID", student.StudentID.ToString(), cookieOptions);
+            HttpContext.Response.Cookies.Append("CurrentUsername", student.Username, cookieOptions);
             
             return View(student);
         }
