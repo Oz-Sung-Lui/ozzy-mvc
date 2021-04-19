@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using ozzy_mvc.Data;
 using ozzy_mvc.Models;
 
@@ -40,6 +41,10 @@ namespace ozzy_mvc.Controllers
                 return NotFound();
             }
 
+            if (student.Password != Password) {
+                return View();
+            }
+
             return RedirectToAction(nameof(Success), new {id = student.StudentID});
         }
 
@@ -56,7 +61,10 @@ namespace ozzy_mvc.Controllers
             {
                 return NotFound();
             }
-            Console.WriteLine(student.Username);
+
+            CookieOptions cookieOptions = new CookieOptions();            
+            HttpContext.Response.Cookies.Append("StudentID", student.StudentID.ToString(), cookieOptions);
+            
             return View(student);
         }
 
