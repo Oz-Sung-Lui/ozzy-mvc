@@ -40,7 +40,24 @@ namespace ozzy_mvc.Controllers
                 return NotFound();
             }
 
-            return View();
+            return RedirectToAction(nameof(Success), new {id = student.StudentID});
+        }
+
+        public async Task<IActionResult> Success(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = await _context.Student
+                .FirstOrDefaultAsync(m => m.StudentID == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            Console.WriteLine(student.Username);
+            return View(student);
         }
 
     }
