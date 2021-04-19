@@ -1,0 +1,16 @@
+@model ozzy_mvc.Models.Student
+
+@{
+    ViewData["Title"] = "Success";
+}
+
+<h1>Login Successful</h1>
+<h2>
+    Welcome <span>@Html.DisplayFor(model => model.Username)</span>
+</h2>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
