@@ -51,7 +51,6 @@ namespace ozzy_mvc.Controllers
         {
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID");
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID");
-            ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
         }
 
@@ -71,7 +70,6 @@ namespace ozzy_mvc.Controllers
             }
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
-            ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View(booking);
         }
 
@@ -90,7 +88,6 @@ namespace ozzy_mvc.Controllers
             }
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
-            ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View(booking);
         }
 
@@ -128,7 +125,6 @@ namespace ozzy_mvc.Controllers
             }
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
-            ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View(booking);
         }
 
