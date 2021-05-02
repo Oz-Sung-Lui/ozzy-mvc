@@ -52,5 +52,16 @@ namespace ozzy_mvc.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult Logout()
+        {
+
+            CookieOptions cookieOptions = new CookieOptions();            
+            HttpContext.Response.Cookies.Delete("CurrentID", cookieOptions);
+            HttpContext.Response.Cookies.Delete("CurrentUsername", cookieOptions);
+            Console.WriteLine("hello");
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
