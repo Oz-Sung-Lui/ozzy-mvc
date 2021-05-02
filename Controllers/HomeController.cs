@@ -20,6 +20,27 @@ namespace ozzy_mvc.Controllers
 
         public IActionResult Index()
         {
+            if (Request.Cookies["CurrentUsername"] != null)
+            {
+                var value = Request.Cookies["CurrentUsername"];
+                if (value == "admin")
+                {
+                    return RedirectToAction(nameof(Admin));
+                }
+                return RedirectToAction(nameof(Student));
+            }
+            return View();
+        }
+
+        public IActionResult Admin()
+        {
+            return View();
+        }
+
+        public IActionResult Student()
+        {
+            var value = Request.Cookies["CurrentUsername"];
+            ViewData["CurrentUsername"] = value;
             return View();
         }
 
