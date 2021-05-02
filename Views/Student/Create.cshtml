@@ -17,30 +17,24 @@
     <div class="container">
         <div class="form-container">
             <div class="create-field">
-                <h1>Create</h1>
-                <h4>Student</h4>
                 <div class="row">
                     <div class="col-md-4">
                         <form asp-action="Create">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
-                                <label asp-for="Username" class="control-label"></label>
-                                <input asp-for="Username" class="form-control" />
+                                <input asp-for="Username" class="form-control" placeholder="Username" />
                                 <span asp-validation-for="Username" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Firstname" class="control-label"></label>
-                                <input asp-for="Firstname" class="form-control" />
+                                <input asp-for="Firstname" class="form-control" placeholder="Firstname" />
                                 <span asp-validation-for="Firstname" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Lastname" class="control-label"></label>
-                                <input asp-for="Lastname" class="form-control" />
+                                <input asp-for="Lastname" class="form-control" placeholder="Lastname" />
                                 <span asp-validation-for="Lastname" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Password" class="control-label"></label>
-                                <input asp-for="Password" class="form-control" />
+                                <input asp-for="Password" class="form-control" placeholder="Password" />
                                 <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
                             <div class="form-group form-check">
@@ -65,6 +59,7 @@
     </div>
 
 </body>
-@section Scripts {
+
+@* @section Scripts {}
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+} *@
