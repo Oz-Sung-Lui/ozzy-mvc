@@ -45,28 +45,11 @@ namespace ozzy_mvc.Controllers
                 return View();
             }
 
-            return RedirectToAction(nameof(Success), new {id = student.StudentID});
-        }
-
-        public async Task<IActionResult> Success(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var student = await _context.Student
-                .FirstOrDefaultAsync(m => m.StudentID == id);
-            if (student == null)
-            {
-                return NotFound();
-            }
-
             CookieOptions cookieOptions = new CookieOptions();            
             HttpContext.Response.Cookies.Append("CurrentID", student.StudentID.ToString(), cookieOptions);
             HttpContext.Response.Cookies.Append("CurrentUsername", student.Username, cookieOptions);
-            
-            return View(student);
+
+            return RedirectToAction("Index", "Home");
         }
 
     }
