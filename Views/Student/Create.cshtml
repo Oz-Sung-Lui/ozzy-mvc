@@ -6,6 +6,7 @@
 
 <h1>Create</h1>
 
+<<<<<<< Updated upstream
 <h4>Student</h4>
 <hr />
 <div class="row">
@@ -26,6 +27,48 @@
                 <label asp-for="Lastname" class="control-label"></label>
                 <input asp-for="Lastname" class="form-control" />
                 <span asp-validation-for="Lastname" class="text-danger"></span>
+=======
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="create-field">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <input asp-for="Username" class="form-control" placeholder="Username"/>
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Firstname" class="form-control" placeholder="Firstname"/>
+                                <span asp-validation-for="Firstname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Lastname" class="form-control" placeholder="Lastname"/>
+                                <span asp-validation-for="Lastname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Password" class="form-control" placeholder="Password"/>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="IsBlacklisted" />
+                                    @Html.DisplayNameFor(model =>
+                                    model.IsBlacklisted)
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+>>>>>>> Stashed changes
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
