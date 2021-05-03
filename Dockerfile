@@ -22,6 +22,6 @@ RUN dotnet dev-certs https --trust && \
     dotnet-ef migrations add InitialCreate  &&\
     dotnet-ef database update 
 
-EXPOSE 5001
+EXPOSE 5000
 
 CMD ["dotnet", "watch" ,"run"]

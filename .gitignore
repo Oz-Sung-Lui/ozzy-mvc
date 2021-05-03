@@ -447,5 +447,5 @@ Migrations/
 ## SQLite
 *.db
 
-## vscode
-.vscode/
+## vscode settings
+.vscode
