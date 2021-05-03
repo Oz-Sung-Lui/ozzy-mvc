@@ -7,7 +7,6 @@ namespace ozzy_mvc.Models
     {
         public Guid EquipmentID { get; set; }
         public String EquipmentName { get; set; }
-        public String Description { get; set; }
         public String LabName  { get; set; }
         public Booking Booking { get; set; }
     }

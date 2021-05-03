@@ -22,7 +22,7 @@ namespace ozzy_mvc.Controllers
         // GET: Booking
         public async Task<IActionResult> Index()
         {
-            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
+            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment);
             return View(await ozzyMvcContext.ToListAsync());
         }
 
@@ -36,7 +36,6 @@ namespace ozzy_mvc.Controllers
 
             var booking = await _context.Booking
                 .Include(b => b.Equipment)
-                .Include(b => b.Student)
                 .FirstOrDefaultAsync(m => m.BookingID == id);
             if (booking == null)
             {
@@ -50,7 +49,6 @@ namespace ozzy_mvc.Controllers
         public IActionResult Create()
         {
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID");
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID");
             return View();
         }
 
@@ -69,7 +67,6 @@ namespace ozzy_mvc.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
             return View(booking);
         }
 
@@ -87,7 +84,6 @@ namespace ozzy_mvc.Controllers
                 return NotFound();
             }
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
             return View(booking);
         }
 
@@ -124,7 +120,6 @@ namespace ozzy_mvc.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
             return View(booking);
         }
 
@@ -138,7 +133,6 @@ namespace ozzy_mvc.Controllers
 
             var booking = await _context.Booking
                 .Include(b => b.Equipment)
-                .Include(b => b.Student)
                 .FirstOrDefaultAsync(m => m.BookingID == id);
             if (booking == null)
             {

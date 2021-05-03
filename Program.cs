@@ -20,11 +20,7 @@ namespace ozzy_mvc
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>()
-                    .UseKestrel(options =>
-                                    {
-                                        options.ListenAnyIP(Int32.Parse(System.Environment.GetEnvironmentVariable("PORT")));
-                                    });
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
