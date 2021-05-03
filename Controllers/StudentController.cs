@@ -59,6 +59,7 @@ namespace ozzy_mvc.Controllers
             if (ModelState.IsValid)
             {
                 student.StudentID = Guid.NewGuid();
+                student.IsBlacklisted = false;
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
