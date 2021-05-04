@@ -9,8 +9,16 @@ namespace ozzy_mvc.Models
         public String EquipmentName { get; set; }
         public EquipmentType EquipmentType { get; set; }
         public String Description { get; set; }
-        public String LabName  { get; set; }
+        public Lab LabName  { get; set; }
         public Booking Booking { get; set; }
+    }
+
+    public enum Lab {
+        HARDWARE,
+        HCRL,
+        ROBOT_IOT,
+        ESL,
+        NETWORK,
     }
     
     public enum EquipmentType {
