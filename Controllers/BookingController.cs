@@ -29,7 +29,10 @@ namespace ozzy_mvc.Controllers
         public async Task<IActionResult> ListByEquipmentID(Guid? id)
         {
             var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
-            return View(await ozzyMvcContext.ToListAsync());
+            var bookingList = await ozzyMvcContext.ToListAsync();
+            var newList = bookingList.Where(b => b.EquipmentID==id);
+
+            return View(newList);
         }
 
         // GET: Booking/Details/5
@@ -55,8 +58,8 @@ namespace ozzy_mvc.Controllers
         // GET: Booking/Create
         public IActionResult Create()
         {
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID");
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID");
+            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
+            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
         }
@@ -94,8 +97,8 @@ namespace ozzy_mvc.Controllers
             {
                 return NotFound();
             }
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", booking.StudentID);
+            ViewData["Equipment"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName", booking.EquipmentID);
+            ViewData["Student"] = new SelectList(_context.Student, "StudentID", "Username", booking.StudentID);
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View(booking);
         }
