@@ -46,6 +46,8 @@ namespace ozzy_mvc.Controllers
         // GET: Equipment/Create
         public IActionResult Create()
         {
+            ViewData["EquipmentType"] = new SelectList(Enum.GetValues(typeof(EquipmentType)));
+            ViewData["LabName"] = new SelectList(Enum.GetValues(typeof(Lab)));
             return View();
         }
 
