@@ -39,6 +39,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LabName)
             </td>
+            <td>
+                <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
+            </td>
         </tr>
 }
     </tbody>

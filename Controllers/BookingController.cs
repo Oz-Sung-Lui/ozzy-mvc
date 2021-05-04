@@ -26,6 +26,12 @@ namespace ozzy_mvc.Controllers
             return View(await ozzyMvcContext.ToListAsync());
         }
 
+        public async Task<IActionResult> ListByEquipmentID(Guid? id)
+        {
+            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
+            return View(await ozzyMvcContext.ToListAsync());
+        }
+
         // GET: Booking/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
