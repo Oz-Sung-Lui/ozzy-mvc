@@ -1,0 +1,45 @@
+@model IEnumerable<ozzy_mvc.Models.Equipment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inventory</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipmentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabName)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

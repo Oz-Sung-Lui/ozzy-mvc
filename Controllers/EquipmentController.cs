@@ -25,6 +25,11 @@ namespace ozzy_mvc.Controllers
             return View(await _context.Equipment.ToListAsync());
         }
 
+        public async Task<IActionResult> Inventory()
+        {
+            return View(await _context.Equipment.ToListAsync());
+        }
+
         // GET: Equipment/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
