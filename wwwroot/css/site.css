@@ -68,30 +68,25 @@ html {
 }
 
 nav {
-    /* navbar-expand-sm
-    navbar-toggleable-sm
-    navbar-light bg-white
-    border-bottom
-    box-shadow 
-    mb-3 */
     position: relative;
     background-color: orchid; 
 }
 
 .container {
     /* Margin bottom by footer height */
-    background: orange;
+    /* background: orange; */
     position: relative;
     width: 100%;
-    min-height:700px;
+    min-height:780px;
     height:fit-content; 
 }
 
 footer {
-    background-color: orangered;
+    /* background-color: orangered; */
     text-align: center;
     position: relative;
-    padding: 10px 0px 5px 0px;
+    padding: 15px 0px 0px 0px;
+    bottom: 0px;
     left: 0px;
     height: 200px;
     width: 100%;
