@@ -81,6 +81,9 @@ namespace ozzy_mvc.Controllers
                 return NotFound();
             }
 
+            ViewData["EquipmentType"] = new SelectList(Enum.GetValues(typeof(EquipmentType)));
+            ViewData["LabName"] = new SelectList(Enum.GetValues(typeof(Lab)));
+
             var equipment = await _context.Equipment.FindAsync(id);
             if (equipment == null)
             {
@@ -94,7 +97,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("EquipmentID,EquipmentName,Description,LabName")] Equipment equipment)
+        public async Task<IActionResult> Edit(Guid id, [Bind("EquipmentID,EquipmentType,EquipmentName,Description,LabName")] Equipment equipment)
         {
             if (id != equipment.EquipmentID)
             {
