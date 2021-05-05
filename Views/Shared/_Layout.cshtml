@@ -11,15 +11,17 @@
 </head>
 
 <body>
-    @if( Context.Request.Cookies["CurrentUsername"] == "admin" )
+    @if (Context.Request.Cookies["CurrentUsername"] == "admin")
     {
-    @Html.Partial("_AdminNavbar")
+        @Html.Partial("_AdminNavbar")
     }
-    else if( Context.Request.Cookies["CurrentUsername"] != null ){
-    @Html.Partial("_StudentNavbar")
+    else if (Context.Request.Cookies["CurrentUsername"] != null)
+    {
+        @Html.Partial("_StudentNavbar")
     }
-    else{
-    @Html.Partial("_GuestNavbar")
+    else
+    {
+        @Html.Partial("_GuestNavbar")
     }
     <div class="container">
         <main role="main" class="pb-3">
@@ -27,7 +29,6 @@
         </main>
     </div>
 
-    
     @Html.Partial("_Footer")
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -35,6 +36,6 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
-   
+
 
 </html>

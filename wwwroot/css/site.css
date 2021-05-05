@@ -77,7 +77,7 @@ nav {
     /* background: orange; */
     position: relative;
     width: 100%;
-    min-height:780px;
+    min-height:850px;
     height:fit-content; 
 }
 
@@ -88,7 +88,7 @@ footer {
     padding: 15px 0px 0px 0px;
     bottom: 0px;
     left: 0px;
-    height: 200px;
+    /* height: 200px; */
     width: 100%;
-    line-height: 16px;
+    line-height: 15px;
 }
