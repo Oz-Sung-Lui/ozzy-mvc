@@ -1,13 +1,15 @@
 .contain-form-regis {
     position: absolute;
-    top: 15%;
-    left: 35%;
+    top : 15%;
+    left: 50%;
+    transform: translate(-50%,0%);
 }
 
 .contain-form-login {
     position: absolute;
     top: 15%;
-    left: 35%;
+    left: 50%;
+    transform: translate(-50%,0%);
 }
 
 .form-login{
@@ -29,8 +31,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 600px;
-    width: 100%;
+    width: 400px;
     height:fit-content;
     background-color: #FDF6ED;
     border-radius: 45px;
@@ -43,16 +44,16 @@
     font-size: 0.85rem;
     padding: 5px;
     margin-top: 10px;
+    text-align: center;
   }
 
 #btnSignUpRe{
     font-family: Asap,sans-serif;
     position: relative;
-    padding: 5px;
     background: #FCE5DF;
     font-size: 18px;
     color: #8C8C8C;
-    width: 40%;
+    width: 150px;
     height: 40px;
     border-radius: 20px;
     border-color: #FCE5DF;
