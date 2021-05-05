@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ozzy_mvc.Models
 {
@@ -10,7 +9,6 @@ namespace ozzy_mvc.Models
         public EquipmentType EquipmentType { get; set; }
         public String Description { get; set; }
         public Lab LabName  { get; set; }
-        public Booking Booking { get; set; }
     }
 
     public enum Lab {
