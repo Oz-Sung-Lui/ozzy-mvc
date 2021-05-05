@@ -7,7 +7,7 @@
 .contain-form-login {
     position: absolute;
     top: 15%;
-    left: 40%;
+    left: 35%;
 }
 
 .form-login{
@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     height:fit-content;
     background-color: #FDF6ED;
