@@ -61,7 +61,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EquipmentID,EquipmentName,Description,LabName")] Equipment equipment)
+        public async Task<IActionResult> Create([Bind("EquipmentID, EquipmentType, EquipmentName,Description,LabName")] Equipment equipment)
         {
             if (ModelState.IsValid)
             {
