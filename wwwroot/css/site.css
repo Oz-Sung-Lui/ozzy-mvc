@@ -63,27 +63,37 @@ button.accept-policy {
 -------------------------------------------------- */
 
 html {
-    position: relative;
+    min-width: 100%;
     min-height: 100%;
 }
 
-body {
-    /* Margin bottom by footer height */
-    left:50%;
-    margin-bottom: 60px;
+nav {
+    /* navbar-expand-sm
+    navbar-toggleable-sm
+    navbar-light bg-white
+    border-bottom
+    box-shadow 
+    mb-3 */
+    position: relative;
+    background-color: orchid; 
 }
 
-.footer {
-    display: flex;
-    z-index: -5;
-    text-align: center;
-    position: absolute;
-    padding: 10px 0px 5px 0px;
-    bottom: 0px;
-    left: 0px;
+.container {
+    /* Margin bottom by footer height */
+    background: orange;
+    position: relative;
     width: 100%;
-    white-space: nowrap;
+    min-height:700px;
+    height:fit-content; 
+}
+
+footer {
+    background-color: orangered;
+    text-align: center;
+    position: relative;
+    padding: 10px 0px 5px 0px;
+    left: 0px;
+    height: 200px;
+    width: 100%;
     line-height: 16px;
-    margin-bottom: 0;
-    /* Vertically center the text there */
 }
