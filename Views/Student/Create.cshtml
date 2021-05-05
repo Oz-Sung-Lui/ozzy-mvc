@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ozzy_mvc</title>
+    <title>@ViewData["Title"] - Register</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/create.css" />
@@ -36,6 +36,9 @@
                         <div class="form-group">
                             <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
                             <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Confirm-Password" />
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Sign Up" id="btnSignUpRe" class="btn btn-primary" />
