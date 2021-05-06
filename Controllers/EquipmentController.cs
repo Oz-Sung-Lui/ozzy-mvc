@@ -25,6 +25,11 @@ namespace ozzy_mvc.Controllers
             return View(await _context.Equipment.ToListAsync());
         }
 
+        public async Task<IActionResult> Inventory()
+        {
+            return View(await _context.Equipment.ToListAsync());
+        }
+
         // GET: Equipment/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -46,6 +51,8 @@ namespace ozzy_mvc.Controllers
         // GET: Equipment/Create
         public IActionResult Create()
         {
+            ViewData["EquipmentType"] = new SelectList(Enum.GetValues(typeof(EquipmentType)));
+            ViewData["LabName"] = new SelectList(Enum.GetValues(typeof(Lab)));
             return View();
         }
 
@@ -54,7 +61,11 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public async Task<IActionResult> Create([Bind("EquipmentID,EquipmentName,LabName")] Equipment equipment)
+=======
+        public async Task<IActionResult> Create([Bind("EquipmentID, EquipmentType, EquipmentName,Description,LabName")] Equipment equipment)
+>>>>>>> inventory
         {
             if (ModelState.IsValid)
             {
@@ -74,6 +85,9 @@ namespace ozzy_mvc.Controllers
                 return NotFound();
             }
 
+            ViewData["EquipmentType"] = new SelectList(Enum.GetValues(typeof(EquipmentType)));
+            ViewData["LabName"] = new SelectList(Enum.GetValues(typeof(Lab)));
+
             var equipment = await _context.Equipment.FindAsync(id);
             if (equipment == null)
             {
@@ -87,7 +101,11 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public async Task<IActionResult> Edit(Guid id, [Bind("EquipmentID,EquipmentName,LabName")] Equipment equipment)
+=======
+        public async Task<IActionResult> Edit(Guid id, [Bind("EquipmentID,EquipmentType,EquipmentName,Description,LabName")] Equipment equipment)
+>>>>>>> inventory
         {
             if (id != equipment.EquipmentID)
             {
