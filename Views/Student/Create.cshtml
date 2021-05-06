@@ -34,11 +34,11 @@
                             <span asp-validation-for="Lastname" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                            <input type="password" asp-for="Password" id="password" class="form-control" placeholder="Password" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Confirm-Password" />
+                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm-Password" />
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Sign Up" id="btnSignUpRe" class="btn btn-primary" />
@@ -50,6 +50,22 @@
     </div>
 </body>
 
+<script>
+    var password = document.getElementById("password")
+        , confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
