@@ -6,10 +6,7 @@ namespace ozzy_mvc.Models
     {
         public Guid EquipmentID { get; set; }
         public String EquipmentName { get; set; }
-<<<<<<< HEAD
-        public String LabName  { get; set; }
         public Booking Booking { get; set; }
-=======
         public EquipmentType EquipmentType { get; set; }
         public String Description { get; set; }
         public Lab LabName  { get; set; }
@@ -46,6 +43,5 @@ namespace ozzy_mvc.Models
         RJ45_CRIMPING_TOOL,
         ROUTER,
         SWITCH,
->>>>>>> inventory
     }
 }

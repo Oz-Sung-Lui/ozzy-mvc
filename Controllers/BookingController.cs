@@ -57,13 +57,9 @@ namespace ozzy_mvc.Controllers
         // GET: Booking/Create
         public IActionResult Create()
         {
-<<<<<<< HEAD
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID");
-=======
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
->>>>>>> inventory
             return View();
         }
 
@@ -98,13 +94,9 @@ namespace ozzy_mvc.Controllers
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-=======
             ViewData["Equipment"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName", booking.EquipmentID);
             ViewData["Student"] = new SelectList(_context.Student, "StudentID", "Username", booking.StudentID);
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
->>>>>>> inventory
             return View(booking);
         }
 

@@ -61,11 +61,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Create([Bind("EquipmentID,EquipmentName,LabName")] Equipment equipment)
-=======
         public async Task<IActionResult> Create([Bind("EquipmentID, EquipmentType, EquipmentName,Description,LabName")] Equipment equipment)
->>>>>>> inventory
         {
             if (ModelState.IsValid)
             {
@@ -101,11 +97,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Edit(Guid id, [Bind("EquipmentID,EquipmentName,LabName")] Equipment equipment)
-=======
         public async Task<IActionResult> Edit(Guid id, [Bind("EquipmentID,EquipmentType,EquipmentName,Description,LabName")] Equipment equipment)
->>>>>>> inventory
         {
             if (id != equipment.EquipmentID)
             {
