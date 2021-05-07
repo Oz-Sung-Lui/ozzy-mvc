@@ -1,10 +1,73 @@
-.lab-name-contain{
-    position: absolute;
+.lab-name-contain {
+    position: relative;
     display: flex;
     justify-content: center;
     min-width: 100%;
     padding: 30px 0 30px 0;
-    border-bottom: 1px solid black;
-    
+    border-bottom: 3px solid rgb(216, 216, 216);
+    box-shadow: 3px 2px 10px #c2c2c2
 }
 
+.lab-detail {
+    font-size: 1.5vw;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-width: 100%;
+    /* background-color: orange; */
+}
+
+.lab-detail-img {
+    border-radius: 45px;
+    width: 50%;
+    height: 50%;
+}
+
+.lab-detail-str {
+    align-items: center;
+    padding: 60px;
+    width: 50%;
+    height: 50%;
+}
+
+.lab-element1 {
+    position: relative;
+    display: flex;
+}
+
+.lab-element2 {
+    position: relative;
+}
+
+.lab-element3 {
+    position: relative;
+}
+
+.lab-element4 {
+    position: relative;
+}
+
+.lab-item-1 {
+    max-width: 500px;
+}
+
+figure {
+    border: 1px #cccccc solid;
+    padding: 4px;
+    margin: auto;
+    width: 45%;
+}
+
+figcaption {
+    background-color: black;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+}
+
+.reserve-table {
+    width: 50%;
+}
