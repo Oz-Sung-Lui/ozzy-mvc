@@ -11,10 +11,31 @@ namespace ozzy_mvc.Controllers
 {
     public class LabController : Controller
     {
-        public IActionResult Lab()
+
+        public IActionResult ESL()
         {
             return View();
         }
+
+        public IActionResult HCRL()
+        {
+            return View();
+        }
+        public IActionResult Hardware()
+        {
+            return View();
+        }
+
+        public IActionResult Network()
+        {
+            return View();
+        }
+
+        public IActionResult Robot()
+        {
+            return View();
+        }
+
     }
 
 }
