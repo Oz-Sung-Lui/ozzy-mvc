@@ -8,7 +8,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Register</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/create.css" />
 </head>
@@ -20,25 +19,26 @@
             <div class="row">
                 <div class="col-md-4">
                     <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div asp-validation-summary="ModelOnly" class="error"></div>
                         <div class="form-group">
                             <input asp-for="Username" class="form-control" placeholder="Username" />
-                            <span asp-validation-for="Username" class="text-danger"></span>
+                            <span asp-validation-for="Username" class="error"></span>
                         </div>
                         <div class="form-group">
                             <input asp-for="Firstname" class="form-control" placeholder="Firstname" />
-                            <span asp-validation-for="Firstname" class="text-danger"></span>
+                            <span asp-validation-for="Firstname" class="error"></span>
                         </div>
                         <div class="form-group">
                             <input asp-for="Lastname" class="form-control" placeholder="Lastname" />
-                            <span asp-validation-for="Lastname" class="text-danger"></span>
+                            <span asp-validation-for="Lastname" class="error"></span>
                         </div>
                         <div class="form-group">
-                            <input type="password" asp-for="Password" id="password" class="form-control" placeholder="Password" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Password" class="error"></span>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm-Password" />
+                            <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                            <span asp-validation-for="ConfirmPassword" class="error"></span>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Sign Up" id="btnSignUpRe" class="btn btn-primary" />
@@ -50,22 +50,6 @@
     </div>
 </body>
 
-<script>
-    var password = document.getElementById("password")
-        , confirm_password = document.getElementById("confirm_password");
-
-    function validatePassword() {
-        if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
-
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-</script>
-
 @section Scripts {
-@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

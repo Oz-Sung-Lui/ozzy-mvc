@@ -6,12 +6,17 @@ namespace ozzy_mvc.Models
     public class Booking 
     {
         public Guid BookingID { get; set; }
-
-        [ForeignKey("Student")]
         public Guid StudentID { get; set; }
+        public Student Student { get; set; }
         public Guid EquipmentID { get; set; }
         public Equipment Equipment { get; set; }
-        public int TimeSlot { get; set; }
+        public TimeSlot TimeSlot { get; set; }
         public DateTime Date { get; set; }
+    }
+
+     public enum TimeSlot {
+        MORNING,
+        AFTERNOON,
+        EVENING
     }
 }
