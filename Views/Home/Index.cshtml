@@ -1,8 +1,61 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<!--
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+-->
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="StyleSheet" href="~/css/home/home.css" />
+
+</head>
+<body>
+<div class='content-container'>
+    <div class='carousel'>
+            <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
+            <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+            <div class='carousel__controls'>
+                <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
+              <!--👉-->>
+            </label>
+            </div>
+            <div class='carousel__controls'>
+                <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
+              <!--👈--><
+            </label>
+            </div>
+            <div class='carousel__screen'>
+                <div class='carousel__track'>
+                    <div class='carousel__item carousel__item--desktop-in-3'>
+                        <div class='demo-content'>
+                            <img src="~/image/1 - HARDWARE.jpg" alt="hardwarre lab">
+                        </div>
+                    </div>
+                    <div class='carousel__item carousel__item--desktop-in-3'>
+                        <div class='demo-content'>
+                            <img src="~/image/2 - HCRL.jpg" alt="hardwarre lab">
+                        </div>
+                    </div>
+                    <div class='carousel__item carousel__item--desktop-in-3'>
+                        <div class='demo-content'>
+                            <img src="~/image/3 - ESL.jpg" alt="hardwarre lab">
+                        </div>
+                    </div>
+                    <div class='carousel__item carousel__item--desktop-in-3'>
+                        <div class='demo-content'>
+                            <img src="~/image/4 - ELEC.jpg" alt="hardwarre lab">
+                        </div>
+                    </div>
+                    <div class='carousel__item carousel__item--desktop-in-3'>
+                        <div class='demo-content'>
+                            <img src="~/image/5 - NETWORK.jpg" alt="hardwarre lab">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
