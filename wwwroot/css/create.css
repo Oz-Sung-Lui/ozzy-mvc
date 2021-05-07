@@ -12,7 +12,6 @@
     transform: translate(-50%,0%);
 }
 
-
 .form-login{
     display: flex;
     align-items: center;
@@ -75,3 +74,4 @@
     margin: 0%;
     font-size: 15px;
 }
+

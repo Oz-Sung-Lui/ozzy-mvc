@@ -92,3 +92,11 @@ footer {
     width: 100%;
     line-height: 15px;
 }
+
+.field-validation-error {
+    color: red !important;
+}
+
+.input-validation-error {
+    color: red !important;
+}
