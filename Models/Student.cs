@@ -9,15 +9,15 @@ namespace ozzy_mvc.Models
         public Guid StudentID { get; set; }
 
         [Required(ErrorMessage = "*Username is required.")]
-        [StringLength(15, MinimumLength = 3, ErrorMessage = "*Lenght must between 3 and 15")]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "*Lenght must between 3 and 10")]
         public String Username { get; set; }
 
         [Required(ErrorMessage = "*Firstname is required.")]
-        [StringLength(15, MinimumLength = 3, ErrorMessage = "*Lenght must between 3 and 15")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "*Lenght must between 3 and 20")]
         public String Firstname { get; set; }
         
         [Required(ErrorMessage = "*Lastname feild is required.")]
-        [StringLength(15, MinimumLength = 3, ErrorMessage = "Lenght must between 3 and 15")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Lenght must between 3 and 20")]
         public String Lastname { get; set; }
         
         [Required(ErrorMessage = "*Password is required.")]
