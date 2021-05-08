@@ -54,11 +54,12 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentID,Username,Firstname,Lastname,Password,IsBlacklisted")] Student student)
+        public async Task<IActionResult> Create([Bind("StudentID,Username,Firstname,Lastname,Password,ConfirmPassword")] Student student)
         {
             if (ModelState.IsValid)
             {
                 student.StudentID = Guid.NewGuid();
+                student.IsBlacklisted = false;
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,7 +88,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("StudentID,Username,Firstname,Lastname,Password,IsBlacklisted")] Student student)
+        public async Task<IActionResult> Edit(Guid id, [Bind("StudentID,Username,Firstname,Lastname,Password,ConfirmPassword")] Student student)
         {
             if (id != student.StudentID)
             {

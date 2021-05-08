@@ -16,12 +16,15 @@ namespace ozzy_mvc.Data
 
         public DbSet<ozzy_mvc.Models.Booking> Booking { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+       protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Booking>()
                 .HasOne<Equipment>(b => b.Equipment)
-                .WithOne(eq => eq.Booking)
-                .HasForeignKey<Booking>(b => b.EquipmentID);
+                .WithMany();
+
+            modelBuilder.Entity<Booking>()
+                .HasOne<Student>(b => b.Student)
+                .WithMany();
         }
     }
 }
