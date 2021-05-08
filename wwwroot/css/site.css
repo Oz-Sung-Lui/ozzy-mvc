@@ -70,6 +70,7 @@ html {
 nav {
     position: relative;
     background-color: orchid; 
+    height: 6vmin;
 }
 
 .container {
@@ -77,20 +78,25 @@ nav {
     /* background: orange; */
     position: relative;
     width: 100%;
-    min-height:850px;
+    min-height:82vmin;
     height:fit-content; 
 }
 
 footer {
     /* background-color: orangered; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     position: relative;
-    padding: 15px 0px 0px 0px;
+    padding: 1.8vmin 0vmin 0vmin 0vmin;
     bottom: 0px;
     left: 0px;
-    /* height: 200px; */
+    height: 12vmin;
     width: 100%;
-    line-height: 15px;
+    line-height: 120%;
+    font-size: 0.9em;
 }
 
 .field-validation-error {

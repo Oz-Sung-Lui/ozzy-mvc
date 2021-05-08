@@ -1,3 +1,13 @@
+.container {
+    min-width: 100%;
+    /* height: fit-content; */
+    /* min-height: 50%; */
+    /* height: 50%; */
+    /* min-height: 0%; */
+    height: fit-content;
+    /* min-height: fit-content; */
+}
+
 .content-container {
     display: flex;
     position: absolute;
@@ -6,6 +16,10 @@
     bottom: 0;
     left: 0;
     right: 0;
+    min-height: 0%;
+    height: 100%;
+    /* width: 100%;
+    height: 100%; */
 }
 
 img {
@@ -20,12 +34,12 @@ img:hover {
 }
 
 .carousel {
-    min-width: 1300px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 48px;
-    padding-right: 48px;
+    min-width: auto;
+    max-width: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     position: relative;
 }
 
@@ -53,21 +67,23 @@ img:hover {
 }
 
 .carousel__control {
+
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
+    text-align: center;
     align-items: center;
     background-color: #fff;
     color: #3d414a;
     border-radius: 100%;
     box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
-    font-size: 30px;
-    height: 48px;
+    font-size: 1.5vw;
+    line-height: 2.7vw;
+    height: 3vw;
     justify-content: center;
     transition: 0.3s all;
-    width: 48px;
+    width: 3vw;
     z-index: 1;
     font-weight: 900;
-    vertical-align: text-top;
 }
 
 .carousel__control:hover {
@@ -156,8 +172,8 @@ img:hover {
 
 .carousel__screen {
     overflow: hidden;
-    margin-left: -16px;
-    margin-right: -16px;
+    /* margin-left: -16px;
+    margin-right: -16px; */
 }
 
 .carousel__track {
@@ -169,8 +185,8 @@ img:hover {
 
 .carousel__item {
     display: inline-flex;
-    padding-left: 16px;
-    padding-right: 16px;
+    /* padding-left: 0.05%;
+    padding-right: 0.05%; */
     vertical-align: top;
     white-space: normal;
 }
@@ -205,8 +221,8 @@ img:hover {
     text-transform: uppercase;
     border-radius: 3px;
     font-size: 56px;
-    height: 330px;
-    width: 100%;
+    height: 50%;/*500*/
+    width: 95%;
     border-radius: 25px;
     margin: 5px;
 }
