@@ -29,7 +29,9 @@
         </main>
     </div>
 
-    @Html.Partial("_Footer")
+    @if (Context.Request.Path!="/Auth/Login" && Context.Request.Path!="/Student/Create" && Context.Request.Path!="/Equipment/Inventory"){
+        @Html.Partial("_Footer")
+    }
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
