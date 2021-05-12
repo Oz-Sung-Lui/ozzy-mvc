@@ -1,5 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
 
 a.navbar-brand {
     white-space: normal;
@@ -32,13 +33,11 @@ a {
 -------------------------------------------------- */
 
 html {
-    font-size: 14px;
+    font-family: Kanit;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+
 }
 
 body {
@@ -77,23 +76,23 @@ nav {
     position: relative;
     background-color: #333;
     color: white; 
-    height: 6vmin;
+    height: 5vmin;
     margin: 0;
     padding: 0;
 }
 
 /*---------------------------- NAV BAR ----------------------------*/
 ul {
-    height: 6vmin;
+    /* height: 5vmin; */
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     color: white; 
 }
-.nav-item{
-    height: 6vmin;
-}
+/* .nav-item{
+    height: 5vmin;
+} */
 
 li {
     float: left;
@@ -143,11 +142,13 @@ li.dropdown {
 
 .container {
     /* Margin bottom by footer height */
-    /* background: orange; */
     position: relative;
     width: 100%;
-    min-height:82vmin;
-    height:fit-content; 
+    min-height:85vmin;
+    height:fit-content;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 footer {
@@ -158,13 +159,20 @@ footer {
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 1.8vmin 0vmin 0vmin 0vmin;
+    border-color: red;
+    border-top-style: solid;
+    padding: 0vmin 0vmin 0vmin 0vmin;
     bottom: 0px;
     left: 0px;
-    height: 12vmin;
+    height: 10vmin;
     width: 100%;
     line-height: 120%;
     font-size: 0.9em;
+}
+
+footer h2{
+    margin: 0;
+    padding: 0;
 }
 
 .field-validation-error {
