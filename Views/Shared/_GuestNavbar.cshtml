@@ -1,4 +1,38 @@
-<header>
+
+<nav>
+    @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ozzy_mvc</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button> *@
+        <ul>
+            <li >
+                <a class= "nav-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li >
+                <a class= "nav-item" asp-area="" asp-controller="Student" asp-action="Create">Register</a>
+            </li>
+            <li class= "float:right">
+                <a class="login-active" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+            </li>
+        </ul>
+</nav>
+
+@* <ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+</ul> *@
+
+
+@* <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ozzy_mvc</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
@@ -19,4 +53,4 @@
             </ul>
         </div>
     </nav>
-</header>
+</header> *@

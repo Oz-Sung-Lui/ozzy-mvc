@@ -1,5 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
 
 a.navbar-brand {
     white-space: normal;
@@ -32,13 +33,16 @@ a {
 -------------------------------------------------- */
 
 html {
-    font-size: 14px;
+    font-family: Kanit;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .border-top {
@@ -67,36 +71,115 @@ html {
     min-height: 100%;
 }
 
+
 nav {
     position: relative;
-    background-color: orchid;
+    background-color: #333;
+    color: white; 
+    height: 5vmin;
+    margin: 0;
+    padding: 0;
 }
+
+/*---------------------------- NAV BAR ----------------------------*/
+nav ul {
+    height: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white; 
+}
+
+nav li {
+    height: inherit;
+    float: left;
+    
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1.3vmin;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+    
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*---------------------------- NAV BAR ----------------------------*/
 
 .container {
     /* Margin bottom by footer height */
-    /* background: orange; */
     position: relative;
     width: 100%;
-    min-height: 850px;
-    height: fit-content;
+    min-height:85vmin;
+    height:fit-content;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 footer {
     /* background-color: orangered; */
     text-align: center;
     position: relative;
-    padding: 15px 0px 0px 0px;
+    border-color: red;
+    border-top-style: solid;
+    border-width: 0.2vmin;
+    padding: 1.3vmin 0vmin 0vmin 0vmin;
     bottom: 0px;
     left: 0px;
+    height: 8.5vmin;
     width: 100%;
-    line-height: 15px;
-    border-top: 1.5px solid #DEE2E6;
+    line-height: 120%;
+    font-size: 0.9em;
+}
+
+footer h2{
+    margin: 0;
+    padding: 0;
 }
 
 .field-validation-error {
     color: red !important;
+    font-size: 1.5vmin;
+
 }
 
 .input-validation-error {
     color: red !important;
+    font-size: 1.5vmin;
+    box-shadow: 0 0 3pt 1pt red;
 }
