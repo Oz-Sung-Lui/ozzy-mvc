@@ -82,32 +82,32 @@ nav {
 }
 
 /*---------------------------- NAV BAR ----------------------------*/
-ul {
-    /* height: 5vmin; */
+nav ul {
+    height: inherit;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     color: white; 
 }
-/* .nav-item{
-    height: 5vmin;
-} */
 
-li {
+nav li {
+    height: inherit;
     float: left;
+    
 }
 
 li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1.3vmin;
     text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
     background-color: red;
+    
 }
 
 li.dropdown {
@@ -161,10 +161,11 @@ footer {
     position: relative;
     border-color: red;
     border-top-style: solid;
-    padding: 0vmin 0vmin 0vmin 0vmin;
+    border-width: 0.2vmin;
+    padding: 1.3vmin 0vmin 0vmin 0vmin;
     bottom: 0px;
     left: 0px;
-    height: 10vmin;
+    height: 8.5vmin;
     width: 100%;
     line-height: 120%;
     font-size: 0.9em;
@@ -177,8 +178,12 @@ footer h2{
 
 .field-validation-error {
     color: red !important;
+    font-size: 1.5vmin;
+
 }
 
 .input-validation-error {
     color: red !important;
+    font-size: 1.5vmin;
+    box-shadow: 0 0 3pt 1pt red;
 }
