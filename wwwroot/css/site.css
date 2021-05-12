@@ -69,8 +69,7 @@ html {
 
 nav {
     position: relative;
-    background-color: orchid; 
-    height: 6vmin;
+    background-color: orchid;
 }
 
 .container {
@@ -78,25 +77,20 @@ nav {
     /* background: orange; */
     position: relative;
     width: 100%;
-    min-height:82vmin;
-    height:fit-content; 
+    min-height: 850px;
+    height: fit-content;
 }
 
 footer {
     /* background-color: orangered; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     position: relative;
-    padding: 1.8vmin 0vmin 0vmin 0vmin;
+    padding: 15px 0px 0px 0px;
     bottom: 0px;
     left: 0px;
-    height: 12vmin;
     width: 100%;
-    line-height: 120%;
-    font-size: 0.9em;
+    line-height: 15px;
+    border-top: 1.5px solid #DEE2E6;
 }
 
 .field-validation-error {
