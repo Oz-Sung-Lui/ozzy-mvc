@@ -69,7 +69,7 @@ html {
 
 nav {
     position: relative;
-    background-color: orchid; 
+    background-color: orchid;
     height: 6vmin;
 }
 
@@ -133,8 +133,11 @@ li.dropdown {
     /* background: orange; */
     position: relative;
     width: 100%;
-    min-height:82vmin;
-    height:fit-content; 
+    min-height: 850px;
+    height: fit-content;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 footer {
@@ -148,9 +151,9 @@ footer {
     padding: 1.8vmin 0vmin 0vmin 0vmin;
     bottom: 0px;
     left: 0px;
-    height: 12vmin;
+    height: 13vmin;
     width: 100%;
-    line-height: 120%;
+    line-height: 160%;
     font-size: 0.9em;
 }
 
