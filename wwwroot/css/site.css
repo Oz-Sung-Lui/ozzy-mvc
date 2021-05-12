@@ -41,6 +41,11 @@ html {
     }
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
@@ -67,19 +72,27 @@ html {
     min-height: 100%;
 }
 
+
 nav {
     position: relative;
-    background-color: orchid; 
+    background-color: #333;
+    color: white; 
     height: 6vmin;
+    margin: 0;
+    padding: 0;
 }
 
 /*---------------------------- NAV BAR ----------------------------*/
 ul {
+    height: 6vmin;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    color: white; 
+}
+.nav-item{
+    height: 6vmin;
 }
 
 li {
