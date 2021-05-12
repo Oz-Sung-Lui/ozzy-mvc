@@ -1,6 +1,25 @@
 .container {
     min-width: 100%;
+    /* height: fit-content; */
+    /* min-height: 50%; */
+    /* height: 50%; */
+    /* min-height: 0%; */
     height: fit-content;
+    /* min-height: fit-content; */
+}
+
+.content-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 0%;
+    height: 100%;
+    /* width: 100%;
+    height: 100%; */
 }
 
 img {
@@ -14,33 +33,13 @@ img:hover {
     transition: 0.3s;
 }
 
-.caption-lab {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 0;
-    margin: 0.3vw;
-    font-size: 1.5vw;
-    min-width: 31.6%;
-    min-height: 10px;
-    text-align: center;
-    border-radius: 25px !important;
-    padding-top: 14.35vw;
-}
-
-.caption-lab:hover {
-    background-color: rgba(0, 0, 0, 0);
-    color:rgba(0, 0, 0, 0);
-    transition: 0.3s;
-}
-
 .carousel {
-    min-width: auto;
-    max-width: auto;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 5%;
-    padding-right: 5%;
+    min-width: 1300px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 48px;
+    padding-right: 48px;
     position: relative;
 }
 
@@ -68,28 +67,26 @@ img:hover {
 }
 
 .carousel__control {
+
     cursor: pointer;
-    /* display: flex; */
-    text-align: center;
+    display: flex;
     align-items: center;
     background-color: #fff;
     color: #3d414a;
     border-radius: 100%;
     box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
-    font-size: 1.5vw;
-    line-height: 2.7vw;
-    height: 3vw;
+    font-size: 30px;
+    height: 48px;
     justify-content: center;
     transition: 0.3s all;
-    width: 3vw;
+    width: 48px;
     z-index: 1;
     font-weight: 900;
+    vertical-align: text-top;
 }
 
 .carousel__control:hover {
-    transform: scale(1.2);
-    background-color: #3d414a;
-    color: rgba(255, 255, 255, 0.705);
+    transform: scale(1.05);
 }
 
 .carousel__activator:nth-of-type(1):checked~.carousel__controls:nth-of-type(1) {
@@ -174,6 +171,8 @@ img:hover {
 
 .carousel__screen {
     overflow: hidden;
+    /* margin-left: -16px;
+    margin-right: -16px; */
 }
 
 .carousel__track {
@@ -185,6 +184,8 @@ img:hover {
 
 .carousel__item {
     display: inline-flex;
+    /* padding-left: 0.05%;
+    padding-right: 0.05%; */
     vertical-align: top;
     white-space: normal;
 }
@@ -218,8 +219,8 @@ img:hover {
     text-transform: uppercase;
     border-radius: 3px;
     font-size: 56px;
-    height: 50%;/*500*/
-    width: 95%;
+    height: 330px;
+    width: 100%;
     border-radius: 25px;
     margin: 5px;
 }

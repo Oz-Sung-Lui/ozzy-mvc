@@ -181,10 +181,6 @@ nav li a, .dropbtn {
 
 footer {
     /* background-color: orangered; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     position: relative;
     border-color: red;
