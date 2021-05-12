@@ -1,21 +1,24 @@
-
 <nav>
-    @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ozzy_mvc</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button> *@
-        <ul>
-            <li >
-                <a class= "nav-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>
-            <li >
-                <a class= "nav-item" asp-area="" asp-controller="Student" asp-action="Create">Register</a>
-            </li>
-            <li class= "float:right">
-                <a class="login-active" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
-            </li>
-        </ul>
+    <ul>
+        <li>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="dropdown">
+            <button class="dropbtn">LAB</button>
+            <div class="dropdown-content">
+                <a asp-area="" asp-controller="Lab" asp-action="Hardware">Hardware</a>
+                <a asp-area="" asp-controller="Lab" asp-action="HCRL">HCRL</a>
+                <a asp-area="" asp-controller="Lab" asp-action="Robot">Robot</a>
+                <a asp-area="" asp-controller="Lab" asp-action="ESL">ESL</a>
+                <a asp-area="" asp-controller="Lab" asp-action="Network">Network</a>
+            </div>
+        <li>
+            <a asp-area="" asp-controller="Lab" asp-action="Network">Network</a>
+        </li>
+        <li style="float:right">
+            <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+        </li>
+    </ul>
 </nav>
 
 @* <ul>

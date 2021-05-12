@@ -1,92 +1,95 @@
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Network Lab";
 }
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Network Labatory</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/lab.css" />
-</head>
+<!DOCTYPE html>
+<html lang="en">
 
-<body>
-    <div class="lab-name-contain">
-        <h1>Network Labatory</h1>
-    </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Network Labatory</title>
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/lab.css" />
+    </head>
 
-    <div class="lab-detail">
-        <div class="contain-lab-img">
-            <img class="lab-detail-img" src="~/img/lab/NETWORK.jpg" alt="network-lab">
+    <body>
+        <div class="lab-banner">
+            Network Labatory
         </div>
-        <div class="lab-detail-str">
-            <h1 style="font-size: 2vw;">Network Labatory</h1>
-            <br>
-            <p>
-                ห้องปฏิบัติ Network ตั้งอยู่ที่ห้อง 601 ชั้น 1 อาคารปฏิบัติการรวมวิศวกรรมศาสตร์ 2 (ECC Building)
-                สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง โดยมีผู้ดูแลคือ นาย ศุภากร วชิรศรัณกูล (61011058)
+
+        <div class="lab-detail">
+            <div class="contain-lab-img">
+                <img class="lab-detail-img" src="~/img/lab/NETWORK.jpg" alt="network-lab">
+            </div>
+            <div class="lab-detail-str">
+                <h1 style="font-size: 2vw;">Network Labatory</h1>
                 <br>
-                <br>
-                ห้องปฏิบัติการ Network เปิดให้นักศึกษาสามารถยืมอุปกรณ์ทางเครือข่ายต่าง ๆ ได้ เช่น สายแลน เราเตอร์
-                คีมเข้าหัวสายแลน และสวิตซ์ เป็นต้น
-            </p>
+                <p>
+                    ห้องปฏิบัติ Network ตั้งอยู่ที่ห้อง 601 ชั้น 1 อาคารปฏิบัติการรวมวิศวกรรมศาสตร์ 2 (ECC Building)
+                    สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง โดยมีผู้ดูแลคือ นาย ศุภากร วชิรศรัณกูล (61011058)
+                    <br>
+                    <br>
+                    ห้องปฏิบัติการ Network เปิดให้นักศึกษาสามารถยืมอุปกรณ์ทางเครือข่ายต่าง ๆ ได้ เช่น สายแลน เราเตอร์
+                    คีมเข้าหัวสายแลน และสวิตซ์ เป็นต้น
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="lab-element1">
-        <figure>
-            <figcaption>Lan CAT6 Cable -ใช้สำหรับเชื่อมต่อทางเครือข่าย</figcaption>
-            <img class="lab-img-item" src="~/img/lab/network/lan_cat6_cable.jpg" alt="lan_cat6_cable">
-        </figure>
+        <div class="lab-element1">
+            <figure>
+                <figcaption>Lan CAT6 Cable -ใช้สำหรับเชื่อมต่อทางเครือข่าย</figcaption>
+                <img class="lab-img-item" src="~/img/lab/network/lan_cat6_cable.jpg" alt="lan_cat6_cable">
+            </figure>
 
-        <div class="lab-table-reserve">
-            <table class="table">
-                <thead>
+            <div class="lab-table-reserve">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Reserved</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
                     <tr>
-                        <th>Reserved</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <td>No.1</td>
+                        <td>22/04/2564</td>
+                        <td>noon</td>
+                        <td>even</td>
+                        <td>night</td>
                     </tr>
-                </thead>
-                <tr>
-                    <td>No.1</td>
-                    <td>22/04/2564</td>
-                    <td>noon</td>
-                    <td>even</td>
-                    <td>night</td>
-                </tr>
-                <tr>
-                    <td>No.2</td>
-                    <td>23/04/2564</td>
-                    <td>noon</td>
-                    <td>even</td>
-                    <td>night</td>
-                </tr>
-                <tr>
-                    <td>No.3</td>
-                    <td>24/04/2564</td>
-                    <td>noon</td>
-                    <td>even</td>
-                    <td>night</td>
-                </tr>
-            </table>
+                    <tr>
+                        <td>No.2</td>
+                        <td>23/04/2564</td>
+                        <td>noon</td>
+                        <td>even</td>
+                        <td>night</td>
+                    </tr>
+                    <tr>
+                        <td>No.3</td>
+                        <td>24/04/2564</td>
+                        <td>noon</td>
+                        <td>even</td>
+                        <td>night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
 
-    <div class="lab-element2">
-        <img class="lab-detail-img" src="~/img/lab/network/crimpingtool.jpg" alt="Crimping-Tool" width="500px">
-    </div>
+        <div class="lab-element2">
+            <img class="lab-detail-img" src="~/img/lab/network/crimpingtool.jpg" alt="Crimping-Tool" width="500px">
+        </div>
 
-    <div class="lab-element3">
-        <img class="lab-detail-img" src="~/img/lab/network/router.jpg" alt="router" width="700px">
-    </div>
+        <div class="lab-element3">
+            <img class="lab-detail-img" src="~/img/lab/network/router.jpg" alt="router" width="700px">
+        </div>
 
-    <div class="lab-element4">
-        <img class="lab-detail-img" src="~/img/lab/network/switch.jpg" alt="switch" width="700px">
-    </div>
+        <div class="lab-element4">
+            <img class="lab-detail-img" src="~/img/lab/network/switch.jpg" alt="switch" width="700px">
+        </div>
 
+    </body>
 
-</body>
+</html>

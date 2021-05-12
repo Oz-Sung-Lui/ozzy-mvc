@@ -16,8 +16,11 @@
 
 </head>
 <body>
-<div class='content-container'>
-    <div class='carousel'>
+    <div class="banner">
+        KMITL Labatory System
+    </div>
+    <div class='content-container'>
+        <div class='carousel'>
             <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
             <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
             
@@ -31,47 +34,51 @@
                     <!--👈--><
                 </label>
             </div>
-            
+                
             <div class='carousel__screen'>
                 <div class='carousel__track'>
-
-                    <div class='carousel__item carousel__item--desktop-in-3'>
-                        <div class='demo-content'>              
-                            <img src="~/image/1 - HARDWARE.jpg" alt="Hardware lab">
-                            <div class='caption-lab'>Hardware Lab</div>
+                    <a asp-area="" asp-controller="Lab" asp-action="Hardware">
+                        <div class='carousel__item carousel__item--desktop-in-3'>
+                            <div class='demo-content'>              
+                                <img src="~/image/1 - HARDWARE.jpg" alt="Hardware lab">
+                                <div class='caption-lab'>Hardware Lab</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class='carousel__item carousel__item--desktop-in-3'>
-                        <div class='demo-content'>
-                            <img src="~/image/2 - HCRL.jpg" alt="HCRL lab">
-                            <div class='caption-lab'>HCRL Lab</div>
+                    </a>
+                    <a asp-area="" asp-controller="Lab" asp-action="HCRL">
+                        <div class='carousel__item carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="~/image/2 - HCRL.jpg" alt="HCRL lab">
+                                <div class='caption-lab'>HCRL Lab</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class='carousel__item carousel__item--desktop-in-3'>
-                        <div class='demo-content'>
-                            <img src="~/image/3 - ROBOT & IOT.jpg" alt="Robot & IoT lab">
-                            <div class='caption-lab'>Robot & IoT Lab</div>
+                    </a>
+                    <a asp-area="" asp-controller="Lab" asp-action="Robot">
+                        <div class='carousel__item carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="~/image/3 - ROBOT & IOT.jpg" alt="Robot & IoT lab">
+                                <div class='caption-lab'>Robot & IoT Lab</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class='carousel__item carousel__item--desktop-in-3'>
-                        <div class='demo-content'>
-                            <img src="~/image/4 - ESL.jpg" alt="ESL lab">
-                            <div class='caption-lab'>ESL Lab</div>
+                    </a>
+                    <a asp-area="" asp-controller="Lab" asp-action="ESL">
+                        <div class='carousel__item carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="~/image/4 - ESL.jpg" alt="ESL lab">
+                                <div class='caption-lab'>ESL Lab</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class='carousel__item carousel__item--desktop-in-3'>
-                        <div class='demo-content'>
-                            <img src="~/image/5 - NETWORK.jpg" alt="Network lab">
-                            <div class='caption-lab'>Network Lab</div>
+                    </a>
+                    <a asp-area="" asp-controller="Lab" asp-action="Network">
+                        <div class='carousel__item carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="~/image/5 - NETWORK.jpg" alt="Network lab">
+                                <div class='caption-lab'>Network Lab</div>
+                            </div>
                         </div>
-                    </div>
-
+                    </a>
                 </div>
             </div>
+        </div>
     </div>
-</div>
 </body>

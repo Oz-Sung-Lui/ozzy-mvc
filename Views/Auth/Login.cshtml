@@ -12,28 +12,29 @@
     <link rel="stylesheet" href="~/css/create.css" />
 </head>
 
+<body>
+    <div class="form-login-regis">
 
-<div class="form-login">
+        <h1>Login</h1>
 
-    <h1>Login</h1>
-    <form asp-action="Login">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
 
-            <input asp-for="Username" class="inputField" placeholder="Username" />
-            <span asp-validation-for="Username" class="error"></span>
+                <input asp-for="Username" class="inputField" placeholder="Username" />
+                <span asp-validation-for="Username" class="error"></span>
 
-            <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
-            <span asp-validation-for="Password" class="error"></span>
+                <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
+                <span asp-validation-for="Password" class="error"></span>
 
-            <input type="submit" value="Login" id="btnSignUpRe"/>
-            <p>
-                Don't have an account?
-                <a class= "nav-item" asp-area="" asp-controller="Student" asp-action="Create">Register</a>
-            </p>
-    </form>
+                <input type="submit" value="Login" id="btnSignUpRe"/>
+                <p>
+                    Don't have an account?
+                    <a asp-area="" asp-controller="Student" asp-action="Create">Register</a>
+                </p>
+        </form>
 
-</div>
-
+    </div>
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
