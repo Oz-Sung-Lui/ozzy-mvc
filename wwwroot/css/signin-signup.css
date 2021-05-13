@@ -40,6 +40,7 @@
 }
 
 .signin-signup-cointainer .inputField {
+    color: #4E2C0D;
     height: 5vmin;
     width: 27.5vmin;
     display: block;
@@ -54,18 +55,23 @@
 
 .signin-signup-cointainer .inputField:focus {
     /* outline: none; */
-    box-shadow: 0 0 3pt 1pt green;
+    box-shadow: 0 0 5pt 5pt #FCE5DF;
 }
+
 
 #btnSigninSignup{
     position: relative;
+    font-weight:800;
     background: #FCE5DF;
-    color: #8C8C8C;
+    color: #4E2C0D;
     width: 18vmin;
     height: 4.5vmin;
     font-size: 2vmin;
     border-radius: 3vmin;
     margin: 10% 0% 2% 0%;
     border: none;
-    box-shadow: 2px 2px 10px hsl(0deg 0% 47% / 50%);
+}
+
+#btnSigninSignup:hover{
+    box-shadow: 0px 0px 2px 2px #4E2C0D;
 }

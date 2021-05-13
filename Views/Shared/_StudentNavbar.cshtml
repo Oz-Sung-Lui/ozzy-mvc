@@ -31,11 +31,12 @@
     </ul>
 </nav>
 
+
 <script>
 // When the user clicks on the button, toggle between hiding and showing the dropdown content
 function myFunction() { 
     document.getElementById("myDropdown").classList.toggle("dropdown-content-user-button");
-    document.querySelector('nav').style.setProperty('--enable', 'black');   //CHANGE COLOR TO BLACK WHEN ACTIVE
+    document.querySelector('nav').style.setProperty('--enable', '#684933');   //CHANGE COLOR TO BLACK WHEN ACTIVE
 }
 
     // Close the dropdown if the user clicks outside of it
@@ -44,7 +45,7 @@ window.onclick = function(e) {
     var myDropdown = document.getElementById("myDropdown");
         if (myDropdown.classList.contains('dropdown-content-user-button')) {
             myDropdown.classList.remove('dropdown-content-user-button');
-            document.querySelector('nav').style.setProperty('--enable', 'rgb(126, 126, 126)');   //CHANGE COLOR BACK WHEN NOT ACTIVE
+            document.querySelector('nav').style.setProperty('--enable', '#684933');   //CHANGE COLOR BACK WHEN NOT ACTIVE
         }
     }
 }

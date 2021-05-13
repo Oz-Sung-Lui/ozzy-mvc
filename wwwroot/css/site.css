@@ -3,7 +3,8 @@ for details on configuring this project to bundle and minify static web assets. 
 @font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
 
 a {
-    color: rgb(255, 0, 255);
+    font-weight: bold;
+    color: #4E2C0D;
 }
 
 input, button {
@@ -13,6 +14,7 @@ input, button {
 
 html {
     font-family: Kanit;
+    color: #4E2C0D;
     min-width: 100%;
     min-height: 100%;
     font-size: medium;
@@ -38,10 +40,10 @@ button.accept-policy {
 /* ============================ NAV BAR ============================ */
 
 nav {
-    --enable: rgb(126, 126, 126);
+    --enable: #684933;
     z-index: 5;
     position: sticky;
-    background-color: #333;
+    background-color: #42260c;
     color: white; 
     height: 5vmin;
     top: 0;
@@ -63,13 +65,14 @@ nav li {
 }
 
 nav li a:hover, #dropdown:hover {
-    background-color: red;  
+    background-color: #88490e;  
     height: 5vmin;
 }
 
 nav li a, .dropbtn, .user-button {
     display: block;
     color: white;
+    font-weight: bold;
     text-align: center;
     padding: 0 1.3vmin 0 1.3vmin;
     /* margin: 1.3vmin; */
@@ -88,14 +91,14 @@ nav li a, .dropbtn, .user-button {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #FDF6ED;
     min-width: 15vmin;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .dropdown-content a {
     float: block;
-    color: black;
+    color: #4E2C0D;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -104,7 +107,7 @@ nav li a, .dropbtn, .user-button {
 }
   
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #f0cc9d;
     height: inherit;
 }
 /*************** WHEN HOVER DROPDOWN ***************/
@@ -124,7 +127,7 @@ nav li a, .dropbtn, .user-button {
     border-radius: 5vh 0 0 5vh;
 }
 .user-button:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: #88490e;
 }
 
 .profile-picture {
@@ -135,7 +138,8 @@ nav li a, .dropbtn, .user-button {
     height: 4vh;
     border-radius: 5vh;
     bottom: 0%;
-    background-color: purple;
+    color: #88490e;
+    background-color: #f0cc9d;
 }
 .dropdown-content[notgeneral] {
     right: 0;
@@ -152,12 +156,15 @@ nav li a, .dropbtn, .user-button {
     height: 8vw;
     font-size: 5vw;
     padding: 0;
-    margin: 0;
-    background-color: yellow;
+    margin: auto;
+    color:#4E2C0DD0;
+    width: 100%;
+    background-image: radial-gradient(#ffd5cb,#fdccc0, #FDF6ED, #FFFFFF,  #FFFFFF);
+    /* box-shadow: 0px 0px 5px 5px rgb(190, 190, 190); */
 }
 
 .lab-banner {
-    background-color: rgb(0, 225, 255);
+    background-color: #FCE5DF;
 }
 
 .container {
@@ -176,7 +183,8 @@ footer {
     /* background-color: orangered; */
     text-align: center;
     position: relative;
-    border-color: red;
+    color : #4E2C0D;
+    border-color:rgb(194, 194, 194);
     border-top-style: solid;
     border-width: 0.2vmin;
     padding: 1.3vmin 0vmin 0vmin 0vmin;
