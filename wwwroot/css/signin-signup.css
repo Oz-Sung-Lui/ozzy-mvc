@@ -1,71 +1,72 @@
-/* ============================ ERROR INPUT ============================ */
+    /* ============================ ERROR INPUT ============================ */
 
 .field-validation-error {
     color: red !important;
     font-size: 1.5vmin;
-
-}
-
-.input-validation-error {
-    color: red !important;
-    font-size: 1.5vmin;
-    box-shadow: 0 0 3pt 1pt red;
-}
-
-/* ============================ ERROR INPUT ============================ */
-
-.signin-signup-cointainer h1 {
-    margin: 0;
-    padding-bottom: 1.vmin;
-    font-size: 4vmin;
-}
-
-.signin-signup-cointainer p {
-    margin: 0;
-}
-
-.signin-signup-cointainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    align-items: center;
-    text-align: center;
-    width: 30vmin;
-    height:fit-content;
-    background-color: #FDF6ED;
-    font-size: 1.8vmin;
-    border-radius: 4vmin;
-    padding: 30px;
-}
-
-.signin-signup-cointainer .inputField {
-    height: 5vmin;
-    width: 27.5vmin;
-    display: block;
-    background: #fff;
-    border-radius: 20vmin;
-    border: 1px solid #fff;
-    padding: 0 0 0 7%;
-    margin: 5% 0% 0% 0%;
-    font-size: 1.6vmin;
-    outline: none;
-}
-
-.signin-signup-cointainer .inputField:focus {
-    /* outline: none; */
-    box-shadow: 0 0 3pt 1pt green;
-}
-
-#btnSigninSignup{
-    position: relative;
-    background: #FCE5DF;
-    color: #8C8C8C;
-    width: 18vmin;
-    height: 4.5vmin;
-    font-size: 2vmin;
-    border-radius: 3vmin;
-    margin: 10% 0% 2% 0%;
-    border: none;
-    box-shadow: 2px 2px 10px hsl(0deg 0% 47% / 50%);
-}
+    .contain-form-regis {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .form-regis {
+        width: 400px;
+        height: fit-content;
+        background-color: #FDF6ED;
+        border-radius: 45px;
+        padding: 30px 60px 30px 60zpx;
+    }
+    /* ============================ ERROR INPUT ============================ */
+    .signin-signup-cointainer h1 {
+        margin: 0;
+        padding-bottom: 1.vmin;
+        font-size: 4vmin;
+    }
+    .signin-signup-cointainer p {
+        margin: 0;
+    }
+    .form-login {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        text-align: center;
+        width: 30vmin;
+        height: fit-content;
+        background-color: #FDF6ED;
+        font-size: 1.8vmin;
+        border-radius: 4vmin;
+        padding: 30px;
+    }
+    .inputField {
+        height: 5vmin;
+        width: 27.5vmin;
+        display: block;
+        background: #fff;
+        border-radius: 20vmin;
+        border: 1px solid #fff;
+        padding: 0 0 0 7%;
+        margin: 5% 0% 0% 0%;
+        font-size: 1.6vmin;
+        outline: none;
+    }
+    .signin-signup-cointainer .inputField:focus {
+        /* outline: none; */
+        box-shadow: 0 0 3pt 1pt green;
+    }
+    input {
+        font-family: kanit;
+    }
+    #btnSignUpRe {
+        position: relative;
+        background: #FCE5DF;
+        color: #8C8C8C;
+        width: 18vmin;
+        height: 4.5vmin;
+        font-size: 2vmin;
+        border-radius: 3vmin;
+        margin: 10% 0% 2% 0%;
+        border: none;
+        box-shadow: 2px 2px 10px hsl(0deg 0% 47% / 50%);
+    }

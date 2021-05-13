@@ -23,11 +23,7 @@ html {
     font-size: medium;
 }
 
-@media (max-width: 768px) {
-    html {
-        font-size: small;
-    }
-}
+@media (min-width: 768px) {}
 
 body {
     margin: 0;
@@ -41,7 +37,13 @@ button.accept-policy {
 }
 
 
-/* ============================ NAV BAR ============================ */
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    min-width: 100%;
+    min-height: 100%;
+}
 
 nav {
     --enable: rgb(126, 126, 126);
@@ -55,6 +57,9 @@ nav {
     border: none;
 }
 
+
+/*---------------------------- NAV BAR ----------------------------*/
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -67,16 +72,9 @@ nav li {
     float: left;
 }
 
-nav li a:hover,
-#dropdown:hover {
-    background-color: red;
-    height: 5vmin;
-}
-
-nav li a,
-.dropbtn,
-.user-button {
-    display: block;
+li a,
+.dropbtn {
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 0 1.3vmin 0 1.3vmin;
@@ -88,19 +86,22 @@ nav li a,
     line-height: 5vh;
 }
 
+li a:hover,
+.dropdown:hover .dropbtn {
+    background-color: red;
+}
 
-/*************** WHEN HOVER DROPDOWN ***************/
-
-.dropdown:hover[general] .dropdown-content {
-    display: block;
+li.dropdown {
+    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 15vmin;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
@@ -128,56 +129,8 @@ nav li a,
     display: block;
 }
 
-.user-button {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0 0 0 5%;
-    width: max-content;
-    background-color: var(--enable);
-    border-radius: 5vh 0 0 5vh;
-}
 
-.user-button:hover {
-    background-color: rgb(0, 0, 0);
-}
-
-.profile-picture {
-    background-position-y: center;
-    margin: 4% 0 0 0;
-    line-height: 4vh;
-    width: 4vh;
-    height: 4vh;
-    border-radius: 5vh;
-    bottom: 0%;
-    background-color: purple;
-}
-
-.dropdown-content[notgeneral] {
-    right: 0;
-    min-width: 12.5vmin;
-}
-
-
-/************ USER BUTTON (NEED CLICK) ************/
-
-
-/* ============================ NAV BAR ============================ */
-
-.banner,
-.lab-banner {
-    position: relative;
-    text-align: center;
-    height: 8vw;
-    font-size: 5vw;
-    padding: 0;
-    margin: 0;
-    background-color: yellow;
-}
-
-.lab-banner {
-    background-color: rgb(0, 225, 255);
-}
+/*---------------------------- NAV BAR ----------------------------*/
 
 .container {
     position: relative;
@@ -211,5 +164,13 @@ footer h2 {
     padding: 0;
 }
 
+.field-validation-error {
+    color: red !important;
+    font-size: 1.5vmin;
+}
 
-/* ============================ FOOTER ============================ */
+.input-validation-error {
+    color: red !important;
+    font-size: 1.5vmin;
+    box-shadow: 0 0 3pt 1pt red;
+}
