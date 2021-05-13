@@ -45,13 +45,9 @@
     width: 60%;
 }
 
-.lab-element1 {
+.lab-element {
     position: relative;
     display: flex;
-}
-
-.lab-element2 {
-    position: relative;
 }
 
 figure {
@@ -67,7 +63,7 @@ figcaption {
     background-color: black;
     color: white;
     font-style: italic;
-    padding: 2px;
+    padding: 5px;
     text-align: center;
 }
 
@@ -92,4 +88,29 @@ td {
 
 thead {
     font-size: 2vw;
+}
+
+.btn-add-reserve {
+    cursor: pointer;
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
+    background-color: #fff;
+    color: #3d414a;
+    border-radius: 100%;
+    box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
+    font-size: 2vw;
+    line-height: 1.8vw;
+    height: 2vw;
+    justify-content: center;
+    transition: 0.3s all;
+    width: 2vw;
+    z-index: 1;
+    font-weight: 900;
+}
+
+.btn-add-reserve:hover {
+    transform: scale(1.2);
+    background-color: #3d414a;
+    color: rgba(255, 255, 255, 0.705);
 }
