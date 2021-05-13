@@ -1,71 +1,155 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: rgb(255, 0, 255);
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+input, button {
+    font-family: inherit;
+    font-size: inherit;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
 html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    font-family: Kanit;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: medium;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+@media (max-width: 768px) {
+    html {
+        font-size: small;
+    }
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
 }
+
+/* ============================ NAV BAR ============================ */
+
+nav {
+    z-index: 5;
+    position: sticky;
+    background-color: #333;
+    color: white; 
+    height: 5.1vmin;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+}
+
+nav li {
+    float: left;
+}
+
+nav li:hover{
+    background-color: red;  
+    height: 5.1vmin;
+}
+
+nav li a, .dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0 1.3vmin 0 1.3vmin;
+    /* margin: 1.3vmin; */
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    line-height: 5vh;
+}
+
+/*************** WHEN HOVER DROPDOWN ***************/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 18vmin;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+  
+.dropdown-content a {
+    float: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    line-height: 2.5vh;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+/*************** WHEN HOVER DROPDOWN ***************/
+
+/* ============================ NAV BAR ============================ */
+
+.banner, .lab-banner {
+    position: relative;
+    text-align: center;
+    height: 8vw;
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+    background-color: yellow;
+}
+
+.lab-banner {
+    background-color: rgb(0, 225, 255);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 85vmin;
+    height: fit-content;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* ============================ FOOTER ============================ */
+
+footer {
+    /* background-color: orangered; */
+    text-align: center;
+    position: relative;
+    border-color: red;
+    border-top-style: solid;
+    border-width: 0.2vmin;
+    padding: 1.3vmin 0vmin 0vmin 0vmin;
+    height: 8.4vmin;
+    width: 100%;
+    line-height: 120%;
+    font-size: 0.9em;
+}
+
+footer h2{
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================ FOOTER ============================ */

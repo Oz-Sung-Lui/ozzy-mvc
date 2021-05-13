@@ -20,6 +20,14 @@ namespace ozzy_mvc.Controllers
 
         public IActionResult Index()
         {
+            if(HttpContext.Request.Cookies["CurrentUsername"]=="admin"){
+            return RedirectToAction(nameof(Admin));
+            }
+            return View();
+        }
+
+        public IActionResult Admin()
+        {
             return View();
         }
 

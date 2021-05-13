@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 
 namespace ozzy_mvc.Models
 {
@@ -9,7 +10,13 @@ namespace ozzy_mvc.Models
         public Student Student { get; set; }
         public Guid EquipmentID { get; set; }
         public Equipment Equipment { get; set; }
-        public int TimeSlot { get; set; }
+        public TimeSlot TimeSlot { get; set; }
         public DateTime Date { get; set; }
+    }
+
+     public enum TimeSlot {
+        MORNING,
+        AFTERNOON,
+        EVENING
     }
 }

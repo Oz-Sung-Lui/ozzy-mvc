@@ -4,49 +4,46 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/signin-signup.css" />
+</head>
 
-<h4>Student</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<body>
+    <div class="signin-signup-cointainer">
+
+        <h1>Register</h1>
+
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Firstname" class="control-label"></label>
-                <input asp-for="Firstname" class="form-control" />
-                <span asp-validation-for="Firstname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Lastname" class="control-label"></label>
-                <input asp-for="Lastname" class="form-control" />
-                <span asp-validation-for="Lastname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+            <div asp-validation-summary="ModelOnly" class="error"></div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <input asp-for="Username" class="inputField" placeholder="Username" />
+            <span asp-validation-for="Username" class="error"></span>
+
+            <input asp-for="Firstname" class="inputField" placeholder="Firstname" />
+            <span asp-validation-for="Firstname" class="error"></span>
+
+            <input asp-for="Lastname" class="inputField" placeholder="Lastname" />
+            <span asp-validation-for="Lastname" class="error"></span>
+
+            <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
+            <span asp-validation-for="Password" class="error"></span>
+
+            <input type="password" asp-for="ConfirmPassword" class="inputField" placeholder="Confirm Password" />
+            <span asp-validation-for="ConfirmPassword" class="error"></span>
+
+            <input type="submit" value="Sign Up" id="btnSigninSignup" />
+            <p>
+                Already have an account?
+                <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+            </p>
+        </form>
+
+    </div>
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
