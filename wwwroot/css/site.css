@@ -1,6 +1,10 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-@font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
+
+@font-face {
+    font-family: Kanit;
+    src: url('../font/Kanit/Kanit-Regular.ttf');
+}
 
 a.navbar-brand {
     white-space: normal;
@@ -36,9 +40,7 @@ html {
     font-family: Kanit;
 }
 
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}
 
 body {
     margin: 0;
@@ -71,33 +73,34 @@ html {
     min-height: 100%;
 }
 
-
 nav {
     position: relative;
     background-color: #333;
-    color: white; 
+    color: white;
     height: 5vmin;
     margin: 0;
     padding: 0;
 }
 
+
 /*---------------------------- NAV BAR ----------------------------*/
+
 nav ul {
     height: inherit;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    color: white; 
+    color: white;
 }
 
 nav li {
     height: inherit;
     float: left;
-    
 }
 
-li a, .dropbtn {
+li a,
+.dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -105,9 +108,9 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+li a:hover,
+.dropdown:hover .dropbtn {
     background-color: red;
-    
 }
 
 li.dropdown {
@@ -119,7 +122,7 @@ li.dropdown {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -138,14 +141,16 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+
 /*---------------------------- NAV BAR ----------------------------*/
 
 .container {
     /* Margin bottom by footer height */
     position: relative;
     width: 100%;
-    min-height:85vmin;
-    height:fit-content;
+    min-height: 85vmin;
+    height: fit-content;
     min-width: 100%;
     padding: 0;
     margin: 0;
@@ -171,7 +176,7 @@ footer {
     font-size: 0.9em;
 }
 
-footer h2{
+footer h2 {
     margin: 0;
     padding: 0;
 }
@@ -179,7 +184,6 @@ footer h2{
 .field-validation-error {
     color: red !important;
     font-size: 1.5vmin;
-
 }
 
 .input-validation-error {

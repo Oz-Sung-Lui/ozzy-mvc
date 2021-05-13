@@ -10,7 +10,7 @@
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    @* <thead> *@
+    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Username)
@@ -29,7 +29,7 @@
             </th>
             <th></th>
         </tr>
-    @* </thead> *@
+    </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>

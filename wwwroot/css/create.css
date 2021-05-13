@@ -6,12 +6,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .form-regis {
     width: 400px;
-    height:fit-content;
+    height: fit-content;
     background-color: #FDF6ED;
     border-radius: 45px;
     padding: 30px 60px 30px 60zpx;
@@ -27,22 +27,22 @@
     margin: 0;
 }
 
-.form-login{
+.form-login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     align-items: center;
     text-align: center;
     width: 30vmin;
-    height:fit-content;
+    height: fit-content;
     background-color: #FDF6ED;
     font-size: 1.8vmin;
     border-radius: 4vmin;
     padding: 30px;
 }
 
-.inputField{
+.inputField {
     height: 5vmin;
     width: 27.5vmin;
     display: block;
@@ -64,8 +64,7 @@ input {
     font-family: kanit;
 }
 
-
-#btnSignUpRe{
+#btnSignUpRe {
     position: relative;
     background: #FCE5DF;
     font-size: 18px;
