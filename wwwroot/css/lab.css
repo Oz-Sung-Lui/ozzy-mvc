@@ -1,0 +1,117 @@
+@font-face {
+    font-family: Kanit;
+    src: url('../font/Kanit/Kanit-Regular.ttf');
+}
+
+* {
+    font-family: Kanit;
+}
+
+.lab-name-contain {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    padding: 30px 0 30px 0;
+    border-bottom: 3px solid rgb(216, 216, 216);
+    box-shadow: 3px 2px 10px #c2c2c2
+}
+
+.lab-detail {
+    font-size: 1.5vw;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-width: 100%;
+    /* background-color: orange; */
+}
+
+.lab-detail-img {
+    border-radius: 45px;
+    width: 70%;
+}
+
+.contain-lab-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lab-detail-str {
+    align-items: center;
+    padding: 60px;
+    width: 60%;
+}
+
+.lab-element {
+    position: relative;
+    display: flex;
+}
+
+figure {
+    align-items: center;
+    padding: 4px;
+    margin: auto;
+    border-radius: 45px;
+    width: 30%;
+}
+
+figcaption {
+    font-size: 18px;
+    border-radius: 20px 20px 0 0;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    padding: 5px;
+    text-align: center;
+}
+
+.lab-img-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.lab-table-reserve {
+    width: 50%;
+}
+
+.lab-table-reserve table {
+    width: 70%;
+}
+
+td {
+    text-align: center;
+}
+
+thead {
+    font-size: 2vw;
+}
+
+.btn-add-reserve {
+    cursor: pointer;
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
+    background-color: #fff;
+    color: #3d414a;
+    border-radius: 100%;
+    box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
+    font-size: 2vw;
+    line-height: 1.8vw;
+    height: 2vw;
+    justify-content: center;
+    transition: 0.3s all;
+    width: 2vw;
+    z-index: 1;
+    font-weight: 900;
+}
+
+.btn-add-reserve:hover {
+    transform: scale(1.2);
+    background-color: #3d414a;
+    color: rgba(255, 255, 255, 0.705);
+}

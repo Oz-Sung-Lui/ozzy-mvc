@@ -4,12 +4,19 @@
     color: red !important;
     font-size: 1.5vmin;
 
+.contain-form-regis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.input-validation-error {
-    color: red !important;
-    font-size: 1.5vmin;
-    box-shadow: 0 0 3pt 1pt red;
+.form-regis {
+    width: 400px;
+    height: fit-content;
+    background-color: #FDF6ED;
+    border-radius: 45px;
+    padding: 30px 60px 30px 60zpx;
 }
 
 /* ============================ ERROR INPUT ============================ */
@@ -24,22 +31,22 @@
     margin: 0;
 }
 
-.signin-signup-cointainer {
+.form-login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     align-items: center;
     text-align: center;
     width: 30vmin;
-    height:fit-content;
+    height: fit-content;
     background-color: #FDF6ED;
     font-size: 1.8vmin;
     border-radius: 4vmin;
     padding: 30px;
 }
 
-.signin-signup-cointainer .inputField {
+.inputField {
     height: 5vmin;
     width: 27.5vmin;
     display: block;
@@ -57,7 +64,11 @@
     box-shadow: 0 0 3pt 1pt green;
 }
 
-#btnSigninSignup{
+input {
+    font-family: kanit;
+}
+
+#btnSignUpRe {
     position: relative;
     background: #FCE5DF;
     color: #8C8C8C;
