@@ -25,6 +25,7 @@ namespace ozzy_mvc.Models
         public String Password { get; set; }
 
         [NotMapped]
+        [Required(ErrorMessage = "*Confirm Password is required.")]
         [Compare("Password", ErrorMessage = "Confirm password doesn't match")]
         public String ConfirmPassword { get; set; }
 

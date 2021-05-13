@@ -30,7 +30,7 @@ namespace ozzy_mvc.Controllers
         {
             var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
             var bookingList = await ozzyMvcContext.ToListAsync();
-            var newList = bookingList.Where(b => b.EquipmentID==id);
+            var newList = bookingList.Where(b => b.EquipmentID == id);
 
             return View(newList);
         }
@@ -74,6 +74,21 @@ namespace ozzy_mvc.Controllers
             {
                 booking.BookingID = Guid.NewGuid();
                 _context.Add(booking);
+
+                var bookingList = _context.Booking.ToList();
+                var properties = new List<string> { "TimeSlot", "Date" };
+
+                foreach (Booking o in bookingList)
+                {
+                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot)
+                    {
+                        ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
+                        ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
+                        ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
+                        return View(booking);
+                    }
+                }
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -170,5 +185,6 @@ namespace ozzy_mvc.Controllers
         {
             return _context.Booking.Any(e => e.BookingID == id);
         }
+
     }
 }

@@ -9,39 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Register</title>
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/create.css" />
+    <link rel="stylesheet" href="~/css/signin-signup.css" />
 </head>
 
 <body>
-    <div class="contain-form-regis">
-        <div class="form-regis">
-            <h1>Register</h1>
-            <div class="row">
-                <div class="col-md-4">
-                    <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="error"></div>
+    <div class="signin-signup-cointainer">
 
-                            <input asp-for="Username" class="inputField" placeholder="Username" />
-                            <span asp-validation-for="Username" class="error"></span>
+        <h1>Register</h1>
 
-                            <input asp-for="Firstname" class="inputField" placeholder="Firstname" />
-                            <span asp-validation-for="Firstname" class="error"></span>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="error"></div>
 
-                            <input asp-for="Lastname" class="inputField" placeholder="Lastname" />
-                            <span asp-validation-for="Lastname" class="error"></span>
+            <input asp-for="Username" class="inputField" placeholder="Username" />
+            <span asp-validation-for="Username" class="error"></span>
 
-                            <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
-                            <span asp-validation-for="Password" class="error"></span>
+            <input asp-for="Firstname" class="inputField" placeholder="Firstname" />
+            <span asp-validation-for="Firstname" class="error"></span>
 
-                            <input type="password" asp-for="ConfirmPassword" class="inputField" placeholder="Confirm Password" />
-                            <span asp-validation-for="ConfirmPassword" class="error"></span>
+            <input asp-for="Lastname" class="inputField" placeholder="Lastname" />
+            <span asp-validation-for="Lastname" class="error"></span>
 
-                            <input type="submit" value="Sign Up" id="btnSignUpRe"  />
+            <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
+            <span asp-validation-for="Password" class="error"></span>
 
-                    </form>
-                </div>
-            </div>
-        </div>
+            <input type="password" asp-for="ConfirmPassword" class="inputField" placeholder="Confirm Password" />
+            <span asp-validation-for="ConfirmPassword" class="error"></span>
+
+            <input type="submit" value="Sign Up" id="btnSigninSignup" />
+            <p>
+                Already have an account?
+                <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+            </p>
+        </form>
+
     </div>
 </body>
 

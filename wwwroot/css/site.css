@@ -6,57 +6,33 @@ for details on configuring this project to bundle and minify static web assets. 
     src: url('../font/Kanit/Kanit-Regular.ttf');
 }
 
-a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
-}
-
-
-/* Provide sufficient contrast against white background */
-
 a {
-    color: #0366d6;
+    color: rgb(255, 0, 255);
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+input,
+button {
+    font-family: inherit;
+    font-size: inherit;
 }
-
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
-
-/* Sticky footer styles
--------------------------------------------------- */
 
 html {
     font-family: Kanit;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: medium;
 }
 
-@media (min-width: 768px) {}
+@media (max-width: 768px) {
+    html {
+        font-size: small;
+    }
+}
 
 body {
     margin: 0;
     padding: 0;
-}
-
-.border-top {
-    border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    height: fit-content;
 }
 
 button.accept-policy {
@@ -65,28 +41,21 @@ button.accept-policy {
 }
 
 
-/* Sticky footer styles
--------------------------------------------------- */
-
-html {
-    min-width: 100%;
-    min-height: 100%;
-}
+/* ============================ NAV BAR ============================ */
 
 nav {
-    position: relative;
+    --enable: rgb(126, 126, 126);
+    z-index: 5;
+    position: sticky;
     background-color: #333;
     color: white;
     height: 5vmin;
-    margin: 0;
-    padding: 0;
+    top: 0;
+    width: 100%;
+    border: none;
 }
 
-
-/*---------------------------- NAV BAR ----------------------------*/
-
 nav ul {
-    height: inherit;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -95,58 +64,122 @@ nav ul {
 }
 
 nav li {
-    height: inherit;
     float: left;
 }
 
-li a,
-.dropbtn {
-    display: inline-block;
+nav li a:hover,
+#dropdown:hover {
+    background-color: red;
+    height: 5vmin;
+}
+
+nav li a,
+.dropbtn,
+.user-button {
+    display: block;
     color: white;
     text-align: center;
-    padding: 1.3vmin;
+    padding: 0 1.3vmin 0 1.3vmin;
+    /* margin: 1.3vmin; */
     text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    line-height: 5vh;
 }
 
-li a:hover,
-.dropdown:hover .dropbtn {
-    background-color: red;
-}
 
-li.dropdown {
-    display: inline-block;
+/*************** WHEN HOVER DROPDOWN ***************/
+
+.dropdown:hover[general] .dropdown-content {
+    display: block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 15vmin;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
 }
 
 .dropdown-content a {
+    float: block;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
+    line-height: 2.5vh;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #ddd;
+    height: inherit;
 }
 
-.dropdown:hover .dropdown-content {
+
+/*************** WHEN HOVER DROPDOWN ***************/
+
+
+/************ USER BUTTON (NEED CLICK) ************/
+
+.dropdown-content-user-button {
     display: block;
 }
 
+.user-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0 0 0 5%;
+    width: max-content;
+    background-color: var(--enable);
+    border-radius: 5vh 0 0 5vh;
+}
 
-/*---------------------------- NAV BAR ----------------------------*/
+.user-button:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.profile-picture {
+    background-position-y: center;
+    margin: 4% 0 0 0;
+    line-height: 4vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 5vh;
+    bottom: 0%;
+    background-color: purple;
+}
+
+.dropdown-content[notgeneral] {
+    right: 0;
+    min-width: 12.5vmin;
+}
+
+
+/************ USER BUTTON (NEED CLICK) ************/
+
+
+/* ============================ NAV BAR ============================ */
+
+.banner,
+.lab-banner {
+    position: relative;
+    text-align: center;
+    height: 8vw;
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+    background-color: yellow;
+}
+
+.lab-banner {
+    background-color: rgb(0, 225, 255);
+}
 
 .container {
-    /* Margin bottom by footer height */
     position: relative;
     width: 100%;
     min-height: 85vmin;
@@ -156,20 +189,17 @@ li.dropdown {
     margin: 0;
 }
 
+
+/* ============================ FOOTER ============================ */
+
 footer {
     /* background-color: orangered; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     position: relative;
     border-color: red;
     border-top-style: solid;
     border-width: 0.2vmin;
     padding: 1.3vmin 0vmin 0vmin 0vmin;
-    bottom: 0px;
-    left: 0px;
     height: 8.5vmin;
     width: 100%;
     line-height: 120%;
@@ -181,13 +211,5 @@ footer h2 {
     padding: 0;
 }
 
-.field-validation-error {
-    color: red !important;
-    font-size: 1.5vmin;
-}
 
-.input-validation-error {
-    color: red !important;
-    font-size: 1.5vmin;
-    box-shadow: 0 0 3pt 1pt red;
-}
+/* ============================ FOOTER ============================ */
