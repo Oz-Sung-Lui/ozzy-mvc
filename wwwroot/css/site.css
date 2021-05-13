@@ -38,13 +38,15 @@ button.accept-policy {
 /* ============================ NAV BAR ============================ */
 
 nav {
+    --enable: rgb(126, 126, 126);
     z-index: 5;
     position: sticky;
     background-color: #333;
     color: white; 
-    height: 5.1vmin;
+    height: 5vmin;
     top: 0;
     width: 100%;
+    border: none;
 }
 
 nav ul {
@@ -53,18 +55,19 @@ nav ul {
     padding: 0;
     overflow: hidden;
     color: white;
+    
 }
 
 nav li {
     float: left;
 }
 
-nav li:hover{
+nav li a:hover, #dropdown:hover {
     background-color: red;  
-    height: 5.1vmin;
+    height: 5vmin;
 }
 
-nav li a, .dropbtn {
+nav li a, .dropbtn, .user-button {
     display: block;
     color: white;
     text-align: center;
@@ -78,7 +81,7 @@ nav li a, .dropbtn {
 }
 
 /*************** WHEN HOVER DROPDOWN ***************/
-.dropdown:hover .dropdown-content {
+.dropdown:hover[general] .dropdown-content {
     display: block;
 }
 
@@ -86,10 +89,10 @@ nav li a, .dropbtn {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 18vmin;
+    min-width: 15vmin;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-  
+
 .dropdown-content a {
     float: block;
     color: black;
@@ -102,8 +105,44 @@ nav li a, .dropbtn {
   
 .dropdown-content a:hover {
     background-color: #ddd;
+    height: inherit;
 }
 /*************** WHEN HOVER DROPDOWN ***************/
+
+/************ USER BUTTON (NEED CLICK) ************/
+.dropdown-content-user-button {
+    display: block;
+}
+
+.user-button {
+    display: flex;
+    justify-content: flex-end;
+    margin:  0;
+    padding: 0 0 0 5%;
+    width: max-content;
+    background-color: var(--enable);
+    border-radius: 5vh 0 0 5vh;
+}
+.user-button:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.profile-picture {
+    background-position-y: center;
+    margin : 4% 0 0 0;
+    line-height: 4vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 5vh;
+    bottom: 0%;
+    background-color: purple;
+}
+.dropdown-content[notgeneral] {
+    right: 0;
+    min-width: 12.5vmin;
+}
+
+/************ USER BUTTON (NEED CLICK) ************/
 
 /* ============================ NAV BAR ============================ */
 
@@ -141,7 +180,7 @@ footer {
     border-top-style: solid;
     border-width: 0.2vmin;
     padding: 1.3vmin 0vmin 0vmin 0vmin;
-    height: 8.4vmin;
+    height: 8.5vmin;
     width: 100%;
     line-height: 120%;
     font-size: 0.9em;

@@ -3,7 +3,7 @@
         <li>
             <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </li>
-        <li class="dropdown">
+        <li class="dropdown" id="dropdown" general="">
             <button class="dropbtn">LAB</button>
             <div class="dropdown-content">
                 <a asp-area="" asp-controller="Lab" asp-action="Hardware">Hardware</a>
@@ -12,28 +12,15 @@
                 <a asp-area="" asp-controller="Lab" asp-action="ESL">ESL</a>
                 <a asp-area="" asp-controller="Lab" asp-action="Network">Network</a>
             </div>
+        </li>
         <li>
             <a asp-area="" asp-controller="Lab" asp-action="Network">Network</a>
         </li>
         <li style="float:right">
-            <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+            <a class="user-button" asp-area="" asp-controller="Auth" asp-action="Login">&emsp; Login &emsp;</a>
         </li>
     </ul>
 </nav>
-
-@* <ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-</ul> *@
-
 
 @* <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
