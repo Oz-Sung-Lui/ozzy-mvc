@@ -1,36 +1,30 @@
-.contain-form-regis {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+/* ============================ ERROR INPUT ============================ */
+
+.field-validation-error {
+    color: red !important;
+    font-size: 1.5vmin;
+
 }
 
-.form-regis {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    align-items: center;
-    text-align: center;
-    width: 30vmin;
-    height:fit-content;
-
-    background-color: #FDF6ED;
-    border-radius: 4vmin;
-    padding: 30px;
+.input-validation-error {
+    color: red !important;
+    font-size: 1.5vmin;
+    box-shadow: 0 0 3pt 1pt red;
 }
 
-.form-login-regis h1 {
+/* ============================ ERROR INPUT ============================ */
+
+.signin-signup-cointainer h1 {
     margin: 0;
     padding-bottom: 1.vmin;
     font-size: 4vmin;
 }
 
-.form-login-regis p {
+.signin-signup-cointainer p {
     margin: 0;
 }
 
-.form-login-regis{
+.signin-signup-cointainer {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,7 +39,7 @@
     padding: 30px;
 }
 
-.inputField{
+.signin-signup-cointainer .inputField {
     height: 5vmin;
     width: 27.5vmin;
     display: block;
@@ -58,21 +52,16 @@
     outline: none;
 }
 
-.inputField:focus {
+.signin-signup-cointainer .inputField:focus {
     /* outline: none; */
     box-shadow: 0 0 3pt 1pt green;
 }
 
-input {
-    font-family: kanit;
-}
-
-
-#btnSignUpRe{
+#btnSigninSignup{
     position: relative;
     background: #FCE5DF;
     color: #8C8C8C;
-    width: 10vmax;
+    width: 18vmin;
     height: 4.5vmin;
     font-size: 2vmin;
     border-radius: 3vmin;

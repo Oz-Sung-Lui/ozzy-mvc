@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Login";
 }
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -13,7 +15,7 @@
 </head>
 
 <body>
-    <div class="form-login-regis">
+    <div class="signin-signup-cointainer">
 
         <h1>Login</h1>
 
@@ -26,7 +28,7 @@
                 <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
                 <span asp-validation-for="Password" class="error"></span>
 
-                <input type="submit" value="Login" id="btnSignUpRe"/>
+                <input type="submit" value="Login" id="btnSigninSignup"/>
                 <p>
                     Don't have an account?
                     <a asp-area="" asp-controller="Student" asp-action="Create">Register</a>
@@ -36,6 +38,7 @@
     </div>
 </body>
 
+</html>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -12,38 +12,38 @@
     <link rel="stylesheet" href="~/css/signin-signup.css" />
 </head>
 
+<body>
+    <div class="signin-signup-cointainer">
 
-<div class="form-login-regis">
+        <h1>Register</h1>
 
-    <h1>Register</h1>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="error"></div>
 
-    <form asp-action="Create">
-        <div asp-validation-summary="ModelOnly" class="error"></div>
+            <input asp-for="Username" class="inputField" placeholder="Username" />
+            <span asp-validation-for="Username" class="error"></span>
 
-        <input asp-for="Username" class="inputField" placeholder="Username" />
-        <span asp-validation-for="Username" class="error"></span>
+            <input asp-for="Firstname" class="inputField" placeholder="Firstname" />
+            <span asp-validation-for="Firstname" class="error"></span>
 
-        <input asp-for="Firstname" class="inputField" placeholder="Firstname" />
-        <span asp-validation-for="Firstname" class="error"></span>
+            <input asp-for="Lastname" class="inputField" placeholder="Lastname" />
+            <span asp-validation-for="Lastname" class="error"></span>
 
-        <input asp-for="Lastname" class="inputField" placeholder="Lastname" />
-        <span asp-validation-for="Lastname" class="error"></span>
+            <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
+            <span asp-validation-for="Password" class="error"></span>
 
-        <input type="password" asp-for="Password" class="inputField" placeholder="Password" />
-        <span asp-validation-for="Password" class="error"></span>
+            <input type="password" asp-for="ConfirmPassword" class="inputField" placeholder="Confirm Password" />
+            <span asp-validation-for="ConfirmPassword" class="error"></span>
 
-        <input type="password" asp-for="ConfirmPassword" class="inputField" placeholder="Confirm Password" />
-        <span asp-validation-for="ConfirmPassword" class="error"></span>
+            <input type="submit" value="Sign Up" id="btnSigninSignup" />
+            <p>
+                Already have an account?
+                <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+            </p>
+        </form>
 
-        <input type="submit" value="Sign Up" id="btnSignUpRe" />
-        <p>
-            Already have an account?
-            <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
-        </p>
-    </form>
-
-</div>
-
+    </div>
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
