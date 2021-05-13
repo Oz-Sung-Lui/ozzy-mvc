@@ -23,65 +23,91 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin: 5% 0 5% 0;
+    margin: 5% 0 15% 0;
     padding: 0;
     min-width: 100%;
+    text-align: justify;
     /* background-color: orange; */
+}
+
+.lab-detail p {
+    margin: 5% 0% 5% 0%;
+    text-indent: 3.5vw;
 }
 
 .lab-detail-img {
     border-radius: 45px;
-    width: 70%;
+    width: 35vw;
 }
 
 .contain-lab-img {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 2.5vw 0 5vw;
 }
 
 .lab-detail-str {
     align-items: center;
-    padding: 60px;
+    margin: 0 5vw 0 2.5vw;
     width: 60%;
 }
 
 .lab-element {
     position: relative;
     display: flex;
+    width: 100%;
+    margin-bottom: 12vh;
+    font-size: 1.5vw;
 }
 
 figure {
     align-items: center;
-    padding: 4px;
     margin: auto;
-    border-radius: 45px;
-    width: 30%;
+    width: 30vw;
+    margin: 0 2.5vw 0 5vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1.4vw;
+    /* background-color: aqua; */
+    height: fit-content;
 }
 
 figcaption {
-    font-size: 1.4vw;
-    border-radius: 20px 20px 0 0;
+    font-size: 2vw;
+    border-radius: 1vw 1vw 0 0;
     background-color: black;
     color: white;
     font-style: italic;
-    padding: 5px;
+    padding: 0.5vw 0vw 0.5vw 0vw;
     text-align: center;
+    margin: 0;
+    width: inherit;
 }
 
 .lab-img-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: inherit;
+    border-radius: inherit;
+    margin: 0;
+}
+
+.lab-table-reserve p {
+    margin: 1vh;
+
+    height: fit-content;
 }
 
 .lab-table-reserve {
-    width: 50%;
+    width: 100%;
+    
 }
 
 .lab-table-reserve table {
-    width: 70%;
+    width: 90%;
+    font-size: inherit;
 }
 
 td {
