@@ -1,5 +1,5 @@
 build:
-   docker:
-     web: Dockerfile
- run:
-   web: dotnet watch run
+  docker:
+    web: Dockerfile
+run:
+  web: dotnet watch run
