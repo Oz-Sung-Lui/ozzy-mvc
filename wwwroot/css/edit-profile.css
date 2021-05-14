@@ -1,0 +1,112 @@
+/* ============================ ERROR INPUT ============================ */
+
+.edit-profile-cointainer .field-validation-error {
+    color: red !important;
+    font-size: 1.8vmin;
+    padding: 0vw 0vw 0vw 5vw;
+    /* box-decoration-break: slice;
+    text-align: center;
+    width: 10px; */
+}
+
+.edit-profile-cointainer .input-validation-error {
+    color: red !important;
+    font-size: 1.8vmin;
+    box-shadow: 0 0 3pt 1pt red;
+}
+
+/* ============================ ERROR INPUT ============================ */
+
+/* .error {
+    margin: 30vh -30vh 30vh -30vh !important;
+}
+span {
+    width: 1000px;
+} */
+
+.edit-profile-cointainer label {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    text-align: right;
+    margin: 3vh 0 0 0;
+    line-height: 5vh; 
+}
+
+.edit-profile-cointainer .inputField {
+    flex: 0 0 15vw;
+    color: #4E2C0D;
+    height: 5vmin;
+    width: 27.5vmin;
+    background: #fff;
+    border-radius: 20vmin;
+    border: 1px solid #fff;
+    padding: 0 0 0 7%;
+    margin: 0% 0% 0% 5%;
+    font-size: 2.2vmin;
+    outline: none;
+}
+
+
+.edit-profile-cointainer h1 {
+    margin: 0;
+    font-size: 4vmin;
+}
+
+.edit-profile-cointainer p {
+    margin: 0;
+}
+
+.edit-profile-cointainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    text-align: center;
+    width: 50vmin;
+    height:fit-content;
+    background-color: #FDF6ED;
+    font-size: 1.8vmin;
+    border-radius: 4vmin;
+    padding: 30px;
+}
+
+
+
+.edit-profile-cointainer .inputField:focus {
+    box-shadow: 0 0 5pt 5pt #FCE5DF;
+}
+
+
+#btnEditProfile{
+    position: relative;
+    font-weight:800;
+    background: #FCE5DF;
+    color: #4E2C0D;
+    width: 18vmin;
+    height: 4.5vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    margin: 4vh 5% 2% 5%;
+    border: none;
+}
+
+#btnEditProfile:hover{
+    box-shadow: 0px 0px 2px 2px #4E2C0D;
+}
+
+.edit-profile-cointainer .profile-picture {
+    background-position-y: center;
+    margin : 4% 0 0 0;
+    line-height: 12vh;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 12vh;
+    bottom: 0%;
+    color: #88490e;
+    background-color: #f0cc9d;
+    font-size: 8vh;
+}
