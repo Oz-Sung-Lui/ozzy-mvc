@@ -19,7 +19,7 @@
 <body>
 
 <div class="edit-profile-cointainer" id="editableVariable">
-    <div style="display:flex; flex-direction: row;">
+    <div style="display:flex; flex-direction: row; align-items:center;">
         <h1>&emsp; &nbsp; My Profile &nbsp;</h1>
         <button id="editButton" onclick="myFunction2()">&#x1F589;</button>
     </div>
@@ -53,7 +53,7 @@
 
             <label asp-for="Password">
                 Password
-                <input type="password" asp-for="Password" class="inputField" id="canedit"/>
+                <input type="password" asp-for="Password" placeholder="********" class="inputField" id="canedit"/>
             </label>
             <span asp-validation-for="Password" class="error"></span>
 
@@ -77,33 +77,40 @@ function myFunction2() {
 
     var a = document.getElementsByTagName("input");
     
+    $(".field-validation-error").empty();
+
     if (document.getElementById("canedit").style.getPropertyValue('--editable')=="all") {
         @* a[1].style.setProperty('background-color', 'red');  *@
-        a[1].style.setProperty('--editable', 'none'); 
-        a[2].style.setProperty('--editable', 'none'); 
+        a[1].style.setProperty('--editable', 'none');
+        a[2].style.setProperty('--editable', 'none');
         a[3].style.setProperty('--editable', 'none');
         a[1].style.setProperty('box-shadow', 'none');
-        a[2].style.setProperty('box-shadow', 'none'); 
-        a[3].style.setProperty('box-shadow', 'none'); 
+        a[2].style.setProperty('box-shadow', 'none');
+        a[3].style.setProperty('box-shadow', 'none');
         document.getElementById("editButton").style.setProperty('background-color','inherit');
         document.getElementById("editButton").style.setProperty('color','#db9ba9');
+
+        document.getElementById("btnEditProfile").style.setProperty('display','none');
         document.getElementsByTagName("form").item(0).reset();
+        var div = document.getElementById('canedit-error');
     }
     else {
         @* a[1].style.setProperty('background-color', 'green'); *@
-        a[1].style.setProperty('--editable', 'all'); 
-        a[2].style.setProperty('--editable', 'all'); 
+        a[1].style.setProperty('--editable', 'all');
+        a[2].style.setProperty('--editable', 'all');
         a[3].style.setProperty('--editable', 'all');
         a[1].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
-        a[2].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D'); 
-        a[3].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D'); 
+        a[2].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
+        a[3].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
         document.getElementById("editButton").style.setProperty('background-color','#FCE5DF');
         document.getElementById("editButton").style.setProperty('color','#4E2C0D');
+
+        document.getElementById("btnEditProfile").style.setProperty('display','block');
     }
 
+    
 }
 </script>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
