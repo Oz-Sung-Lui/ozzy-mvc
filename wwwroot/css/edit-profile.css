@@ -24,6 +24,17 @@ span {
     width: 1000px;
 } */
 
+.edit-profile-cointainer form{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-profile-cointainer span{
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
 .edit-profile-cointainer label {
     display: flex;
     font-weight: bold;
@@ -90,7 +101,7 @@ span {
     height: 4.5vmin;
     font-size: 2vmin;
     border-radius: 3vmin;
-    margin: 4vh 5% 2% 5%;
+    margin: 4vh auto 2% auto;
     border: none;
 }
 
