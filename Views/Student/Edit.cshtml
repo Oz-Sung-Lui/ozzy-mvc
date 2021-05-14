@@ -1,7 +1,7 @@
 @model ozzy_mvc.Models.Student
 
 @{
-    ViewData["Title"] = "Edit Profile";
+    ViewData["Title"] = "My Profile";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -18,44 +18,47 @@
 
 <body>
 
-<div class="edit-profile-cointainer">
-
-    <h1>Edit Profile</h1>
+<div class="edit-profile-cointainer" id="editableVariable">
+    <div style="display:flex; flex-direction: row;">
+        <h1>&emsp; &nbsp; My Profile &nbsp;</h1>
+        <button id="editButton" onclick="myFunction2()">&#x1F589;</button>
+    </div>
 
     <div class="profile-picture">
         @Context.Request.Cookies["CurrentUsername"].Substring(0,1)
     </div>
 
-    <form asp-action="Edit">
+    <form asp-action="Edit" id="test">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
 
             @* <input type="hidden" asp-for="StudentID" /> *@
 
             <label asp-for="Username">
                 Username
-                <input asp-for="Username" class="inputField"/>
+                <input asp-for="Username" class="inputField" readonly="True"/>
             </label>
             <span asp-validation-for="Username" class="error"></span>
 
             <label asp-for="Firstname">
                 Firstname
-                <input asp-for="Firstname" class="inputField"/>
+                <input asp-for="Firstname" class="inputField" id="canedit"/>
             </label>
             <span asp-validation-for="Firstname" class="error"></span>
 
             <label asp-for="Lastname">
                 Lastname
-                <input asp-for="Lastname" class="inputField"/>
+                <input asp-for="Lastname" class="inputField tr" id="canedit"/>
             </label>
             <span asp-validation-for="Lastname" class="error"></span>
 
             <label asp-for="Password">
                 Password
-                <input type="password" asp-for="Password" class="inputField"/>
+                <input type="password" asp-for="Password" class="inputField" id="canedit"/>
             </label>
             <span asp-validation-for="Password" class="error"></span>
 
             <input type="submit" value="Save" id="btnEditProfile"/>
+            
 
             @* <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
             
@@ -65,10 +68,42 @@
     </form>
 
 </div>
-   
-
 
 </body>
+
+<script>
+
+function myFunction2() { 
+
+    var a = document.getElementsByTagName("input");
+    
+    if (document.getElementById("canedit").style.getPropertyValue('--editable')=="all") {
+        @* a[1].style.setProperty('background-color', 'red');  *@
+        a[1].style.setProperty('--editable', 'none'); 
+        a[2].style.setProperty('--editable', 'none'); 
+        a[3].style.setProperty('--editable', 'none');
+        a[1].style.setProperty('box-shadow', 'none');
+        a[2].style.setProperty('box-shadow', 'none'); 
+        a[3].style.setProperty('box-shadow', 'none'); 
+        document.getElementById("editButton").style.setProperty('background-color','inherit');
+        document.getElementById("editButton").style.setProperty('color','#db9ba9');
+        document.getElementsByTagName("form").item(0).reset();
+    }
+    else {
+        @* a[1].style.setProperty('background-color', 'green'); *@
+        a[1].style.setProperty('--editable', 'all'); 
+        a[2].style.setProperty('--editable', 'all'); 
+        a[3].style.setProperty('--editable', 'all');
+        a[1].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
+        a[2].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D'); 
+        a[3].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D'); 
+        document.getElementById("editButton").style.setProperty('background-color','#FCE5DF');
+        document.getElementById("editButton").style.setProperty('color','#4E2C0D');
+    }
+
+}
+</script>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

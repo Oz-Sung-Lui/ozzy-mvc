@@ -4,25 +4,15 @@
     color: red !important;
     font-size: 1.8vmin;
     padding: 0vw 0vw 0vw 5vw;
-    /* box-decoration-break: slice;
-    text-align: center;
-    width: 10px; */
 }
 
 .edit-profile-cointainer .input-validation-error {
     color: red !important;
     font-size: 1.8vmin;
-    box-shadow: 0 0 3pt 1pt red;
+    box-shadow: 0 0 3pt 1pt red !important;
 }
 
 /* ============================ ERROR INPUT ============================ */
-
-/* .error {
-    margin: 30vh -30vh 30vh -30vh !important;
-}
-span {
-    width: 1000px;
-} */
 
 .edit-profile-cointainer form{
     display: flex;
@@ -69,6 +59,7 @@ span {
 }
 
 .edit-profile-cointainer {
+    --editable: none;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -120,4 +111,26 @@ span {
     color: #88490e;
     background-color: #f0cc9d;
     font-size: 8vh;
+}
+
+#editButton {
+    width: 3vw;
+    height: 3vw;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #db9ba9;
+    border: none;
+    text-decoration: wavy;
+    background-color: inherit;
+    border-radius: 3vw;
+}
+
+#editButton:hover {
+    background-color: #FCE5DF;
+    color: #4E2C0D;
+    box-shadow: 1px 1px 2px 2px rgb(133, 133, 133);
+}
+
+#canedit {
+    pointer-events: var(--editable);
 }

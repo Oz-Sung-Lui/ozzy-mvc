@@ -24,8 +24,7 @@
                 &emsp;@Context.Request.Cookies["CurrentUsername"] &emsp;
             </button>
             <div class="dropdown-content" id="myDropdown" notgeneral="">
-                <a asp-area="" asp-controller="Student" asp-action="Details" asp-route-id=@Context.Request.Cookies["CurrentID"]>My Profile</a>
-                <a asp-area="" asp-controller="Student" asp-action="Edit" asp-route-id=@Context.Request.Cookies["CurrentID"]>Edit Profile</a>
+                <a asp-area="" asp-controller="Student" asp-action="Edit" asp-route-id=@Context.Request.Cookies["CurrentID"]>My Profile</a>
                 <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>Inventory</a>
                 <a asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
             </div>         
