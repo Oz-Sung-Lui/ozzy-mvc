@@ -1,0 +1,94 @@
+table {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    border-spacing: 0;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+thead tr {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 25px 25px 0px 0px;
+}
+
+tbody {
+    display: block;
+    background-color: #FDF6ED;
+    border-radius: 0px 0px 25px 25px;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+tbody::-webkit-scrollbar {
+    display: none;
+}
+
+th {
+    height: 75px;
+    text-align: center;
+    font-size: 24px;
+}
+
+td {
+    height: 75px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid #4E2C0D;
+}
+
+th.item_ID,
+td:nth-child(1) {
+    width: 270px;
+}
+
+th.item_Name,
+td:nth-child(2) {
+    width: 270px;
+}
+
+th.Laboratory,
+td:nth-child(3) {
+    width: 270px;
+}
+
+th.return,
+td:nth-child(4) {
+    width: 90px;
+}
+
+td input {
+    position: relative;
+    left: 15px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.fa-reply {
+    position: relative;
+    top: -6px;
+    left: -25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 25px;
+    background-color: #FCE5DF;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #4E2C0D;
+}
+
+td:hover input~.fa-reply {
+    background-color: #ccc;
+}
+
+td input:checked~.fa-reply {
+    color: rgb(255, 0, 0)
+}
