@@ -96,18 +96,17 @@ figcaption {
 
 .lab-table-reserve p {
     margin: 1vh;
-
     height: fit-content;
 }
 
 .lab-table-reserve {
     width: 100%;
-    
 }
 
 .lab-table-reserve table {
     width: 90%;
     font-size: inherit;
+    /* overflow-y: scroll; */
 }
 
 td {
@@ -115,7 +114,7 @@ td {
 }
 
 thead {
-    font-size: 2vw;
+    font-size: 1.25vw;
 }
 
 .btn-add-reserve {
@@ -141,4 +140,142 @@ thead {
     transform: scale(1.2);
     background-color: #3d414a;
     color: rgba(255, 255, 255, 0.705);
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.table-calendar {
+    width: 90%;
+    font-size: 1vw;
+    background-color: aquamarine;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    width: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 11px 0;
+    background: #eee;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+form #decrease {
+    margin-right: -4px;
+    border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+    margin-left: -4px;
+    border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+}
+
+input#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-reserve-confirm {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 800;
+    background: #FCE5DF;
+    color: #4E2C0D;
+    width: 18vmin;
+    height: 4.5vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    border: none;
+}
+
+.reserve-foot {
+    display: flex;
+    justify-content: flex-end;
 }
