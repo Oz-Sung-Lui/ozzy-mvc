@@ -25,7 +25,7 @@ namespace ozzy_mvc.Controllers
             return View(await _context.Equipment.ToListAsync());
         }
 
-        public async Task<IActionResult> Inventory()
+        public async Task<IActionResult> Inventory(Guid id)
         {
 
             var query = from equipment in _context.Set<Equipment>()
@@ -41,10 +41,11 @@ namespace ozzy_mvc.Controllers
                     Description = x.equipment.Description,
                     LabName = x.equipment.LabName,
                     TimeSlot = x.booking.TimeSlot,
-                    Date = x.booking.Date
+                    Date = x.booking.Date,
+                    StudentID = x.booking.StudentID
                 }
-            );
-
+            ).Where(i => i.StudentID == id);
+            
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
             return View(eq);
@@ -180,5 +181,17 @@ namespace ozzy_mvc.Controllers
         {
             return _context.Equipment.Any(e => e.EquipmentID == id);
         }
+    }
+
+    public class EquipmentInventory
+    {
+        public Guid EquipmentID { get; set; }
+        public String EquipmentName { get; set; }
+        public EquipmentType EquipmentType { get; set; }
+        public String Description { get; set; }
+        public Lab LabName  { get; set; }
+        public TimeSlot TimeSlot { get; set; }
+        public DateTime Date { get; set; }
+        public Guid StudentID {get; set; }
     }
 }
