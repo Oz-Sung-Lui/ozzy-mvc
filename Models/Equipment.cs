@@ -11,6 +11,17 @@ namespace ozzy_mvc.Models
         public Lab LabName  { get; set; }
     }
 
+    public class EquipmentInventory
+    {
+        public Guid EquipmentID { get; set; }
+        public String EquipmentName { get; set; }
+        public EquipmentType EquipmentType { get; set; }
+        public String Description { get; set; }
+        public Lab LabName  { get; set; }
+        public TimeSlot TimeSlot { get; set; }
+        public DateTime Date { get; set; }
+    }
+
     public enum Lab {
         HARDWARE,
         HCRL,

@@ -1,4 +1,4 @@
-@model IEnumerable<ozzy_mvc.Models.Equipment>
+@model IEnumerable<ozzy_mvc.Models.EquipmentInventory>
 
 @{
     ViewData["Title"] = "Inventory";
@@ -21,6 +21,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.LabName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeSlot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -39,6 +45,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LabName)
             </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.TimeSlot)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Date)
+            </th>
             <td>
                 <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
             </td>
