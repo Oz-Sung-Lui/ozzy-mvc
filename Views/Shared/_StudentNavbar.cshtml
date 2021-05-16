@@ -24,7 +24,8 @@
                 &emsp;@Context.Request.Cookies["CurrentUsername"] &emsp;
             </button>
             <div class="dropdown-content" id="myDropdown" notgeneral="">
-                <a asp-area="" asp-controller="Booking" asp-action="ListByEquipmentID">My Profile</a>
+                <a asp-area="" asp-controller="Student" asp-action="Edit" asp-route-id=@Context.Request.Cookies["CurrentID"]>My Profile</a>
+                <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>Inventory</a>
                 <a asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
             </div>         
         </li>    
@@ -33,21 +34,20 @@
 
 
 <script>
-// When the user clicks on the button, toggle between hiding and showing the dropdown content
 function myFunction() { 
-    document.getElementById("myDropdown").classList.toggle("dropdown-content-user-button");
-    document.querySelector('nav').style.setProperty('--enable', '#684933');   //CHANGE COLOR TO BLACK WHEN ACTIVE
+    document.getElementById("myDropdown").classList.toggle("dropdown-content-user-button"); //TOGGLE BUTTON
+    document.querySelector('nav').style.setProperty('--enable', '#88490e');   //CHANGE COLOR TO #88490e WHEN ACTIVE
 }
-
-    // Close the dropdown if the user clicks outside of it
+    
 window.onclick = function(e) {
     if (!e.target.matches('.user-button')) {
-    var myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains('dropdown-content-user-button')) {
-            myDropdown.classList.remove('dropdown-content-user-button');
-            document.querySelector('nav').style.setProperty('--enable', '#684933');   //CHANGE COLOR BACK WHEN NOT ACTIVE
-        }
+        if (document.getElementById("myDropdown").classList.contains('dropdown-content-user-button')) {
+            document.getElementById("myDropdown").classList.remove('dropdown-content-user-button');
+        }   //Close the dropdown if the user clicks outside of it
     }
+    if (!document.getElementById("myDropdown").classList.contains('dropdown-content-user-button')) {
+        document.querySelector('nav').style.setProperty('--enable', '#684933');   
+    }   //CHANGE COLOR BACK (#684933) WHEN NOT ACTIVE
 }
 </script>
 

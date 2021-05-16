@@ -140,7 +140,9 @@ nav li a, .dropbtn, .user-button {
     bottom: 0%;
     color: #88490e;
     background-color: #f0cc9d;
+    font-size: 2.2vh;
 }
+
 .dropdown-content[notgeneral] {
     right: 0;
     min-width: 12.5vmin;
