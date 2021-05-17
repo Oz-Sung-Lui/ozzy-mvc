@@ -4,7 +4,6 @@ table {
     border-spacing: 0;
     position: relative;
     margin: auto;
-    border: 1px solid black;
     border-radius: 25px;
 }
 
@@ -85,7 +84,6 @@ td:nth-child(7) {
 
 tfoot tr{
     border-bottom: none;
-    text-align: right;
 }
 
 tfoot td{

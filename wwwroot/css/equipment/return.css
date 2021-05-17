@@ -1,9 +1,14 @@
+.container{
+    height: 95vmin;
+}
+
 table {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     width: 900px;
-    margin:auto;
     border-spacing: 0;
     position: relative;
-    border: 1px solid black;
     border-radius: 25px;
 }
 
@@ -59,39 +64,49 @@ td:nth-child(4) {
     width: 240px;
 }
 
-th.check,
-td:nth-child(5) {
+th.check, td:nth-child(5) {
     width: 90px;
 }
 
+.returnbox{
+    display: grid;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    background-color: #FCE5DF;
+    border-radius: 50%;
+}
+
 td input {
+    margin: auto;
+    grid-row: 1;
+    grid-column: 1;
     position: relative;
-    left: 15px;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     z-index: 1;
-    opacity: 0;
+    opacity: 0%;
 }
 
 .fa-reply {
+    margin: auto;
+    grid-row: 1;
+    grid-column: 1;
     position: relative;
-    top: -6px;
-    left: -25px;
-    height: 30px;
-    width: 30px;
-    border-radius: 25px;
-    background-color: #FCE5DF;
-    padding-top: 5px;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     color: #4E2C0D;
 }
 
-td:hover input~.fa-reply {
-    background-color: #ccc;
+td:hover .returnbox {
+    background-color: #4E2C0D;
+}
+
+td:hover .fa-reply{
+    color: #FCE5DF;
 }
 
 td input:checked~.fa-reply {
-    color: rgb(255, 0, 0)
+    color: red;
 }

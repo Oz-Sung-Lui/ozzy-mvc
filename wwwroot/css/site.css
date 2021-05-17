@@ -124,6 +124,7 @@ nav li a:hover, #dropdown:hover {
 }
 
 nav li a, .dropbtn, .user-button {
+    cursor: default;
     display: block;
     color: white;
     font-weight: bold;
@@ -180,6 +181,7 @@ nav li a, .dropbtn, .user-button {
     height: 5vmin;
     background-color: var(--enable);
     border-radius: 5vh 0 0 5vh;
+    cursor: pointer;
 }
 .user-button:hover {
     background-color: #88490e;
