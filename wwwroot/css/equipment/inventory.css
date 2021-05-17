@@ -1,9 +1,9 @@
+/* Inventory Table */
 table {
     width: 1520px;
-    top: 150px;
-    left: 77px;
     border-spacing: 0;
     position: relative;
+    margin: auto;
     border: 1px solid black;
     border-radius: 25px;
 }
@@ -17,18 +17,23 @@ thead tr {
 tbody {
     display: block;
     background-color: #FDF6ED;
-    border-radius: 0px 0px 25px 25px;
     height: 450px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
+tfoot tr {
+    display: block;
+    background-color: #FDF6ED;
+    border-radius: 0px 0px 25px 25px;
+}
 
-/*
+
+
 tbody::-webkit-scrollbar {
     display: none;
 }
-*/
+
 
 th {
     height: 75px;
@@ -45,7 +50,7 @@ td {
 
 th.EquipmentName,
 td:nth-child(1) {
-    width: 240px;
+    width: 360px;
 }
 
 th.EquipmentType,
@@ -78,10 +83,27 @@ td:nth-child(7) {
     width: 240px;
 }
 
+tfoot tr{
+    border-bottom: none;
+    text-align: right;
+}
+
+tfoot td{
+    border-top: 1px solid #4E2C0D;
+    border-bottom: none;
+}
+
 .fa-check {
     color: green;
 }
 
 .fa-remove {
     color: red;
+}
+
+/* Webpage Style*/
+.inventory-container{
+    display: flex;
+    min-height: 85vmin;
+    justify-content: center;
 }

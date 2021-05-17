@@ -9,69 +9,84 @@
 </head>
 
 <body>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th class='EquipmentName'>
-                @Html.DisplayNameFor(model => model.EquipmentName)
-            </th>
-            <th class='EquipmentType'>
-                @Html.DisplayNameFor(model => model.EquipmentType)
-            </th>
-            <th class='Description'>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th class='LabName'>
-                @Html.DisplayNameFor(model => model.LabName)
-            </th>
-            <th class='TimeSlot'>
-                @Html.DisplayNameFor(model => model.TimeSlot)
-            </th>
-            <th class='Date'>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th class='blank'>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LabName)
-            </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.TimeSlot)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Date)
-            </th>
-            <td>
-                <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-
-<a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-    <button onclick="myFunction11()">Return</button>
-</a>
-
-<button onclick="myFunction11()">
-    <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>Cancel</a>
-</button>
-
+    <div class="inventory-container">
+            <table class="table">  
+                <thead>
+                    <tr>
+                        <th class='EquipmentName'>
+                            @Html.DisplayNameFor(model => model.EquipmentName)
+                        </th>
+                        @* 
+                        <th class='EquipmentType'>
+                            @Html.DisplayNameFor(model => model.EquipmentType)
+                        </th>
+                        <th class='Description'>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                         *@
+                        <th class='LabName'>
+                            @Html.DisplayNameFor(model => model.LabName)
+                        </th>
+                        <th class='Date'>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th class='TimeSlot'>
+                            @Html.DisplayNameFor(model => model.TimeSlot)
+                        </th>
+                        @*
+                        <th class='blank'>
+                        </th>
+                        *@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EquipmentName)
+                            </td>
+                            @*
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EquipmentType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            *@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LabName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TimeSlot)
+                            </td>
+                            @*
+                            <td>
+                                <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
+                            </td>
+                            *@
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td><td></td>
+                        <td>
+                            <a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                                <button onclick="myFunction11()">Return</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                                <button onclick="myFunction11()">Cancel</button>
+                            </a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+    </div>
 </body>
 
 <script>
