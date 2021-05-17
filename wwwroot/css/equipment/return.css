@@ -1,8 +1,6 @@
 table {
     width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    top: 150px;
+    margin:auto;
     border-spacing: 0;
     position: relative;
     border: 1px solid black;
@@ -41,23 +39,28 @@ td {
     border-bottom: 1px solid #4E2C0D;
 }
 
-th.item_ID,
+th.itemname,
 td:nth-child(1) {
-    width: 270px;
+    width: 360px;
 }
 
-th.item_Name,
+th.labname,
 td:nth-child(2) {
-    width: 270px;
+    width: 240px;
 }
 
-th.Laboratory,
+th.date,
 td:nth-child(3) {
-    width: 270px;
+    width: 240px;
 }
 
-th.return,
+th.timeslot,
 td:nth-child(4) {
+    width: 240px;
+}
+
+th.check,
+td:nth-child(5) {
     width: 90px;
 }
 

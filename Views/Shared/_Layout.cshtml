@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@ViewData["Title"] - ozzy_mvc</title>
         <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/layout.css" />
     </head>
 
     <body>
@@ -22,11 +21,19 @@
         {
             @Html.Partial("_GuestNavbar")
         }
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+
+        @if (Context.Request.Path=="/Lab/Hardware"  || Context.Request.Path=="/Lab/HCRL" || 
+             Context.Request.Path=="/Lab/Robot"     || Context.Request.Path=="/Lab/ESL" ||
+             Context.Request.Path=="/Lab/Network"   || Context.Request.Path=="/"){   
+            <main role="main" class="withfooter">
+                    @RenderBody()
+            </main> 
+        }
+        else{
+            <main role="main">
+                    @RenderBody()
+            </main> 
+        }
 
         @if (Context.Request.Path=="/Lab/Hardware"  || Context.Request.Path=="/Lab/HCRL" || 
              Context.Request.Path=="/Lab/Robot"     || Context.Request.Path=="/Lab/ESL" ||

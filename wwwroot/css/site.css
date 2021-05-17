@@ -223,14 +223,18 @@ nav li a, .dropbtn, .user-button {
     background-color: #FCE5DF;
 }
 
-.container {
+main {
     position: relative;
     width: 100%;
-    min-height: 85vmin;
+    min-height: 95vmin;
     height: fit-content;
     min-width: 100%;
     padding: 0;
     margin: 0;
+}
+
+main.withfooter{
+    min-height: 85vmin;
 }
 
 /* ============================ FOOTER ============================ */

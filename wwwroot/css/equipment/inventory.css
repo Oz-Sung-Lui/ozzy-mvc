@@ -53,32 +53,32 @@ td:nth-child(1) {
     width: 360px;
 }
 
-th.EquipmentType,
+th.LabName,
 td:nth-child(2) {
     width: 240px;
 }
 
-th.Description,
+th.Date,
 td:nth-child(3) {
     width: 240px;
 }
 
-th.LabName,
+th.TimeSlot,
 td:nth-child(4) {
     width: 240px;
 }
 
-th.TimeSlot,
+th.Morning,
 td:nth-child(5) {
     width: 240px;
 }
 
-th.Date,
+th.Afternoon,
 td:nth-child(6) {
     width: 240px
 }
 
-th.blank,
+th.Evening,
 td:nth-child(7) {
     width: 240px;
 }
@@ -104,6 +104,6 @@ tfoot td{
 /* Webpage Style*/
 .inventory-container{
     display: flex;
-    min-height: 85vmin;
+    min-height: 95vmin;
     justify-content: center;
 }

@@ -4,60 +4,71 @@
     ViewData["Title"] = "Inventory";
 }
 
-<h1>Inventory</h1>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="StyleSheet" href="~/css/equipment/return.css" />
+</head>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EquipmentName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EquipmentType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LabName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeSlot)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LabName)
-            </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.TimeSlot)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Date)
-            </th>
-            <td>
-                <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="itemname">
+                    @Html.DisplayNameFor(model => model.EquipmentName)
+                </th>
+                @* <th>
+                    @Html.DisplayNameFor(model => model.EquipmentType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                *@
+                <th class="labname">
+                    @Html.DisplayNameFor(model => model.LabName)
+                </th>
+                <th class="date">
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th class="timeslot">
+                    @Html.DisplayNameFor(model => model.TimeSlot)
+                </th>
+                <th class='check'></th> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EquipmentName)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.EquipmentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.LabName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeSlot)
+                </td>
+                <td>
+
+                </td>
+                @* <td>
+                    <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
+                </td> *@
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
 
 <!-- ไม่รู้mergeไง แปะไว้ก่อนน้าาา //  ยังไม่มีปุ่มกดไปหน้า cancle, return -->
 
