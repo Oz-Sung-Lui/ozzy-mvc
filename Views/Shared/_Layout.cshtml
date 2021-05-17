@@ -28,7 +28,9 @@
             </main>
         </div>
 
-        @if (Context.Request.Path!="/Auth/Login" && Context.Request.Path!="/Student/Create" && Context.Request.Path!="/Equipment/Inventory"){
+        @if (Context.Request.Path=="/Lab/Hardware"  || Context.Request.Path=="/Lab/HCRL" || 
+             Context.Request.Path=="/Lab/Robot"     || Context.Request.Path=="/Lab/ESL" ||
+             Context.Request.Path=="/Lab/Network"   || Context.Request.Path=="/"){
             @Html.Partial("_Footer")
         }
         <script src="~/lib/jquery/dist/jquery.min.js"></script>

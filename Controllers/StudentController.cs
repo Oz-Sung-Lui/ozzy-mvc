@@ -151,5 +151,57 @@ namespace ozzy_mvc.Controllers
         {
             return _context.Student.Any(e => e.StudentID == id);
         }
+        public async Task<IActionResult> Cancel(Guid id)
+        {
+
+            var query = from equipment in _context.Set<Equipment>()
+            join booking in _context.Set<Booking>()
+                on equipment.EquipmentID equals booking.EquipmentID
+            select new { equipment,booking };
+
+            var data = query.Select(x =>
+                new EquipmentInventory {
+                    EquipmentID = x.equipment.EquipmentID,
+                    EquipmentName = x.equipment.EquipmentName,
+                    EquipmentType = x.equipment.EquipmentType,
+                    Description = x.equipment.Description,
+                    LabName = x.equipment.LabName,
+                    TimeSlot = x.booking.TimeSlot,
+                    Date = x.booking.Date,
+                    StudentID = x.booking.StudentID
+                }
+            ).Where(i => i.StudentID == id);
+            
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            return View(eq);
+        }
+
+        public async Task<IActionResult> Return(Guid id)
+        {
+
+            var query = from equipment in _context.Set<Equipment>()
+            join booking in _context.Set<Booking>()
+                on equipment.EquipmentID equals booking.EquipmentID
+            select new { equipment,booking };
+
+            var data = query.Select(x =>
+                new EquipmentInventory {
+                    EquipmentID = x.equipment.EquipmentID,
+                    EquipmentName = x.equipment.EquipmentName,
+                    EquipmentType = x.equipment.EquipmentType,
+                    Description = x.equipment.Description,
+                    LabName = x.equipment.LabName,
+                    TimeSlot = x.booking.TimeSlot,
+                    Date = x.booking.Date,
+                    StudentID = x.booking.StudentID
+                }
+            ).Where(i => i.StudentID == id);
+            
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            return View(eq);
+        }
+
     }
 }
