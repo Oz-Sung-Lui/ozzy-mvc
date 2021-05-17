@@ -3,8 +3,6 @@
 @{
     ViewData["Title"] = "Login";
 }
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -14,7 +12,6 @@
     <link rel="stylesheet" href="~/css/signin-signup.css" />
 </head>
 
-<body>
     <div class="signin-signup-cointainer">
 
         <h1>Login</h1>
@@ -36,9 +33,7 @@
         </form>
 
     </div>
-</body>
 
-</html>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

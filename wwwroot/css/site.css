@@ -7,6 +7,7 @@ a {
     color: #4E2C0D;
 }
 
+
 /* ============================= BUTTON ============================ */
 
 button {
@@ -30,6 +31,16 @@ button:hover{
 button.accept-policy {
     font-size: 1rem;
     line-height: inherit;
+}
+
+button.light{
+    background: #FDF6ED;
+    color: #4E2C0D;
+}
+
+button.dark{
+    background: #4E2C0D;
+    color: #FDF6ED;
 }
 
 /* ============================= BUTTON ============================ */
@@ -237,6 +248,10 @@ main {
 
 main.withfooter{
     min-height: 85vmin;
+}
+
+main.fitscreen{
+    height: 95vmin;
 }
 
 /* ============================ FOOTER ============================ */

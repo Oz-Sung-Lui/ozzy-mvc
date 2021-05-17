@@ -1,112 +1,11 @@
-.container{
-    height: 95vmin;
+tfoot td:nth-child(1){
+    width: 45vw;
 }
 
-table {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 900px;
-    border-spacing: 0;
-    position: relative;
-    border-radius: 25px;
+tfoot td:nth-child(2){
+    width: 10vw;
 }
 
-thead tr {
-    display: block;
-    background-color: #FCE5DF;
-    border-radius: 25px 25px 0px 0px;
-}
-
-tbody {
-    display: block;
-    background-color: #FDF6ED;
-    border-radius: 0px 0px 25px 25px;
-    height: 400px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-tbody::-webkit-scrollbar {
-    display: none;
-}
-
-th {
-    height: 75px;
-    text-align: center;
-    font-size: 24px;
-}
-
-td {
-    height: 75px;
-    text-align: center;
-    font-size: 24px;
-    border-bottom: 1px solid #4E2C0D;
-}
-
-th.itemname,
-td:nth-child(1) {
-    width: 360px;
-}
-
-th.labname,
-td:nth-child(2) {
-    width: 240px;
-}
-
-th.date,
-td:nth-child(3) {
-    width: 240px;
-}
-
-th.timeslot,
-td:nth-child(4) {
-    width: 240px;
-}
-
-th.check, td:nth-child(5) {
-    width: 90px;
-}
-
-.returnbox{
-    display: grid;
-    margin: auto;
-    width: 40px;
-    height: 40px;
-    background-color: #FCE5DF;
-    border-radius: 50%;
-}
-
-td input {
-    margin: auto;
-    grid-row: 1;
-    grid-column: 1;
-    position: relative;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    z-index: 1;
-    opacity: 0%;
-}
-
-.fa-reply {
-    margin: auto;
-    grid-row: 1;
-    grid-column: 1;
-    position: relative;
-    text-align: center;
-    font-size: 15px;
-    color: #4E2C0D;
-}
-
-td:hover .returnbox {
-    background-color: #4E2C0D;
-}
-
-td:hover .fa-reply{
-    color: #FCE5DF;
-}
-
-td input:checked~.fa-reply {
-    color: red;
+tfoot td:nth-child(3){
+    width: 10vw;
 }
