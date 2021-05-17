@@ -1,6 +1,6 @@
 table {
     width: 1520px;
-    top: 300px;
+    top: 150px;
     left: 77px;
     border-spacing: 0;
     position: relative;
@@ -18,7 +18,7 @@ tbody {
     display: block;
     background-color: #FDF6ED;
     border-radius: 0px 0px 25px 25px;
-    height: 452px;
+    height: 450px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -43,39 +43,39 @@ td {
     border-bottom: 1px solid #4E2C0D;
 }
 
-th.item_ID,
+th.EquipmentName,
 td:nth-child(1) {
-    width: 280px;
+    width: 240px;
 }
 
-th.item_Name,
+th.EquipmentType,
 td:nth-child(2) {
-    width: 270px;
+    width: 240px;
 }
 
-th.Laboratory,
+th.Description,
 td:nth-child(3) {
-    width: 250px;
+    width: 240px;
+}
+
+th.LabName,
+td:nth-child(4) {
+    width: 240px;
+}
+
+th.TimeSlot,
+td:nth-child(5) {
+    width: 240px;
 }
 
 th.Date,
-td:nth-child(4) {
-    width: 220px;
-}
-
-th.Morning,
-td:nth-child(5) {
-    width: 160px;
-}
-
-th.Noon,
 td:nth-child(6) {
-    width: 160px
+    width: 240px
 }
 
-th.Evening,
+th.blank,
 td:nth-child(7) {
-    width: 170px;
+    width: 240px;
 }
 
 .fa-check {

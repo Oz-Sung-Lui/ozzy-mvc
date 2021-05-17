@@ -3,36 +3,31 @@
 @{
     ViewData["Title"] = "Inventory";
 }
-<head>
-    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
-    <link rel="StyleSheet" href="~/css/equipment/inventory.css" />
-</head>
 
-<body>
+<h1>Inventory</h1>
 
 <table class="table">
     <thead>
         <tr>
-            <th class='EquipmentName'>
+            <th>
                 @Html.DisplayNameFor(model => model.EquipmentName)
             </th>
-            <th class='EquipmentType'>
+            <th>
                 @Html.DisplayNameFor(model => model.EquipmentType)
             </th>
-            <th class='Description'>
+            <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th class='LabName'>
+            <th>
                 @Html.DisplayNameFor(model => model.LabName)
             </th>
-            <th class='TimeSlot'>
+            <th>
                 @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
-            <th class='Date'>
+            <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th class='blank'>
-            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -64,19 +59,6 @@
     </tbody>
 </table>
 
-<a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-    <button onclick="myFunction11()">Return</button>
-</a>
-
-<button onclick="myFunction11()">
-    <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>Cancel</a>
-</button>
-
-</body>
-
-<script>
-
-</script>
 <!-- ไม่รู้mergeไง แปะไว้ก่อนน้าาา //  ยังไม่มีปุ่มกดไปหน้า cancle, return -->
 
 <!--   
