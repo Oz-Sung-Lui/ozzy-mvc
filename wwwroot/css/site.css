@@ -7,10 +7,67 @@ a {
     color: #4E2C0D;
 }
 
-input, button {
+/* ============================= BUTTON ============================ */
+
+button {
     font-family: inherit;
     font-size: inherit;
+    position: relative;
+    font-weight:800;
+    background: #FCE5DF;
+    color: #4E2C0D;
+    width: 18vmin;
+    height: 4.5vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    border: none;
 }
+
+button:hover{
+    box-shadow: 0px 0px 2px 2px #4E2C0D;
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* ============================= BUTTON ============================ */
+
+/* ======================= INPUT (TextField) ======================= */
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 5vmin;
+    width: 27.5vmin;
+    background: #fff;
+    border-radius: 20vmin;
+    border: 1px solid #fff;
+    padding: 0 0 0 7%;
+    outline: none;
+    font-size: 1.8vmin;
+}
+
+input:focus {
+    box-shadow: 0px 0px 2px 2px #88490e !important;
+}
+
+/* ------------------ ERROR INPUT ------------------ */
+.field-validation-error {
+    color: red !important;
+    font-size: 1.4vmin;
+}
+
+.input-validation-error {
+    color: red !important;
+    font-size: 1.4vmin;
+    box-shadow: 0 0 3pt 1pt red !important;
+}
+/* ------------------ ERROR INPUT ------------------ */
+
+/* ======================= INPUT (TextField) ======================= */
 
 html {
     font-family: Kanit;
@@ -32,10 +89,7 @@ body {
     height: fit-content;
 }
 
-button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
-}
+
 
 /* ============================ NAV BAR ============================ */
 
@@ -80,10 +134,10 @@ nav li a, .dropbtn, .user-button {
     border: none;
     outline: none;
     background-color: inherit;
-    line-height: 5vh;
+    line-height: 5vmin;
 }
 
-/*************** WHEN HOVER DROPDOWN ***************/
+/* -------------- WHEN HOVER DROPDOWN -------------- */
 .dropdown:hover[general] .dropdown-content {
     display: block;
 }
@@ -103,16 +157,16 @@ nav li a, .dropbtn, .user-button {
     text-decoration: none;
     display: block;
     text-align: left;
-    line-height: 2.5vh;
+    line-height: 2.5vmin;
 }
   
 .dropdown-content a:hover {
     background-color: #f0cc9d;
     height: inherit;
 }
-/*************** WHEN HOVER DROPDOWN ***************/
+/* -------------- WHEN HOVER DROPDOWN -------------- */
 
-/************ USER BUTTON (NEED CLICK) ************/
+/* ----------- USER BUTTON (NEED CLICK) ------------ */
 .dropdown-content-user-button {
     display: block;
 }
@@ -123,6 +177,7 @@ nav li a, .dropbtn, .user-button {
     margin:  0;
     padding: 0 0 0 5%;
     width: max-content;
+    height: 5vmin;
     background-color: var(--enable);
     border-radius: 5vh 0 0 5vh;
 }
@@ -132,10 +187,10 @@ nav li a, .dropbtn, .user-button {
 
 .profile-picture {
     background-position-y: center;
-    margin : 4% 0 0 0;
-    line-height: 4vh;
-    width: 4vh;
-    height: 4vh;
+    margin : 3% 0 0 0;
+    line-height: 4vmin;
+    width: 4vmin;
+    height: 4vmin;
     border-radius: 5vh;
     bottom: 0%;
     color: #88490e;
@@ -147,8 +202,7 @@ nav li a, .dropbtn, .user-button {
     right: 0;
     min-width: 12.5vmin;
 }
-
-/************ USER BUTTON (NEED CLICK) ************/
+/* ----------- USER BUTTON (NEED CLICK) ------------ */
 
 /* ============================ NAV BAR ============================ */
 
@@ -196,7 +250,7 @@ footer {
     font-size: 0.9em;
 }
 
-footer h2{
+footer h2 {
     margin: 0;
     padding: 0;
 }

@@ -57,7 +57,7 @@
             </label>
             <span asp-validation-for="Password" class="error"></span>
 
-            <input type="submit" value="Save" id="btnEditProfile"/>
+            <button type="submit" id="btnEditProfile">Save</button>
             
 
             @* <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
@@ -76,7 +76,7 @@
 function myFunction2() { 
 
     var a = document.getElementsByTagName("input");
-    
+
     $(".field-validation-error").empty();
 
     if (document.getElementById("canedit").style.getPropertyValue('--editable')=="all") {
@@ -92,7 +92,6 @@ function myFunction2() {
 
         document.getElementById("btnEditProfile").style.setProperty('display','none');
         document.getElementsByTagName("form").item(0).reset();
-        var div = document.getElementById('canedit-error');
     }
     else {
         @* a[1].style.setProperty('background-color', 'green'); *@
@@ -107,8 +106,6 @@ function myFunction2() {
 
         document.getElementById("btnEditProfile").style.setProperty('display','block');
     }
-
-    
 }
 </script>
 
