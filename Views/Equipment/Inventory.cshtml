@@ -16,14 +16,6 @@
                     <th class='EquipmentName'>
                         @Html.DisplayNameFor(model => model.EquipmentName)
                     </th>
-                    @* 
-                    <th class='EquipmentType'>
-                        @Html.DisplayNameFor(model => model.EquipmentType)
-                    </th>
-                        <th class='Description'>
-                        @Html.DisplayNameFor(model => model.Description)
-                       </th>
-                    *@
                     <th class='LabName'>
                         @Html.DisplayNameFor(model => model.LabName)
                     </th>
@@ -33,10 +25,6 @@
                     <th class='TimeSlot'>
                         @Html.DisplayNameFor(model => model.TimeSlot)
                        </th>
-                    @*
-                    <th class='blank'>
-                    </th>
-                    *@
                     <th class='Morning'>
                         Morn
                     </th>
@@ -54,27 +42,16 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.EquipmentName)
                         </td>
-                        @*
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EquipmentType)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </td>
-                        *@
                         <td>
                             @Html.DisplayFor(modelItem => item.LabName)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Date)
+                            @Html.DisplayFor(modelItem => item.DateStr)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.TimeSlot)
                         </td>
                         @*
-                        <td>
-                            <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
-                        </td>
                         *@
                         <td>
                             testM

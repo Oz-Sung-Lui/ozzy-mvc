@@ -34,14 +34,14 @@ namespace ozzy_mvc.Controllers
             select new { equipment,booking };
 
             var data = query.Select(x =>
-                new EquipmentInventory {
-                    EquipmentID = x.equipment.EquipmentID,
+                new EquipmentInventory { EquipmentID = x.equipment.EquipmentID,
                     EquipmentName = x.equipment.EquipmentName,
                     EquipmentType = x.equipment.EquipmentType,
                     Description = x.equipment.Description,
                     LabName = x.equipment.LabName,
                     TimeSlot = x.booking.TimeSlot,
                     Date = x.booking.Date,
+                    DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
                     StudentID = x.booking.StudentID
                 }
             ).Where(i => i.StudentID == id);
@@ -192,6 +192,7 @@ namespace ozzy_mvc.Controllers
         public Lab LabName  { get; set; }
         public TimeSlot TimeSlot { get; set; }
         public DateTime Date { get; set; }
+        public String DateStr { get; set; }
         public Guid StudentID {get; set; }
     }
 }
