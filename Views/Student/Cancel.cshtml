@@ -7,10 +7,8 @@
 <head>
     <meta http-equiv="content-type" content="text/html" charset="utf-8" />
     <link rel="styleSheet" href="~/css/equipment.css" />
-    <link rel="styleSheet" href="~/css/equipment/cancel.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<h1>Cancel Booking</h1>
 
 <table>
     <thead>
@@ -18,16 +16,10 @@
             <th class="EquipmentName">
                 @Html.DisplayNameFor(model => model.EquipmentName)
             </th>
-            @* <th>
-                @Html.DisplayNameFor(model => model.EquipmentType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th> *@
-            <th class ="LabName">
+            <th class="LabName">
                 @Html.DisplayNameFor(model => model.LabName)
             </th>
-            <th class ="Date">
+            <th class="Date">
                 @Html.DisplayNameFor(model => model.Date)
             </th>
             <th class="TimeSlot">
@@ -50,24 +42,16 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EquipmentName)
                 </td>
-                @* <td>
-                    @Html.DisplayFor(modelItem => item.EquipmentType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td> *@
                 <td>
                     @Html.DisplayFor(modelItem => item.LabName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @Html.DisplayFor(modelItem => item.DateStr)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TimeSlot)
                 </td>
-                @* <td>
-                    <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
-                </td> *@
+                @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
                 <td>
                     <div class="tableGridBox">
                     <input type="checkbox"> 
@@ -91,13 +75,13 @@
     </tbody>
     <tfoot>
         <tr>
-            <td></td>
-            <td>
+            <td style="width:55vw;"></td>
+            <td style="width:10vw;">
                 <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
                     <button class="light">Back</button>
                 </a>
             </td>
-            <td>
+            <td style="width:10vw;">
                 <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
                     <button class="light">Cancel Book</button>
                 </a>

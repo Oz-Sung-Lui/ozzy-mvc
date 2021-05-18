@@ -7,49 +7,65 @@
 <head>
     <meta http-equiv="content-type" content="text/html" charset="utf-8" />
     <link rel="styleSheet" href="~/css/equipment.css" />
-    <link rel="styleSheet" href="~/css/equipment/return.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="itemname">
-                    @Html.DisplayNameFor(model => model.EquipmentName)
-                </th>
-                <th class="labname">
-                    @Html.DisplayNameFor(model => model.LabName)
-                </th>
-                <th class="date">
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th class="timeslot">
-                    @Html.DisplayNameFor(model => model.TimeSlot)
-                </th>
-                <th class='check'></th> 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model) {
-            <tr>
-                <td>
-                    <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                        <button class="light">Back</button>
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LabName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeSlot)
-                </td>
-                <td>
-
-                </td>
-            </tr>
-        </tfoot>
+<table>
+    <thead>
+        <tr>
+            <th class="EquipmentName">
+                @Html.DisplayNameFor(model => model.EquipmentName)
+            </th>
+            <th class="LabName">
+                @Html.DisplayNameFor(model => model.LabName)
+            </th>
+            <th class="Date">
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th class="TimeSlot">
+                @Html.DisplayNameFor(model => model.TimeSlot)
+            </th>
+            <th class='Blank'></th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateStr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeSlot)
+            </td>
+            @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
+            <td>
+                <div class="tableGridBox">
+                    <input type="checkbox"> 
+                    <i class="fa fa-reply"></i>
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td style="width:45vw;"></td>
+            <td style="width:10vw;">
+                <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                    <button class="light">Back</button>
+                </a>
+            </td>
+            <td style="width:10vw;">
+                <a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                    <button class="light">Return Item</button>
+                </a>
+            </td>
+        </tr>
+    </tfoot>
 </table>
