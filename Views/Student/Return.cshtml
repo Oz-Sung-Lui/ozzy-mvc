@@ -1,7 +1,7 @@
 @model IEnumerable<ozzy_mvc.Controllers.EquipmentInventory>
 
 @{
-    ViewData["Title"] = "Return";
+    ViewData["Title"] = "Return Booked Item";
 }
 
 <head>
@@ -16,13 +16,6 @@
                 <th class="itemname">
                     @Html.DisplayNameFor(model => model.EquipmentName)
                 </th>
-                @* <th>
-                    @Html.DisplayNameFor(model => model.EquipmentType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                *@
                 <th class="labname">
                     @Html.DisplayNameFor(model => model.LabName)
                 </th>
@@ -41,12 +34,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EquipmentName)
                 </td>
-                @* <td>
-                    @Html.DisplayFor(modelItem => item.EquipmentType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td> *@
                 <td>
                     @Html.DisplayFor(modelItem => item.LabName)
                 </td>
@@ -59,142 +46,8 @@
                 <td>
 
                 </td>
-                @* <td>
-                    <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
-                </td> *@
             </tr>
         }
         </tbody>
     </table>
 </div>
-
-
-
-<!-- ไม่รู้mergeไง แปะไว้ก่อนน้าาา //  ยังไม่มีปุ่มกดไปหน้า cancle, return -->
-
-<!--   
-    <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
-    <title>laboratory_instrument_booking_system</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <link rel="StyleSheet" href="inventory.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<body>
-    <div class="outer">
-        <table>
-            <thead>
-                <tr>
-                    <th class='item_ID'>Item ID</th>
-                    <th class='item_Name'>Item Name</th>
-                    <th class='Laboratory'>Laboratory</th>
-                    <th class='Date'>Date</th>
-                    <th class='Morning'>Morning</th>
-                    <th class='Noon'>Noon</th>
-                    <th class='Evening'>Evening</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td>QGi2c08iDSa290bfg</td>
-                    <td>Cat-5E Cable</td>
-                    <td>Network</td>
-                    <td>22/04/2564</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
-
-</html>
--->
