@@ -4,12 +4,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="StyleSheet" href="~/css/admin.css" />
+
+</head>
+
 <body>
-    <div class="text-center">
-        <h1 class="display-4">Welcome Admin</h1>
-        <a asp-controller="Student" asp-action="Index"><h1 class="display-6">Student Management</h1></a>
-        <a asp-controller="Equipment" asp-action="Index"><h1 class="display-6" >Equipment Management</h1></a>
-        <a asp-controller="Booking" asp-action="Index"><h1 class="display-6">Booking Management</h1></a>
+    <h1 style="font-size: 5vw;">Welcome Admin</h1>
+    <div class="contain-btn">
+        <a asp-controller="Student" asp-action="Index" class="btn">
+            <p>Student Management</p>
+        </a>
+        <a asp-controller="Equipment" asp-action="Index" class="btn">
+            <p>Equipment Management</p>
+        </a>
+        <a asp-controller="Booking" asp-action="Index" class="btn">
+            <p>Booking Management</p>
+        </a>
     </div>
 </body>
 

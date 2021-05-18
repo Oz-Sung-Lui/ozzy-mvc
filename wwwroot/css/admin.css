@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.contain-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    position: relative;
+    font-weight: 800;
+    background: #FCE5DF;
+    color: #4E2C0D;
+    width: 30vmin;
+    height: 6vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    border: none;
+    margin: 2vw;
+}
