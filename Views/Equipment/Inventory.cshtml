@@ -10,93 +10,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<table class="table">  
-    <thead>
-        <tr>
-            <th class='EquipmentName'>
-                @Html.DisplayNameFor(model => model.EquipmentName)
-            </th>
-            @* 
-            <th class='EquipmentType'>
-                @Html.DisplayNameFor(model => model.EquipmentType)
-            </th>
-                <th class='Description'>
-                @Html.DisplayNameFor(model => model.Description)
-                </th>
-            *@
-            <th class='LabName'>
-                @Html.DisplayNameFor(model => model.LabName)
-            </th>
-            <th class='Date'>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th class='TimeSlot'>
-                @Html.DisplayNameFor(model => model.TimeSlot)
-            </th>
-            <th class='Morning'>
-                Morn
-            </th>
-            <th class='Afternoon'>
-                Noon
-            </th>
-            <th class='Evening'>
-                Night
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EquipmentName)
-                </td>
-                @*
-                <td>
-                    @Html.DisplayFor(modelItem => item.EquipmentType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                *@
-                <td>
-                    @Html.DisplayFor(modelItem => item.LabName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeSlot)
-                </td>
-                @*
-                <td>
-                    <a asp-controller="Booking" asp-action="ListByEquipmentID" asp-route-id="@item.EquipmentID">View Booking</a> 
-                </td>
-                *@
-                <td>
-                    <i class="fa fa-check"></i>
-                </td>
-                <td>
-                    <i class="fa fa-check"></i>
-                </td>
-                <td>
-                    <i class="fa fa-check"></i>
-                </td>
-            </tr>
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <td></td>
-            <td>
-                <a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Return Item</button>
-                </a>
-            </td>
-            <td>
-                <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Cancel Book</button>
-                </a>
-            </td>
-        </tr>
-    </tfoot>
-</table>
+<body>
+    <div class="inventory-container">
+        <table class="table">  
+            <thead>
+                <tr>
+                    <th class='EquipmentName'>
+                        @Html.DisplayNameFor(model => model.EquipmentName)
+                    </th>
+                    <th class='LabName'>
+                        @Html.DisplayNameFor(model => model.LabName)
+                    </th>
+                    <th class='Date'>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th class='TimeSlot'>
+                        @Html.DisplayNameFor(model => model.TimeSlot)
+                       </th>
+                    <th class='Morning'>
+                        Morn
+                    </th>
+                    <th class='Afternoon'>
+                        Noon
+                    </th>
+                    <th class='Evening'>
+                        Night
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EquipmentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LabName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateStr)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeSlot)
+                        </td>
+                        @*
+                        *@
+                        <td>
+                            testM
+                        </td>
+                        <td>
+                            testN
+                        </td>
+                        <td>
+                            testNi
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td>
+                        <a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                            <button onclick="myFunction11()">Return</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                            <button onclick="myFunction11()">Cancel</button>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+<script>
+
+</script>
