@@ -170,7 +170,7 @@ namespace ozzy_mvc.Controllers
                     Date = x.booking.Date,
                     StudentID = x.booking.StudentID
                 }
-            ).Where(i => i.StudentID == id && i.Date > DateTime.Now);
+            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
