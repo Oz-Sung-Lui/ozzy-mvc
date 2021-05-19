@@ -30,3 +30,155 @@ body {
     border: none;
     margin: 2vw;
 }
+
+table {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-spacing: 0;
+    position: relative;
+}
+
+thead {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 2.5vmin 2.5vmin 0px 0px;
+}
+
+tbody {
+    display: block;
+    background-color: #FDF6ED;
+    height: 50vmin;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+tfoot {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 0px 0px 2.5vmin 2.5vmin;
+}
+
+tbody::-webkit-scrollbar {
+    display: none;
+}
+
+th {
+    height: 6vmin;
+    font-size: x-large;
+    vertical-align: middle;
+    text-align: center;
+}
+
+td {
+    height: 6vmin;
+    font-size: large;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #4E2C0D;
+}
+
+@media (max-width: 1344px) {
+    th {
+        font-size: large;
+    }
+    td {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    th {
+        font-size: small;
+    }
+    td {
+        font-size: x-small;
+    }
+}
+
+th.EquipmentName,
+td:nth-child(1) {
+    width: 20vw;
+}
+
+th.LabName,
+td:nth-child(2) {
+    width: 15vw;
+}
+
+th.Date,
+td:nth-child(3) {
+    width: 15vw;
+}
+
+th.TimeSlot,
+td:nth-child(4) {
+    width: 10vw;
+}
+
+th.Morning,
+td:nth-child(5) {
+    width: 5vw;
+}
+
+th.Afternoon,
+td:nth-child(6) {
+    width: 5vw
+}
+
+th.Evening,
+td:nth-child(7) {
+    width: 5vw;
+}
+
+th.Blank,
+td:nth-child(5) {
+    width: 5vw;
+}
+
+tfoot td {
+    /* border-top: 1px solid #4E2C0D; */
+    border-bottom: none;
+}
+
+.fa {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    color: #4E2C0D;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.tableGridBox {
+    display: grid;
+    margin: auto;
+    width: 4vmin;
+    height: 4vmin;
+    background-color: #FCE5DF;
+    border-radius: 50%;
+}
+
+.tableGridBox:hover {
+    background-color: #4E2C0D;
+}
+
+.tableGridBox:hover .fa {
+    color: #FCE5DF;
+}
+
+.tableGridBox input:checked~.fa {
+    color: red;
+}
+
+.tableGridBox input {
+    margin: auto;
+    grid-row: 1;
+    grid-column: 1;
+    position: relative;
+    cursor: pointer;
+    height: 4vmin;
+    width: 4vmin;
+    z-index: 1;
+    opacity: 0%;
+}
