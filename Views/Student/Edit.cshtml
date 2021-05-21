@@ -60,8 +60,12 @@
             <button type="submit" id="btnEditProfile">Save</button>
             
 
-            @* <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
-            
+            @if (Context.Request.Cookies["CurrentUsername"] == "admin")
+            {
+            <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
+            }
+
+            @*
             <div>
                 <a asp-action="Index">Back to List</a>
             </div> *@
