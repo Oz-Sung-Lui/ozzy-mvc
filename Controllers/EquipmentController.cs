@@ -44,7 +44,7 @@ namespace ozzy_mvc.Controllers
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
                     StudentID = x.booking.StudentID
                 }
-            ).Where(i => i.StudentID == id).OrderBy(i => i.EquipmentName).OrderBy(i => i.Date);
+            ).Where(i => i.StudentID == id).OrderBy(i => i.Date).OrderBy(i => i.EquipmentName);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
