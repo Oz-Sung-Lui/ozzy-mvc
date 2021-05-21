@@ -10,7 +10,7 @@ a {
 
 /* ============================= BUTTON ============================ */
 
-button {
+button , input[type=submit]{
     font-family: inherit;
     font-size: inherit;
     position: relative;
@@ -33,7 +33,7 @@ button.accept-policy {
     line-height: inherit;
 }
 
-button.light{
+button.light, input.light{
     background: #FDF6ED;
     color: #4E2C0D;
 }
@@ -47,7 +47,7 @@ button.dark{
 
 /* ======================= INPUT (TextField) ======================= */
 
-input {
+input[type=text] ,input[type=password]{
     font-family: inherit;
     font-size: inherit;
     color: #4E2C0D;
@@ -248,6 +248,11 @@ main.withfooter{
 
 main.fitscreen{
     height: 95vmin;
+}
+
+
+tbody::-webkit-scrollbar {
+    display: none;
 }
 
 /* ============================ FOOTER ============================ */
