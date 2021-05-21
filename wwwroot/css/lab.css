@@ -1,12 +1,3 @@
-@font-face {
-    font-family: Kanit;
-    src: url('../font/Kanit/Kanit-Regular.ttf');
-}
-
-* {
-    font-family: Kanit;
-}
-
 .lab-name-contain {
     position: relative;
     display: flex;
@@ -109,6 +100,8 @@ figcaption {
     /* overflow-y: scroll; */
 }
 
+/*
+
 td {
     text-align: center;
 }
@@ -117,29 +110,36 @@ thead {
     font-size: 1.25vw;
 }
 
+*/
+
 .btn-add-reserve {
     cursor: pointer;
-    /* display: flex; */
     text-align: center;
-    align-items: center;
-    background-color: #fff;
-    color: #3d414a;
+    background-color: #FCE5DF;
+    color: #4E2C0D;
     border-radius: 100%;
-    box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
-    font-size: 2vw;
-    line-height: 1.8vw;
-    height: 2vw;
-    justify-content: center;
+    box-shadow: 0 2px 10px 0 rgba(36, 36, 36, 0.3);
+    font-size: 5vmin;
+    line-height: 3.5vmin;
+    height: 4vmin;
     transition: 0.3s all;
-    width: 2vw;
+    width: 4vmin;
     z-index: 1;
-    font-weight: 900;
+    font-weight: 600;
 }
 
-.btn-add-reserve:hover {
+.btn-add-reserve:hover ,.active{
     transform: scale(1.2);
-    background-color: #3d414a;
-    color: rgba(255, 255, 255, 0.705);
+    background-color: #4E2C0D;
+    color: #FCE5DF;
+}
+
+.btn-add-reserve::after {
+    content : "+";
+}
+
+.active::after {
+    content : "-";
 }
 
 .modal {
@@ -203,10 +203,7 @@ thead {
 }
 
 form {
-    width: 300px;
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
+    margin : auto;
 }
 
 .value-button {
@@ -246,29 +243,38 @@ form #input-wrap {
     padding: 0px;
 }
 
-input#number {
-    text-align: center;
+input[type=number] {
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 3vmin;
+    width: 6vmin;
+    background: #fff;
+    border-radius: 2vmin;
     border: none;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin: 0px;
-    width: 40px;
-    height: 40px;
+    padding: 0;
+    outline: none;
+    text-align: center;
+    font-size: 1.8vmin;
 }
 
+
+
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+input[type=number]::-webkit-outer-spin-button{
+    opacity: 50%;
+    color: #4E2C0D;
+    height: 3vmin;
+    cursor: pointer;
     margin: 0;
 }
 
+
+
 .btn-reserve-confirm {
-    margin-top: auto;
-    margin-bottom: auto;
-    font-weight: 800;
-    background: #FCE5DF;
+    margin: auto;
+    background-color: #FCE5DF;
     color: #4E2C0D;
-    width: 18vmin;
     height: 4.5vmin;
     font-size: 2vmin;
     border-radius: 3vmin;
@@ -278,4 +284,188 @@ input[type=number]::-webkit-outer-spin-button {
 .reserve-foot {
     display: flex;
     justify-content: flex-end;
+}
+
+
+
+/*Test*/
+
+.reserve-table {
+    border-spacing: 0px;
+    position: relative;
+    width: 40vw;
+}
+
+
+.reserve-table thead {
+    display: block;
+    height: 6vmin;
+    background-color: #FCE5DF;
+    border-radius: 2.5vmin 2.5vmin 0px 0px;
+}
+
+.reserve-table th {
+    height: inherit;
+    font-size: xx-large;
+    vertical-align: middle;
+    padding-left: 2.5vw;
+    text-align: left;
+}
+
+
+.reserve-table tbody {
+    display: block;
+    background-color: #FDF6ED;
+    height: fit-content;
+    max-height: 36vmin;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.reserve-table tfoot {
+    height: 6vmin;
+    display: block;
+    background-color: #FDF6ED;
+    border-radius: 0px 0px 2.5vmin 2.5vmin;
+}
+
+.reserve-table tr {
+    height: 6vmin;
+}
+
+.reserve-table td {
+    height: inherit;
+    font-size: large;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #4E2C0D;
+}
+
+.reserve-table tfoot td{
+    padding-left: 1vw;
+    width: inherit;
+    border-bottom: none;
+}
+
+
+.booking-calendar {
+    display: none;
+    width: 35vw;
+    border-spacing: 0;
+    position: relative;
+}
+
+
+.booking-calendar thead {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 0px 2.5vmin 0px 0px;
+}
+
+.booking-calendar tbody {
+    display: block;
+    background-color: #FDF6ED;
+    height: 30vmin;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+.booking-calendar  tfoot {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 0px 0px 2.5vmin 2.5vmin;
+}
+
+.booking-calendar th {
+    height: 6vmin;
+    width: 5vw;
+    font-size: x-large;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.booking-calendar td {
+    height: 6vmin;
+    width: 5vw;
+    font-size: large;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #4E2C0D;
+}
+
+.booking-calendar tfoot td{
+    /* border-top: 1px solid #4E2C0D; */
+    border-bottom: none;
+}
+
+.booking-calendar th:first-child,.booking-calendar td:first-child{
+    width: 15vw;
+}
+
+.tableGridBox {
+    display: grid;
+    margin: auto;
+    height: 4vmin;
+}
+
+.tableGridBox .fa ,.item-left{
+    margin: auto;
+    position: relative;
+    text-align: center;
+    color: #4E2C0D;
+}
+
+
+.tableGridBox input {
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    height: 4vmin;
+    width: 4vmin;
+    z-index: 1;
+    opacity: 0%;
+}
+
+.tableGridBox:hover{
+    font-weight: 900;
+}
+
+.tableGridBox:hover .fa-check{
+    display: none;
+}
+
+.tableGridBox:not(:hover) .fa-times{
+    display: none;
+}
+
+.tableGridBox input:not(:checked)~.fa {
+    display: none;
+}
+
+.tableGridBox  input:checked~.item-left{
+    display: none;
+}
+
+.tableGridBox input,.fa,.item-left{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+@media (max-width: 1344px) {
+    th {
+        font-size: large ; 
+    }
+    td {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    th {
+        font-size: small;
+    }
+    td {
+        font-size: x-small;
+    }
 }

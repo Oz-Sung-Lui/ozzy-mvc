@@ -22,7 +22,7 @@ namespace ozzy_mvc.Controllers
         // GET: Booking
         public async Task<IActionResult> Index()
         {
-            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment);
+            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
             return View(await ozzyMvcContext.ToListAsync());
         }
 
