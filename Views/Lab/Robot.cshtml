@@ -40,59 +40,138 @@
             <img class="lab-img-item" src="~/image/LAB/ROBOT&IOT/3A - Arduino.jpg" alt="Arduino">
         </figure>
 
-        <div class="lab-table-reserve">
+        <div class="item-info">
             <p>
                 Arduino เป็นไมโครคอนโทรลเลอร์ที่มาจากอิตาลี่ เป็นบอร์ดไมโครคอนโทรเลอร์ตระกูล AVR ที่มีการพัฒนาแบบ Open Source 
                 มีวัยยากรการเขียนที่คล้ายกับภาษาซี
             </p>
             <br>
-            <table class="table">
-                <thead>
+@* เริ่มตรงนี้ *@
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th>
+                        Reserved @* Apply If to items booking len *@
+                    </th>
+                </tr>
+            </thead>
+            @* Reserved @* Apply If to items booking len *@
+            <tbody>
+                @* For loop Queries Item here *@
+                <tr>
+                    <td style="width: 15vw;">
+                        No. 1 @* Number of item or UID of item  *@
+                    </td>
+                    <td style="width: 10vw;">
+                        22/05/2021 @* Date here *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Sun @* apply if to Timeslot morning *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Sunset @* apply if to Timeslot afternoon *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Moon @* apply if to Timeslot evening *@
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <div class="btn-add-reserve collapsible"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <table class="booking-calendar content" style="--coll:true">
+            <thead>
+                <tr>
+                    <th>
+                        Date 
+                    </th>
+                    <th>
+                        All Day
+                    </th>
+                    <th>
+                        Morn
+                    </th>
+                    <th>
+                        Noon
+                    </th>
+                    <th>
+                        Night
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    @* For loop 7 days here *@
                     <tr>
-                        <th>Reserved</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <td>
+                            Date @* Display Date form today *@
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
                     </tr>
-                </thead>
+            </tbody>
+            <tfoot>
                 <tr>
-                    <td>No.1</td>
-                    <td>22/04/2564</td>
-                    <td>noon</td>
-                    <td>even</td>
-                    <td>night</td>
+                    <td style="width: 25vw; text-align:right;">
+                        Amount : 
+                    </td>
+                    <td style="width: 5vw;">
+                        <form id="amount">
+                            <input type="number" id="number" value="1" max="25" min="1">
+                        </form>
+                    </td>
+                    <td style="width: 10vw;">
+                        <input form="amount" class="light" type="submit" value="Confirm">
+                    </td>
                 </tr>
-                <tr>
-                    <td>No.2</td>
-                    <td>23/04/2564</td>
-                    <td>noon</td>
-                    <td>even</td>
-                    <td>night</td>
-                </tr>
-                <tr>
-                    <td>No.3</td>
-                    <td>24/04/2564</td>
-                    <td>noon</td>
-                    <td>even</td>
-                    <td>night</td>
-                </tr>
-            </table>
-            <p><b>TEST</b></p>
-            <p><b>TEST</b></p>
-            <p><b>TEST</b></p>
-            <p><b>TEST</b></p>
-            <p><b>TEST</b></p>
-            <p><b>TEST</b></p>
-            <p><b>TEST</b></p>
-
-            <div class='btn-add-reserve'>
-                <label>
-                    +
-                </label>
-            </div>
-        </div>
+            </tfoot>
+        </table>
     </div>
+</div>
+
+@* ถึงตรงนี้ *@
     <br>
 
     <div class="lab-element">
@@ -100,51 +179,138 @@
             <figcaption>NodeMCU V.3</figcaption>
             <img class="lab-img-item" src="~/image/LAB/ROBOT&IOT/3B - NodeMCU.jpg" alt="NodeMCU V.3">
         </figure>
-        <div class="lab-table-reserve">
+        <div class="table-info">
             <p>
                 NodeMCU เป็นไมโครคอนโทรลเลอร์ทีมีลักษณะการทำงานตามคำสั่งภาษา C คล้าย Arduino แต่มีลักษณะพิเศษกว่าตรงที่ 
                 สามารถเชื่อมต่อกับ WiFi ได้ การควบคุมการทางานสามารถใช้ โปรแกรม Arduino IDE ได้เช่นเดียวกันกับบอร์ด Arduino
             </p>
             <br>
-            <table class="table">
-                <thead>
+            @* เริ่มตรงนี้ *@
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th>
+                        Reserved @* Apply If to items booking len *@
+                    </th>
+                </tr>
+            </thead>
+            @* Reserved @* Apply If to items booking len *@
+            <tbody>
+                @* For loop Queries Item here *@
+                <tr>
+                    <td style="width: 15vw;">
+                        No. 1 @* Number of item or UID of item  *@
+                    </td>
+                    <td style="width: 10vw;">
+                        22/05/2021 @* Date here *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Sun @* apply if to Timeslot morning *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Sunset @* apply if to Timeslot afternoon *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Moon @* apply if to Timeslot evening *@
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <div class="btn-add-reserve collapsible"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <table class="booking-calendar content" style="--coll:true">
+            <thead>
+                <tr>
+                    <th>
+                        Date 
+                    </th>
+                    <th>
+                        All Day
+                    </th>
+                    <th>
+                        Morn
+                    </th>
+                    <th>
+                        Noon
+                    </th>
+                    <th>
+                        Night
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    @* For loop 7 days here *@
                     <tr>
-                        <th>Not Reserved</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <td>
+                            Date @* Display Date form today *@
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
                     </tr>
-                </thead>
+            </tbody>
+            <tfoot>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td style="width: 25vw; text-align:right;">
+                        Amount : 
+                    </td>
+                    <td style="width: 5vw;">
+                        <form id="amount">
+                            <input type="number" id="number" value="1" max="25" min="1">
+                        </form>
+                    </td>
+                    <td style="width: 10vw;">
+                        <input form="amount" class="light" type="submit" value="Confirm">
+                    </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <div class='btn-add-reserve'>
-                <label>
-                    +
-                </label>
-            </div>
-        </div>
+            </tfoot>
+        </table>
     </div>
+</div>
+
+@* ถึงตรงนี้ *@
     <br>
     
     <div class="lab-element">
@@ -152,48 +318,137 @@
             <figcaption>Raspberry Pi 4</figcaption>
             <img class="lab-img-item" src="~/image/LAB/ROBOT&IOT/3C - Raspberry Pi 4.jpg" alt="Raspberry Pi 4">
         </figure>
-        <div class="lab-table-reserve">
+        <div class="item-info">
             <p>
                 บอร์ดคอมพิวเตอร์ขนาดเล็ก (Single-Board Computer หรือ SBC) ที่ถูกพัฒนาขึ้นโดย Raspberry Pi Foundation 
                 มีคุณสมบัติเด่น คือ ติดต่อ และความคุมอุปกรณ์อิเล็กทรอนิกส์ได้
             </p>
             <br>
-            <table class="table">
-                <thead>
+            @* เริ่มตรงนี้ *@
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th>
+                        Reserved @* Apply If to items booking len *@
+                    </th>
+                </tr>
+            </thead>
+            @* Reserved @* Apply If to items booking len *@
+            <tbody>
+                @* For loop Queries Item here *@
+                <tr>
+                    <td style="width: 15vw;">
+                        No. 1 @* Number of item or UID of item  *@
+                    </td>
+                    <td style="width: 10vw;">
+                        22/05/2021 @* Date here *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Sun @* apply if to Timeslot morning *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Sunset @* apply if to Timeslot afternoon *@
+                    </td>
+                    <td style="width: 5vw;">
+                        Moon @* apply if to Timeslot evening *@
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <div class="btn-add-reserve collapsible"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <table class="booking-calendar content" style="--coll:true">
+            <thead>
+                <tr>
+                    <th>
+                        Date 
+                    </th>
+                    <th>
+                        All Day
+                    </th>
+                    <th>
+                        Morn
+                    </th>
+                    <th>
+                        Noon
+                    </th>
+                    <th>
+                        Night
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    @* For loop 7 days here *@
                     <tr>
-                        <th>Not Reserved</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <td>
+                            Date @* Display Date form today *@
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tableGridBox">
+                                <input type="checkbox"> 
+                                <i class="fa fa-check"></i>
+                                <i class="fa fa-times"></i>
+                                <span class = "item-left">
+                                    25 left
+                                </span>
+                            </div>
+                        </td>
                     </tr>
-                </thead>
+            </tbody>
+            <tfoot>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td style="width: 25vw; text-align:right;">
+                        Amount : 
+                    </td>
+                    <td style="width: 5vw;">
+                        <form id="amount">
+                            <input type="number" id="number" value="1" max="25" min="1">
+                        </form>
+                    </td>
+                    <td style="width: 10vw;">
+                        <input form="amount" class="light" type="submit" value="Confirm">
+                    </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <div class='btn-add-reserve'>
-                <label>
-                    +
-                </label>
-            </div>
-        </div>
+            </tfoot>
+        </table>
     </div>
+</div>
+
+@* ถึงตรงนี้ *@
+
+<script src="~/js/lab.js"></script>
