@@ -1,53 +1,149 @@
 @model ozzy_mvc.Models.Student
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "My Profile";
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Edit</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>@ViewData["Title"] - ozzy_mvc</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/edit-profile.css" />
+</head>
 
-<h4>Student</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="StudentID" />
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Firstname" class="control-label"></label>
-                <input asp-for="Firstname" class="form-control" />
-                <span asp-validation-for="Firstname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Lastname" class="control-label"></label>
-                <input asp-for="Lastname" class="form-control" />
-                <span asp-validation-for="Lastname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input type="password" asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<body>
+
+<div class="edit-profile-cointainer" id="editableVariable">
+    <div style="display:flex; flex-direction: row; align-items:center;">
+        <h1>&emsp; &nbsp; My Profile &nbsp;</h1>
+        <button id="editButton" onclick="myFunction2()">&#x1F589;</button>
     </div>
+
+    <div class="profile-picture">
+        @Context.Request.Cookies["CurrentUsername"].Substring(0,1)
+    </div>
+
+    @if(Context.Request.Cookies["CurrentUsername"] == "admin"){
+    <form asp-action="Edit" id="test">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
+
+            <label>
+                Username
+                <input asp-for="Username" class="inputField" readonly="True"/>
+            </label>
+            <span asp-validation-for="Username" class="error"></span>
+
+            <label>
+                Firstname
+                <input asp-for="Firstname" class="inputField" id="canedit"/>
+            </label>
+            <span asp-validation-for="Firstname" class="error"></span>
+
+            <label>
+                Lastname
+                <input asp-for="Lastname" class="inputField tr" id="canedit"/>
+            </label>
+            <span asp-validation-for="Lastname" class="error"></span>
+
+            <input type="hidden" asp-for="Password"/>
+            
+            <input type="hidden" asp-for="StudentID" />
+            <input type="hidden" asp-for="ConfirmPassword" />
+
+            <label>
+                @Html.DisplayNameFor(model => model.IsBlacklisted)
+                <input class="form-check-input" asp-for="IsBlacklisted" />
+            </label>
+
+            <input type="submit" id="btnEditProfile" value="Save">
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div> 
+    </form>
+    }
+    else{
+        <form asp-action="Edit" id="test">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
+
+            <label asp-for="Username">
+                Username
+                <input asp-for="Username" class="inputField" readonly="True"/>
+            </label>
+            <span asp-validation-for="Username" class="error"></span>
+
+            <label asp-for="Firstname">
+                Firstname
+                <input asp-for="Firstname" class="inputField" id="canedit"/>
+            </label>
+            <span asp-validation-for="Firstname" class="error"></span>
+
+            <label asp-for="Lastname">
+                Lastname
+                <input asp-for="Lastname" class="inputField tr" id="canedit"/>
+            </label>
+            <span asp-validation-for="Lastname" class="error"></span>
+
+            <label asp-for="Password">
+                Password
+                <input type="password" asp-for="Password" placeholder="********" class="inputField" id="canedit"/>
+            </label>
+            <span asp-validation-for="Password" class="error"></span>
+            
+            <input type="hidden" asp-for="StudentID" />
+            <input type="hidden" asp-for="ConfirmPassword" />
+            <input type="hidden" asp-for="IsBlacklisted" />
+
+            <input type="submit" id="btnEditProfile" value="Save">
+    </form>
+    }
+
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</body>
+
+<script>
+
+function myFunction2() { 
+
+    var a = document.getElementsByTagName("input");
+
+    $(".field-validation-error").empty();
+
+    if (a[1].style.getPropertyValue('--editable')=="all") {
+        @* a[1].style.setProperty('background-color', 'red');  *@
+        a[1].style.setProperty('--editable', 'none');
+        a[2].style.setProperty('--editable', 'none');
+        a[3].style.setProperty('--editable', 'none');
+        a[1].style.setProperty('box-shadow', 'none');
+        a[2].style.setProperty('box-shadow', 'none');
+        a[3].style.setProperty('box-shadow', 'none');
+        document.getElementById("editButton").style.setProperty('background-color','inherit');
+        document.getElementById("editButton").style.setProperty('color','#db9ba9');
+
+        document.getElementById("btnEditProfile").style.setProperty('display','none');
+        document.getElementsByTagName("form").item(0).reset();
+    }
+    else {
+        /* a[1].style.setProperty('background-color', 'green'); */
+        a[1].style.setProperty('--editable', 'all');
+        a[2].style.setProperty('--editable', 'all');
+        a[3].style.setProperty('--editable', 'all');
+        a[1].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
+        a[2].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
+        a[3].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
+        document.getElementById("editButton").style.setProperty('background-color','#FCE5DF');
+        document.getElementById("editButton").style.setProperty('color','#4E2C0D');
+
+        document.getElementById("btnEditProfile").style.setProperty('display','block');
+    }
+}
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

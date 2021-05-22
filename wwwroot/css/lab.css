@@ -1,0 +1,347 @@
+.lab-name-contain {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    padding: 30px 0 30px 0;
+    border-bottom: 3px solid rgb(216, 216, 216);
+    box-shadow: 3px 2px 10px #c2c2c2
+}
+
+.lab-detail {
+    font-size: 1.5vw;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 15% 0;
+    padding: 0;
+    min-width: 100%;
+    text-align: justify;
+    /* background-color: orange; */
+}
+
+.lab-detail p {
+    margin: 5% 0% 5% 0%;
+    text-indent: 3.5vw;
+}
+
+.lab-detail-img {
+    border-radius: 45px;
+    width: 35vw;
+}
+
+.contain-lab-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2.5vw 0 5vw;
+}
+
+.lab-detail-str {
+    align-items: center;
+    margin: 0 5vw 0 2.5vw;
+    width: 60%;
+}
+
+.lab-element {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-bottom: 12vh;
+    font-size: 1.5vw;
+}
+
+figure {
+    align-items: center;
+    margin: auto;
+    width: 30vw;
+    margin: 0 2.5vw 0 5vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1.4vw;
+    /* background-color: aqua; */
+    height: fit-content;
+}
+
+figcaption {
+    font-size: 2vw;
+    border-radius: 1vw 1vw 0 0;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    padding: 0.5vw 0vw 0.5vw 0vw;
+    text-align: center;
+    margin: 0;
+    width: inherit;
+}
+
+.lab-img-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    border-radius: inherit;
+    margin: 0;
+}
+
+.lab-table-reserve p {
+    margin: 1vh;
+    height: fit-content;
+}
+
+.lab-table-reserve {
+    width: 100%;
+}
+
+.lab-table-reserve table {
+    width: 90%;
+    font-size: inherit;
+    /* overflow-y: scroll; */
+}
+
+.btn-add-reserve {
+    cursor: pointer;
+    text-align: center;
+    background-color: #FCE5DF;
+    color: #4E2C0D;
+    border-radius: 100%;
+    box-shadow: 0 2px 10px 0 rgba(36, 36, 36, 0.3);
+    font-size: 5vmin;
+    line-height: 3.5vmin;
+    height: 4vmin;
+    transition: 0.3s all;
+    width: 4vmin;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.btn-add-reserve:hover,
+.active {
+    transform: scale(1.2);
+    background-color: #4E2C0D;
+    color: #FCE5DF;
+}
+
+.btn-add-reserve::after {
+    content: "+";
+}
+
+.active::after {
+    content: "-";
+}
+input[type=number] {
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 3vmin;
+    width: 6vmin;
+    background: #fff;
+    border-radius: 2vmin;
+    border: none;
+    padding: 0;
+    outline: none;
+    text-align: center;
+    font-size: 1.8vmin;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    opacity: 50%;
+    color: #4E2C0D;
+    height: 3vmin;
+    cursor: pointer;
+    margin: 0;
+}
+
+
+
+.btn-reserve-confirm {
+    margin: auto;
+    background-color: #FCE5DF;
+    color: #4E2C0D;
+    height: 4.5vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    border: none;
+}
+
+/*Test*/
+
+.reserve-table {
+    border-spacing: 0px;
+    position: relative;
+    width: 40vw;
+}
+
+.reserve-table thead {
+    display: block;
+    height: 6vmin;
+    background-color: #FCE5DF;
+    border-radius: 2.5vmin 2.5vmin 0px 0px;
+}
+
+.reserve-table th {
+    height: inherit;
+    font-size: xx-large;
+    vertical-align: middle;
+    padding-left: 2.5vw;
+    text-align: left;
+}
+
+.reserve-table tbody {
+    display: block;
+    background-color: #FDF6ED;
+    height: fit-content;
+    max-height: 36vmin;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.reserve-table tfoot {
+    height: 6vmin;
+    display: block;
+    background-color: #FDF6ED;
+    border-radius: 0px 0px 2.5vmin 2.5vmin;
+}
+
+.reserve-table tr {
+    height: 6vmin;
+}
+
+.reserve-table td {
+    height: inherit;
+    font-size: large;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #4E2C0D;
+}
+
+.reserve-table tfoot td {
+    padding-left: 1vw;
+    width: inherit;
+    border-bottom: none;
+}
+
+.booking-calendar {
+    display: none;
+    width: 35vw;
+    border-spacing: 0;
+    position: relative;
+}
+
+.booking-calendar thead {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 0px 2.5vmin 0px 0px;
+}
+
+.booking-calendar tbody {
+    display: block;
+    background-color: #FDF6ED;
+    height: 30vmin;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.booking-calendar tfoot {
+    display: block;
+    background-color: #FCE5DF;
+    border-radius: 0px 0px 2.5vmin 2.5vmin;
+}
+
+.booking-calendar th {
+    height: 6vmin;
+    width: 5vw;
+    font-size: x-large;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.booking-calendar td {
+    height: 6vmin;
+    width: 5vw;
+    font-size: large;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #4E2C0D;
+}
+
+.booking-calendar tfoot td {
+    /* border-top: 1px solid #4E2C0D; */
+    border-bottom: none;
+}
+
+.booking-calendar th:first-child,
+.booking-calendar td:first-child {
+    width: 15vw;
+}
+
+.tableGridBox {
+    display: grid;
+    margin: auto;
+    height: 4vmin;
+}
+
+.tableGridBox .fa,
+.item-left {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    color: #4E2C0D;
+}
+
+.tableGridBox input {
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    height: 4vmin;
+    width: 4vmin;
+    z-index: 1;
+    opacity: 0%;
+}
+
+.tableGridBox:hover {
+    font-weight: 900;
+}
+
+.tableGridBox:hover .fa-check {
+    display: none;
+}
+
+.tableGridBox:not(:hover) .fa-times {
+    display: none;
+}
+
+.tableGridBox input:not(:checked)~.fa {
+    display: none;
+}
+
+.tableGridBox input:checked~.item-left {
+    display: none;
+}
+
+.tableGridBox input,
+.fa,
+.item-left {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+@media (max-width: 1344px) {
+    th {
+        font-size: large;
+    }
+    td {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    th {
+        font-size: small;
+    }
+    td {
+        font-size: x-small;
+    }
+}

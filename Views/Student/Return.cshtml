@@ -1,0 +1,66 @@
+@model IEnumerable<ozzy_mvc.Controllers.EquipmentInventory>
+
+@{
+    ViewData["Title"] = "Return Booked Item";
+}
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="styleSheet" href="~/css/equipment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<h1 style="position: absolute; left:50%; padding-top:5vmin; transform: translate(-50%,0)">Return Items</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th class="EquipmentName">
+                @Html.DisplayNameFor(model => model.EquipmentName)
+            </th>
+            <th class="LabName">
+                @Html.DisplayNameFor(model => model.LabName)
+            </th>
+            <th class="Date">
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th class="TimeSlot">
+                @Html.DisplayNameFor(model => model.TimeSlot)
+            </th>
+            <th class='Blank'></th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateStr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeSlot)
+            </td>
+            
+            <td>
+            <a asp-action="DeleteReturn" asp-route-id="@item.BookingID">Return</a> 
+            </td>
+            
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td style="width:45vw;"></td>
+            <td style="width:10vw;">
+                <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                    <button class="light">Back</button>
+                </a>
+            </td>
+        </tr>
+    </tfoot>
+</table>

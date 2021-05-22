@@ -25,9 +25,30 @@ namespace ozzy_mvc.Controllers
             return View(await _context.Equipment.ToListAsync());
         }
 
-        public async Task<IActionResult> Inventory()
+        public async Task<IActionResult> Inventory(Guid id)
         {
-            return View(await _context.Equipment.ToListAsync());
+
+            var query = from equipment in _context.Set<Equipment>()
+            join booking in _context.Set<Booking>()
+                on equipment.EquipmentID equals booking.EquipmentID
+            select new { equipment,booking };
+
+            var data = query.Select(x =>
+                new EquipmentInventory { EquipmentID = x.equipment.EquipmentID,
+                    EquipmentName = x.equipment.EquipmentName,
+                    EquipmentType = x.equipment.EquipmentType,
+                    Description = x.equipment.Description,
+                    LabName = x.equipment.LabName,
+                    TimeSlot = x.booking.TimeSlot,
+                    Date = x.booking.Date,
+                    DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
+                    StudentID = x.booking.StudentID
+                }
+            ).Where(i => i.StudentID == id).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
+            
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            return View(eq);
         }
 
         // GET: Equipment/Details/5
@@ -160,5 +181,19 @@ namespace ozzy_mvc.Controllers
         {
             return _context.Equipment.Any(e => e.EquipmentID == id);
         }
+    }
+
+    public class EquipmentInventory
+    {
+        public Guid EquipmentID { get; set; }
+        public String EquipmentName { get; set; }
+        public EquipmentType EquipmentType { get; set; }
+        public String Description { get; set; }
+        public Lab LabName  { get; set; }
+        public TimeSlot TimeSlot { get; set; }
+        public DateTime Date { get; set; }
+        public String DateStr { get; set; }
+        public Guid StudentID {get; set; }
+        public Guid BookingID {get; set; }
     }
 }

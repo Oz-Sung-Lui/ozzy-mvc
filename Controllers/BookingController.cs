@@ -22,7 +22,7 @@ namespace ozzy_mvc.Controllers
         // GET: Booking
         public async Task<IActionResult> Index()
         {
-            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment);
+            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
             return View(await ozzyMvcContext.ToListAsync());
         }
 
@@ -80,7 +80,8 @@ namespace ozzy_mvc.Controllers
 
                 foreach (Booking o in bookingList)
                 {
-                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot)
+                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot 
+                    && booking.StudentID == o.StudentID && booking.EquipmentID == o.EquipmentID)
                     {
                         ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
                         ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");

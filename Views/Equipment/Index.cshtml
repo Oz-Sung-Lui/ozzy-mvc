@@ -4,44 +4,65 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Equipment Management</h1>
+<!--
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EquipmentName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LabName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LabName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EquipmentID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EquipmentID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EquipmentID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+-->
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="StyleSheet" href="~/css/admin.css" />
+</head>
+
+<div class="banner">
+    Equipment Management
+</div>
+
+<button style="margin-bottom: 1vw;">
+    <a asp-action="Create">Create Item</a>
+</button>
+
+<div class="contain-std-table">
+    <table class="std-table">
+        <thead class="std-thead">
+            <tr>
+                <th style="width: 15vw;">
+                    @Html.DisplayNameFor(model => model.EquipmentName)
+                </th>
+                <th style="width: 6vw;">
+                    @Html.DisplayNameFor(model => model.EquipmentType)
+                </th>
+                @* <th style="width: 15vw;">
+                    @Html.DisplayNameFor(model => model.Description)
+                </th> *@
+                <th style="width: 6vw;">
+                    @Html.DisplayNameFor(model => model.LabName)
+                </th>
+                <th style="width: 8vw;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EquipmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EquipmentType)
+                    </td>
+                    @* <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td> *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LabName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EquipmentID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.EquipmentID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.EquipmentID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

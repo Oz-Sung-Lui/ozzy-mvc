@@ -151,5 +151,75 @@ namespace ozzy_mvc.Controllers
         {
             return _context.Student.Any(e => e.StudentID == id);
         }
+        public async Task<IActionResult> Cancel(Guid id)
+        {
+
+            var query = from equipment in _context.Set<Equipment>()
+            join booking in _context.Set<Booking>()
+                on equipment.EquipmentID equals booking.EquipmentID
+            select new { equipment,booking };
+
+            var data = query.Select(x =>
+                new EquipmentInventory { EquipmentID = x.equipment.EquipmentID,
+                    EquipmentName = x.equipment.EquipmentName,
+                    EquipmentType = x.equipment.EquipmentType,
+                    Description = x.equipment.Description,
+                    LabName = x.equipment.LabName,
+                    TimeSlot = x.booking.TimeSlot,
+                    Date = x.booking.Date,
+                    DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
+                    StudentID = x.booking.StudentID,
+                    BookingID = x.booking.BookingID
+                }
+            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
+            
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            return View(eq);
+        }
+
+        public async Task<IActionResult> Return(Guid id)
+        {
+
+            var query = from equipment in _context.Set<Equipment>()
+            join booking in _context.Set<Booking>()
+                on equipment.EquipmentID equals booking.EquipmentID
+            select new { equipment,booking };
+
+
+            var data = query.Select(x =>
+                new EquipmentInventory { EquipmentID = x.equipment.EquipmentID,
+                    EquipmentName = x.equipment.EquipmentName,
+                    EquipmentType = x.equipment.EquipmentType,
+                    Description = x.equipment.Description,
+                    LabName = x.equipment.LabName,
+                    TimeSlot = x.booking.TimeSlot,
+                    Date = x.booking.Date,
+                    DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
+                    StudentID = x.booking.StudentID,
+                    BookingID = x.booking.BookingID
+                }
+            ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
+            
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            return View(eq);
+        }
+
+        public async Task<IActionResult> DeleteReturn(Guid id)
+        {
+            var booking = await _context.Booking.FindAsync(id);
+            _context.Booking.Remove(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Return), new {id = booking.StudentID});
+        }
+        
+        public async Task<IActionResult> DeleteCancel(Guid id)
+        {
+            var booking = await _context.Booking.FindAsync(id);
+            _context.Booking.Remove(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Cancel), new {id = booking.StudentID});
+        }
     }
 }

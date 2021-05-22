@@ -3,16 +3,86 @@ for details on configuring this project to bundle and minify static web assets. 
 @font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
 
 a {
-    color: rgb(255, 0, 255);
+    font-weight: bold;
+    color: #4E2C0D;
 }
 
-input, button {
+
+/* ============================= BUTTON ============================ */
+
+button , input[type=submit]{
     font-family: inherit;
     font-size: inherit;
+    position: relative;
+    font-weight:800;
+    background: #FCE5DF;
+    color: #4E2C0D;
+    width: 18vmin;
+    height: 4.5vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    border: none;
 }
+
+button:hover{
+    box-shadow: 0px 0px 2px 2px #4E2C0D;
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+button.light, input.light{
+    background: #FDF6ED;
+    color: #4E2C0D;
+}
+
+button.dark{
+    background: #4E2C0D;
+    color: #FDF6ED;
+}
+
+/* ============================= BUTTON ============================ */
+
+/* ======================= INPUT (TextField) ======================= */
+
+input[type=text] ,input[type=password]{
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 5vmin;
+    width: 27.5vmin;
+    background: #fff;
+    border-radius: 20vmin;
+    border: 1px solid #fff;
+    padding: 0 0 0 7%;
+    outline: none;
+    font-size: 1.8vmin;
+}
+
+input:focus {
+    box-shadow: 0px 0px 2px 2px #88490e !important;
+}
+
+/* ------------------ ERROR INPUT ------------------ */
+.field-validation-error {
+    color: red !important;
+    font-size: 1.4vmin;
+}
+
+.input-validation-error {
+    color: red !important;
+    font-size: 1.4vmin;
+    box-shadow: 0 0 3pt 1pt red !important;
+}
+/* ------------------ ERROR INPUT ------------------ */
+
+/* ======================= INPUT (TextField) ======================= */
 
 html {
     font-family: Kanit;
+    color: #4E2C0D;
     min-width: 100%;
     min-height: 100%;
     font-size: medium;
@@ -30,21 +100,20 @@ body {
     height: fit-content;
 }
 
-button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
-}
+
 
 /* ============================ NAV BAR ============================ */
 
 nav {
+    --enable: #684933;
     z-index: 5;
     position: sticky;
-    background-color: #333;
+    background-color: #42260c;
     color: white; 
-    height: 5.1vmin;
+    height: 5vmin;
     top: 0;
     width: 100%;
+    border: none;
 }
 
 nav ul {
@@ -53,20 +122,23 @@ nav ul {
     padding: 0;
     overflow: hidden;
     color: white;
+    
 }
 
 nav li {
     float: left;
 }
 
-nav li:hover{
-    background-color: red;  
-    height: 5.1vmin;
+nav li a:hover, #dropdown:hover {
+    background-color: #88490e;  
+    height: 5vmin;
 }
 
-nav li a, .dropbtn {
+nav li a, .dropbtn, .user-button {
+    cursor: default;
     display: block;
     color: white;
+    font-weight: bold;
     text-align: center;
     padding: 0 1.3vmin 0 1.3vmin;
     /* margin: 1.3vmin; */
@@ -74,61 +146,113 @@ nav li a, .dropbtn {
     border: none;
     outline: none;
     background-color: inherit;
-    line-height: 5vh;
+    line-height: 5vmin;
 }
 
-/*************** WHEN HOVER DROPDOWN ***************/
-.dropdown:hover .dropdown-content {
+/* -------------- WHEN HOVER DROPDOWN -------------- */
+.dropdown:hover[general] .dropdown-content {
     display: block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 18vmin;
+    background-color: #FDF6ED;
+    min-width: 15vmin;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-  
+
 .dropdown-content a {
     float: block;
-    color: black;
+    color: #4E2C0D;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-    line-height: 2.5vh;
+    line-height: 2.5vmin;
 }
   
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #f0cc9d;
+    height: inherit;
 }
-/*************** WHEN HOVER DROPDOWN ***************/
+/* -------------- WHEN HOVER DROPDOWN -------------- */
+
+/* ----------- USER BUTTON (NEED CLICK) ------------ */
+.dropdown-content-user-button {
+    display: block;
+}
+
+.user-button {
+    display: flex;
+    justify-content: flex-end;
+    margin:  0;
+    padding: 0 0 0 5%;
+    width: max-content;
+    height: 5vmin;
+    background-color: var(--enable);
+    border-radius: 5vh 0 0 5vh;
+    cursor: pointer;
+}
+.user-button:hover {
+    background-color: #88490e;
+}
+
+.profile-picture {
+    background-position-y: center;
+    margin : 3% 0 0 0;
+    line-height: 4vmin;
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 5vh;
+    bottom: 0%;
+    color: #88490e;
+    background-color: #f0cc9d;
+    font-size: 2.2vh;
+}
+
+.dropdown-content[notgeneral] {
+    right: 0;
+    min-width: 12.5vmin;
+}
+/* ----------- USER BUTTON (NEED CLICK) ------------ */
 
 /* ============================ NAV BAR ============================ */
 
-.banner, .lab-banner {
+.banner{
     position: relative;
     text-align: center;
     height: 8vw;
     font-size: 5vw;
     padding: 0;
-    margin: 0;
-    background-color: yellow;
+    margin: auto;
+    color:#4E2C0DD0;
+    width: 100%;
+    background-image: radial-gradient(#ffd5cb,#fdccc0, #FDF6ED, #FFFFFF,  #FFFFFF);
+    /* box-shadow: 0px 0px 5px 5px rgb(190, 190, 190); */
 }
 
-.lab-banner {
-    background-color: rgb(0, 225, 255);
-}
-
-.container {
+main {
     position: relative;
     width: 100%;
-    min-height: 85vmin;
+    min-height: 95vmin;
     height: fit-content;
     min-width: 100%;
     padding: 0;
     margin: 0;
+}
+
+main.withfooter{
+    min-height: 85vmin;
+}
+
+main.fitscreen{
+    height: 95vmin;
+}
+
+
+tbody::-webkit-scrollbar {
+    display: none;
 }
 
 /* ============================ FOOTER ============================ */
@@ -137,17 +261,18 @@ footer {
     /* background-color: orangered; */
     text-align: center;
     position: relative;
-    border-color: red;
+    color : #4E2C0D;
+    border-color:rgb(194, 194, 194);
     border-top-style: solid;
     border-width: 0.2vmin;
     padding: 1.3vmin 0vmin 0vmin 0vmin;
-    height: 8.4vmin;
+    height: 8.5vmin;
     width: 100%;
     line-height: 120%;
     font-size: 0.9em;
 }
 
-footer h2{
+footer h2 {
     margin: 0;
     padding: 0;
 }

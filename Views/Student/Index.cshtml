@@ -4,56 +4,74 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Student Management</h1>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="StyleSheet" href="~/css/admin.css" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Firstname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lastname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsBlacklisted)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Firstname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lastname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsBlacklisted)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+</head>
+
+<div class="banner">
+    Student Management
+</div>
+
+<button style="margin-bottom: 1vw;">
+    <a asp-action="Create">Create Account</a>
+</button>
+
+<div class="contain-std-table">
+    <table class="std-table">
+        <thead class="std-thead">
+            <tr>
+                <th style="width: 15vw;">
+                    @Html.DisplayNameFor(model => model.StudentID)
+                </th>
+                <th style="width: 6vw;">
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th style="width: 6vw;">
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </th>
+                <th style="width: 7vw;">
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </th>
+                <th style="width: 6vw;">
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th style="width: 6vw;">
+                    @Html.DisplayNameFor(model => model.IsBlacklisted)
+                </th>
+                <th style="width: 6vw;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>   
+                        @Html.CheckBoxFor(modelItem => item.IsBlacklisted)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

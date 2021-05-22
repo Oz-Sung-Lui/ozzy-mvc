@@ -3,8 +3,8 @@
         <li>
             <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </li>
-        <li class="dropdown">
-            <button class="dropbtn">LAB</button>
+        <li class="dropdown" id="dropdown" general="">
+            <div class="dropbtn">LAB</div>
             <div class="dropdown-content">
                 <a asp-area="" asp-controller="Lab" asp-action="Hardware">Hardware</a>
                 <a asp-area="" asp-controller="Lab" asp-action="HCRL">HCRL</a>
@@ -12,21 +12,48 @@
                 <a asp-area="" asp-controller="Lab" asp-action="ESL">ESL</a>
                 <a asp-area="" asp-controller="Lab" asp-action="Network">Network</a>
             </div>
-        <li>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
         </li>
-        <li>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="Index">Booking</a>
+            <a asp-area="" asp-controller="Home" asp-action="Admin"><li class="dropdown" id="dropdown" general="">
+                <div class="dropbtn">Admin Panel</div>
+                <div class="dropdown-content">
+                    Admin Tools
+                    <a asp-area="" asp-controller="Student" asp-action="Index">Student</a>
+                    <a asp-area="" asp-controller="Booking" asp-action="Index">Booking</a>
+                    <a asp-area="" asp-controller="Equipment" asp-action="Index">Equipment</a>
+                </div>
+            </a>
         </li>
-        <li>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Equipment" asp-action="Index">Equipment</a>
-        </li>       
-        <li style="float:right">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Logout">@Context.Request.Cookies["CurrentUsername"] Logout</a>
+        <li class="dropdown" style="float: right;">
+            <button class="user-button" onclick="myFunction()">
+                <div class="profile-picture">
+                    @Context.Request.Cookies["CurrentUsername"].Substring(0,1)
+                </div>
+                &emsp; @Context.Request.Cookies["CurrentUsername"] &emsp;
+            </button>
+            <div class="dropdown-content" id="myDropdown" notgeneral="">
+                <a asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
+            </div>         
         </li>
     </ul>
 </nav>
 
+<script>
+function myFunction() { 
+    document.getElementById("myDropdown").classList.toggle("dropdown-content-user-button"); //TOGGLE BUTTON
+    document.querySelector('nav').style.setProperty('--enable', '#88490e');   //CHANGE COLOR TO #88490e WHEN ACTIVE
+}
+    
+window.onclick = function(e) {
+    if (!e.target.matches('.user-button')) {
+        if (document.getElementById("myDropdown").classList.contains('dropdown-content-user-button')) {
+            document.getElementById("myDropdown").classList.remove('dropdown-content-user-button');
+        }   //Close the dropdown if the user clicks outside of it
+    }
+    if (!document.getElementById("myDropdown").classList.contains('dropdown-content-user-button')) {
+        document.querySelector('nav').style.setProperty('--enable', '#684933');   
+    }   //CHANGE COLOR BACK (#684933) WHEN NOT ACTIVE
+}
+</script>
 
 @* <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">

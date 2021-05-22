@@ -10,7 +10,6 @@ img {
 }
 
 img:hover {
-    box-shadow: 0 0 10px rgba(77, 29, 2, 0.5);
     transition: 0.3s;
 }
 
@@ -29,6 +28,7 @@ img:hover {
 }
 
 .caption-lab:hover {
+    box-shadow: 0 0 5px 5px #f0cc9d;
     background-color: rgba(0, 0, 0, 0);
     color:rgba(0, 0, 0, 0);
     transition: 0.3s;
@@ -72,12 +72,12 @@ img:hover {
     /* display: flex; */
     text-align: center;
     align-items: center;
-    background-color: #fff;
-    color: #3d414a;
+    background-color: #FCE5DF;
+    color: #4E2C0D;
     border-radius: 100%;
     box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
     font-size: 1.5vw;
-    line-height: 2.7vw;
+    line-height: 3vw;
     height: 3vw;
     justify-content: center;
     transition: 0.3s all;
@@ -88,8 +88,8 @@ img:hover {
 
 .carousel__control:hover {
     transform: scale(1.2);
-    background-color: #3d414a;
-    color: rgba(255, 255, 255, 0.705);
+    background-color: #4E2C0D;
+    color: #FCE5DF;
 }
 
 .carousel__activator:nth-of-type(1):checked~.carousel__controls:nth-of-type(1) {
@@ -210,7 +210,7 @@ img:hover {
 }
 
 .demo-content {
-    color: #fff;
+    color: #FDF6ED;
     display: flex;
     font-weight: 100;
     align-items: center;

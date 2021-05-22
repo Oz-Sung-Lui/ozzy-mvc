@@ -1,7 +1,7 @@
 @model IEnumerable<ozzy_mvc.Controllers.EquipmentInventory>
 
 @{
-    ViewData["Title"] = "Inventory";
+    ViewData["Title"] = "Cancel";
 }
 
 <head>
@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<h1 style="position: absolute; left:50%; padding-top:5vmin; transform: translate(-50%,0)">Inventory</h1>
+<h1 style="position: absolute; left:50%; padding-top:5vmin; transform: translate(-50%,0)">Cancel Booking</h1>
 
-<table>  
+<table>
     <thead>
         <tr>
-            <th class='EquipmentName'>
+            <th class="EquipmentName">
                 @Html.DisplayNameFor(model => model.EquipmentName)
             </th>
-            <th class='LabName'>
+            <th class="LabName">
                 @Html.DisplayNameFor(model => model.LabName)
             </th>
-            <th class='Date'>
+            <th class="Date">
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th class='TimeSlot'>
+            <th class="TimeSlot">
                 @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
         </tr>
@@ -44,6 +44,28 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.TimeSlot)
                 </td>
+                @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
+                @* <td>
+                    <div class="tableGridBox">
+                        <input type="checkbox"> 
+                        <i class="fa fa-trash-o"></i>
+                    </div>
+                </td>
+                <td>
+                    <div class="tableGridBox">
+                        <input type="checkbox"> 
+                        <i class="fa fa-trash-o"></i>
+                    </div>
+                </td>
+                <td>
+                    <div class="tableGridBox">
+                        <input type="checkbox">
+                        <i class="fa fa-trash-o"></i>
+                    </div>
+                </td> *@
+                <td>
+                <a asp-action="DeleteCancel" asp-route-id="@item.BookingID">Cancel</a> 
+                </td>
             </tr>
         }
     </tbody>
@@ -51,13 +73,8 @@
         <tr>
             <td style="width:55vw;"></td>
             <td style="width:10vw;">
-                <a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Return Item</button>
-                </a>
-            </td>
-            <td style="width:10vw;">
-                <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Cancel Book</button>
+                <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
+                    <button class="light">Back</button>
                 </a>
             </td>
         </tr>
