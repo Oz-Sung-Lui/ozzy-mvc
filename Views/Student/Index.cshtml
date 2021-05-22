@@ -14,9 +14,10 @@
     Student Management
 </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<button style="margin-bottom: 1vw;">
+    <a asp-action="Create">Create Account</a>
+</button>
+
 <div class="contain-std-table">
     <table class="std-table">
         <thead class="std-thead">
@@ -60,8 +61,8 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Password)
-                    </td  >
-                    <td>   
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.IsBlacklisted)
                     </td>
                     <td>
@@ -71,5 +72,6 @@
                 </tr>
             }
         </tbody>
+
     </table>
 </div>
