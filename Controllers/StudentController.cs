@@ -213,5 +213,13 @@ namespace ozzy_mvc.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Return), new {id = booking.StudentID});
         }
+        
+        public async Task<IActionResult> DeleteCancel(Guid id)
+        {
+            var booking = await _context.Booking.FindAsync(id);
+            _context.Booking.Remove(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Cancel), new {id = booking.StudentID});
+        }
     }
 }
