@@ -100,6 +100,7 @@ figcaption {
     /* overflow-y: scroll; */
 }
 
+
 /*
 
 td {
@@ -128,164 +129,20 @@ thead {
     font-weight: 600;
 }
 
-.btn-add-reserve:hover ,.active{
+.btn-add-reserve:hover,
+.active {
     transform: scale(1.2);
     background-color: #4E2C0D;
     color: #FCE5DF;
 }
 
 .btn-add-reserve::after {
-    content : "+";
+    content: "+";
 }
 
 .active::after {
-    content : "-";
+    content: "-";
 }
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-}
-
-
-/* Modal Content */
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-
-/* The Close Button */
-
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.table-calendar {
-    width: 90%;
-    font-size: 1vw;
-    background-color: aquamarine;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-form {
-    margin : auto;
-}
-
-.value-button {
-    display: inline-block;
-    border: 1px solid #ddd;
-    margin: 0px;
-    width: 40px;
-    height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 11px 0;
-    background: #eee;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.value-button:hover {
-    cursor: pointer;
-}
-
-form #decrease {
-    margin-right: -4px;
-    border-radius: 8px 0 0 8px;
-}
-
-form #increase {
-    margin-left: -4px;
-    border-radius: 0 8px 8px 0;
-}
-
-form #input-wrap {
-    margin: 0px;
-    padding: 0px;
-}
-
-input[type=number] {
-    font-family: inherit;
-    font-size: inherit;
-    color: #4E2C0D;
-    height: 3vmin;
-    width: 6vmin;
-    background: #fff;
-    border-radius: 2vmin;
-    border: none;
-    padding: 0;
-    outline: none;
-    text-align: center;
-    font-size: 1.8vmin;
-}
-
-
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{
-    opacity: 50%;
-    color: #4E2C0D;
-    height: 3vmin;
-    cursor: pointer;
-    margin: 0;
-}
-
-
-
-.btn-reserve-confirm {
-    margin: auto;
-    background-color: #FCE5DF;
-    color: #4E2C0D;
-    height: 4.5vmin;
-    font-size: 2vmin;
-    border-radius: 3vmin;
-    border: none;
-}
-
-.reserve-foot {
-    display: flex;
-    justify-content: flex-end;
-}
-
 
 
 /*Test*/
@@ -295,7 +152,6 @@ input[type=number]::-webkit-outer-spin-button{
     position: relative;
     width: 40vw;
 }
-
 
 .reserve-table thead {
     display: block;
@@ -311,7 +167,6 @@ input[type=number]::-webkit-outer-spin-button{
     padding-left: 2.5vw;
     text-align: left;
 }
-
 
 .reserve-table tbody {
     display: block;
@@ -341,12 +196,11 @@ input[type=number]::-webkit-outer-spin-button{
     border-bottom: 1px solid #4E2C0D;
 }
 
-.reserve-table tfoot td{
+.reserve-table tfoot td {
     padding-left: 1vw;
     width: inherit;
     border-bottom: none;
 }
-
 
 .booking-calendar {
     display: none;
@@ -354,7 +208,6 @@ input[type=number]::-webkit-outer-spin-button{
     border-spacing: 0;
     position: relative;
 }
-
 
 .booking-calendar thead {
     display: block;
@@ -370,8 +223,7 @@ input[type=number]::-webkit-outer-spin-button{
     overflow-x: hidden;
 }
 
-
-.booking-calendar  tfoot {
+.booking-calendar tfoot {
     display: block;
     background-color: #FCE5DF;
     border-radius: 0px 0px 2.5vmin 2.5vmin;
@@ -394,12 +246,13 @@ input[type=number]::-webkit-outer-spin-button{
     border-bottom: 1px solid #4E2C0D;
 }
 
-.booking-calendar tfoot td{
+.booking-calendar tfoot td {
     /* border-top: 1px solid #4E2C0D; */
     border-bottom: none;
 }
 
-.booking-calendar th:first-child,.booking-calendar td:first-child{
+.booking-calendar th:first-child,
+.booking-calendar td:first-child {
     width: 15vw;
 }
 
@@ -409,13 +262,13 @@ input[type=number]::-webkit-outer-spin-button{
     height: 4vmin;
 }
 
-.tableGridBox .fa ,.item-left{
+.tableGridBox .fa,
+.item-left {
     margin: auto;
     position: relative;
     text-align: center;
     color: #4E2C0D;
 }
-
 
 .tableGridBox input {
     margin: auto;
@@ -427,15 +280,15 @@ input[type=number]::-webkit-outer-spin-button{
     opacity: 0%;
 }
 
-.tableGridBox:hover{
+.tableGridBox:hover {
     font-weight: 900;
 }
 
-.tableGridBox:hover .fa-check{
+.tableGridBox:hover .fa-check {
     display: none;
 }
 
-.tableGridBox:not(:hover) .fa-times{
+.tableGridBox:not(:hover) .fa-times {
     display: none;
 }
 
@@ -443,18 +296,20 @@ input[type=number]::-webkit-outer-spin-button{
     display: none;
 }
 
-.tableGridBox  input:checked~.item-left{
+.tableGridBox input:checked~.item-left {
     display: none;
 }
 
-.tableGridBox input,.fa,.item-left{
+.tableGridBox input,
+.fa,
+.item-left {
     grid-row: 1;
     grid-column: 1;
 }
 
 @media (max-width: 1344px) {
     th {
-        font-size: large ; 
+        font-size: large;
     }
     td {
         font-size: medium;
