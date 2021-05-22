@@ -45,14 +45,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TimeSlot)
             </td>
-            @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
+            
             <td>
-                <div class="tableGridBox">
-                    <a asp-area="" asp-controller="Booking" asp-action="Delete" asp-route-id="@item.BookingID">
-                    <i class="fa fa-reply"></i>
-                    </a>
-                </div>
+            <a asp-action="DeleteReturn" asp-route-id="@item.BookingID">Return</a> 
             </td>
+            
         </tr>
     }
     </tbody>

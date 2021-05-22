@@ -206,5 +206,12 @@ namespace ozzy_mvc.Controllers
             return View(eq);
         }
 
+        public async Task<IActionResult> DeleteReturn(Guid id)
+        {
+            var booking = await _context.Booking.FindAsync(id);
+            _context.Booking.Remove(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Return), new {id = booking.StudentID});
+        }
     }
 }
