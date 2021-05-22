@@ -194,5 +194,6 @@ namespace ozzy_mvc.Controllers
         public DateTime Date { get; set; }
         public String DateStr { get; set; }
         public Guid StudentID {get; set; }
+        public Guid BookingID {get; set; }
     }
 }

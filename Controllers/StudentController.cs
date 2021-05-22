@@ -168,7 +168,8 @@ namespace ozzy_mvc.Controllers
                     TimeSlot = x.booking.TimeSlot,
                     Date = x.booking.Date,
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
-                    StudentID = x.booking.StudentID
+                    StudentID = x.booking.StudentID,
+                    BookingID = x.booking.BookingID
                 }
             ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
             
@@ -195,7 +196,8 @@ namespace ozzy_mvc.Controllers
                     TimeSlot = x.booking.TimeSlot,
                     Date = x.booking.Date,
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
-                    StudentID = x.booking.StudentID
+                    StudentID = x.booking.StudentID,
+                    BookingID = x.booking.BookingID
                 }
             ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
             

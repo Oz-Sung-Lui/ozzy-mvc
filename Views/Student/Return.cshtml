@@ -48,8 +48,9 @@
             @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
             <td>
                 <div class="tableGridBox">
-                    <input type="checkbox"> 
+                    <a asp-area="" asp-controller="Booking" asp-action="Delete" asp-route-id="@item.BookingID">
                     <i class="fa fa-reply"></i>
+                    </a>
                 </div>
             </td>
         </tr>
@@ -61,11 +62,6 @@
             <td style="width:10vw;">
                 <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
                     <button class="light">Back</button>
-                </a>
-            </td>
-            <td style="width:10vw;">
-                <a asp-area="" asp-controller="Student" asp-action="Return" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Return Item</button>
                 </a>
             </td>
         </tr>
