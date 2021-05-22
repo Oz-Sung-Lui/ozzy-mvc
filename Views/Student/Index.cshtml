@@ -62,8 +62,8 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Password)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsBlacklisted)
+                    <td>   
+                        @Html.CheckBoxFor(modelItem => item.IsBlacklisted)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
