@@ -170,7 +170,7 @@ namespace ozzy_mvc.Controllers
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
                     StudentID = x.booking.StudentID
                 }
-            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now);
+            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
@@ -197,7 +197,7 @@ namespace ozzy_mvc.Controllers
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
                     StudentID = x.booking.StudentID
                 }
-            ).Where(i => i.StudentID == id && i.Date < DateTime.Now);
+            ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 

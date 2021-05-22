@@ -27,15 +27,6 @@
             <th class="TimeSlot">
                 @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
-            <th class='Morning'>
-                Morn
-            </th>
-            <th class='Afternoon'>
-                Noon
-            </th>
-            <th class='Evening'>
-                Night
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -54,24 +45,6 @@
                     @Html.DisplayFor(modelItem => item.TimeSlot)
                 </td>
                 @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
-                <td>
-                    <div class="tableGridBox">
-                    <input type="checkbox"> 
-                    <i class="fa fa-trash-o"></i>
-                </div>
-                </td>
-                <td>
-                    <div class="tableGridBox">
-                    <input type="checkbox"> 
-                    <i class="fa fa-trash-o"></i>
-                </div>
-                </td>
-                <td>
-                    <div class="tableGridBox">
-                    <input type="checkbox">
-                    <i class="fa fa-trash-o"></i>
-                </div>
-                </td>
             </tr>
         }
     </tbody>
