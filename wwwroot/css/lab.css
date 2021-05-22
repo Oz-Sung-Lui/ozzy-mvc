@@ -100,19 +100,6 @@ figcaption {
     /* overflow-y: scroll; */
 }
 
-
-/*
-
-td {
-    text-align: center;
-}
-
-thead {
-    font-size: 1.25vw;
-}
-
-*/
-
 .btn-add-reserve {
     cursor: pointer;
     text-align: center;
@@ -143,7 +130,6 @@ thead {
 .active::after {
     content: "-";
 }
-
 input[type=number] {
     font-family: inherit;
     font-size: inherit;
@@ -160,13 +146,15 @@ input[type=number] {
 }
 
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-outer-spin-button{
     opacity: 50%;
     color: #4E2C0D;
     height: 3vmin;
     cursor: pointer;
     margin: 0;
 }
+
+
 
 .btn-reserve-confirm {
     margin: auto;
@@ -177,7 +165,6 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 3vmin;
     border: none;
 }
-
 
 /*Test*/
 
