@@ -144,6 +144,40 @@ thead {
     content: "-";
 }
 
+input[type=number] {
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 3vmin;
+    width: 6vmin;
+    background: #fff;
+    border-radius: 2vmin;
+    border: none;
+    padding: 0;
+    outline: none;
+    text-align: center;
+    font-size: 1.8vmin;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 50%;
+    color: #4E2C0D;
+    height: 3vmin;
+    cursor: pointer;
+    margin: 0;
+}
+
+.btn-reserve-confirm {
+    margin: auto;
+    background-color: #FCE5DF;
+    color: #4E2C0D;
+    height: 4.5vmin;
+    font-size: 2vmin;
+    border-radius: 3vmin;
+    border: none;
+}
+
 
 /*Test*/
 
