@@ -27,15 +27,6 @@
             <th class="TimeSlot">
                 @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
-            <th class='Morning'>
-                Morn
-            </th>
-            <th class='Afternoon'>
-                Noon
-            </th>
-            <th class='Evening'>
-                Night
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -54,7 +45,7 @@
                     @Html.DisplayFor(modelItem => item.TimeSlot)
                 </td>
                 @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
-                <td>
+                @* <td>
                     <div class="tableGridBox">
                         <input type="checkbox"> 
                         <i class="fa fa-trash-o"></i>
@@ -71,6 +62,9 @@
                         <input type="checkbox">
                         <i class="fa fa-trash-o"></i>
                     </div>
+                </td> *@
+                <td>
+                <a asp-action="DeleteCancel" asp-route-id="@item.BookingID">Cancel</a> 
                 </td>
             </tr>
         }
@@ -81,11 +75,6 @@
             <td style="width:10vw;">
                 <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
                     <button class="light">Back</button>
-                </a>
-            </td>
-            <td style="width:10vw;">
-                <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Cancel Book</button>
                 </a>
             </td>
         </tr>
