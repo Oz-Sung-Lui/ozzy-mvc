@@ -171,7 +171,7 @@ namespace ozzy_mvc.Controllers
                     StudentID = x.booking.StudentID,
                     BookingID = x.booking.BookingID
                 }
-            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
+            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
@@ -199,7 +199,7 @@ namespace ozzy_mvc.Controllers
                     StudentID = x.booking.StudentID,
                     BookingID = x.booking.BookingID
                 }
-            ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.Date).ThenBy(i => i.EquipmentName);
+            ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
