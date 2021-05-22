@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
+
 <h1>Equipment Management</h1>
 
 <p>
@@ -16,9 +17,14 @@
                 @Html.DisplayNameFor(model => model.EquipmentName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LabName)
+                @Html.DisplayNameFor(model => model.EquipmentType)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.LabName)
+            </th>
         </tr>
     </thead>
     <tbody>
