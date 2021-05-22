@@ -100,19 +100,6 @@ figcaption {
     /* overflow-y: scroll; */
 }
 
-
-/*
-
-td {
-    text-align: center;
-}
-
-thead {
-    font-size: 1.25vw;
-}
-
-*/
-
 .btn-add-reserve {
     cursor: pointer;
     text-align: center;

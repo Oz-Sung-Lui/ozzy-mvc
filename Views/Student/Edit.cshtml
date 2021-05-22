@@ -28,10 +28,48 @@
         @Context.Request.Cookies["CurrentUsername"].Substring(0,1)
     </div>
 
+    @if(Context.Request.Cookies["CurrentUsername"] == "admin"){
     <form asp-action="Edit" id="test">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
 
-            @* <input type="hidden" asp-for="StudentID" /> *@
+            <label>
+                Username
+                <input asp-for="Username" class="inputField" readonly="True"/>
+            </label>
+            <span asp-validation-for="Username" class="error"></span>
+
+            <label>
+                Firstname
+                <input asp-for="Firstname" class="inputField" id="canedit"/>
+            </label>
+            <span asp-validation-for="Firstname" class="error"></span>
+
+            <label>
+                Lastname
+                <input asp-for="Lastname" class="inputField tr" id="canedit"/>
+            </label>
+            <span asp-validation-for="Lastname" class="error"></span>
+
+            <input type="hidden" asp-for="Password"/>
+            
+            <input type="hidden" asp-for="StudentID" />
+            <input type="hidden" asp-for="ConfirmPassword" />
+
+            <label>
+                @Html.DisplayNameFor(model => model.IsBlacklisted)
+                <input class="form-check-input" asp-for="IsBlacklisted" />
+            </label>
+
+            <input type="submit" id="btnEditProfile" value="Save">
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div> 
+    </form>
+    }
+    else{
+        <form asp-action="Edit" id="test">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
 
             <label asp-for="Username">
                 Username
@@ -56,20 +94,14 @@
                 <input type="password" asp-for="Password" placeholder="********" class="inputField" id="canedit"/>
             </label>
             <span asp-validation-for="Password" class="error"></span>
-
-            <button type="submit" id="btnEditProfile">Save</button>
             
+            <input type="hidden" asp-for="StudentID" />
+            <input type="hidden" asp-for="ConfirmPassword" />
+            <input type="hidden" asp-for="IsBlacklisted" />
 
-            @if (Context.Request.Cookies["CurrentUsername"] == "admin")
-            {
-            <input class="form-check-input" asp-for="IsBlacklisted" /> @Html.DisplayNameFor(model => model.IsBlacklisted)
-            }
-
-            @*
-            <div>
-                <a asp-action="Index">Back to List</a>
-            </div> *@
+            <input type="submit" id="btnEditProfile" value="Save">
     </form>
+    }
 
 </div>
 
@@ -83,8 +115,8 @@ function myFunction2() {
 
     $(".field-validation-error").empty();
 
-    if (document.getElementById("canedit").style.getPropertyValue('--editable')=="all") {
-        @* a[1].style.setProperty('background-color', 'red');  *@
+    if (a[1].style.getPropertyValue('--editable')=="all") {
+        /*a[1].style.setProperty('background-color', 'red'); */
         a[1].style.setProperty('--editable', 'none');
         a[2].style.setProperty('--editable', 'none');
         a[3].style.setProperty('--editable', 'none');
@@ -98,7 +130,7 @@ function myFunction2() {
         document.getElementsByTagName("form").item(0).reset();
     }
     else {
-        @* a[1].style.setProperty('background-color', 'green'); *@
+        /* a[1].style.setProperty('background-color', 'green'); */
         a[1].style.setProperty('--editable', 'all');
         a[2].style.setProperty('--editable', 'all');
         a[3].style.setProperty('--editable', 'all');
