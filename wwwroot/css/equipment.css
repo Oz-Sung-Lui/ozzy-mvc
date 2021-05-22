@@ -26,15 +26,10 @@ tfoot {
     border-radius: 0px 0px 2.5vmin 2.5vmin;
 }
 
-tbody::-webkit-scrollbar {
-    display: none;
-}
-
 th {
     height: 6vmin;
     font-size: x-large;
     vertical-align: middle;
-    text-align: center;
 }
 
 td {
