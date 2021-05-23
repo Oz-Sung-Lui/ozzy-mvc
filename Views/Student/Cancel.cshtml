@@ -27,34 +27,127 @@
             <th class="TimeSlot">
                 @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
-            <th class='Morning'>
-                Morn
-            </th>
-            <th class='Afternoon'>
-                Noon
-            </th>
-            <th class='Evening'>
-                Night
-            </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EquipmentName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LabName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateStr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeSlot)
-                </td>
-                @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
-                <td>
+        @{
+            int init = 0;
+            string lastItem = "";
+            object lastlabName = null;
+            string lastDate = "";
+            object lastTimeSlot = null;
+            Guid lastBookingID = new Guid();
+            List<string> timeSlotCache = new List<string>();
+            List<Guid> bookingIdCache = new List<Guid>();
+            IDictionary<string , Guid> BookingTime = new Dictionary<string, Guid>();
+            foreach (var item in Model) {
+            if(item.EquipmentName != lastItem){
+                
+                if (init == 0){
+                    lastItem = item.EquipmentName;
+                    lastlabName = (Lab) (Convert.ChangeType(item.LabName, item.LabName.GetTypeCode()));
+                    lastDate = item.DateStr;
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                    lastBookingID = item.BookingID;
+                    bookingIdCache.Add(lastBookingID);
+                    BookingTime.Add(lastTimeSlot.ToString(),lastBookingID);
+                    init = 1;
+                }
+                else{
+
+                    <tr class="item-info">
+                        <td>@lastItem</td>
+                        <td>@lastlabName</td>
+                        <td>@lastDate</td>
+
+                        @* <td>@if(timeSlotCache.Contains("MORNING")) {<span>Morning</span>}</td>
+                        <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
+                        <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td> *@
+
+                        <td>@if(BookingTime.ContainsKey("MORNING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("EVENING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">Cancel</a>}</td>
+                    </tr>
+                    
+                    lastItem = item.EquipmentName;
+                    lastlabName = (Lab) (Convert.ChangeType(item.LabName, item.LabName.GetTypeCode()));
+                    lastDate = item.DateStr;
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Clear();
+                    bookingIdCache.Clear();
+                    BookingTime.Clear();
+                    @* Console.WriteLine(lastTimeSlot); *@
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                    lastBookingID = item.BookingID;
+                    bookingIdCache.Add(lastBookingID);
+                    BookingTime.Add(lastTimeSlot.ToString(),lastBookingID);
+                }
+            }
+            
+            else{
+                if (item.DateStr != lastDate){
+                    <tr class="item-info">
+
+                        <td>@lastItem</td>
+                        <td>@lastlabName</td>
+                        <td>@lastDate</td>
+                        
+                        @* <td>@if(timeSlotCache.Contains("MORNING")) {<span>Morning</span>}</td>
+                        <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
+                        <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td> *@
+
+                        <td>@if(BookingTime.ContainsKey("MORNING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("EVENING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">Cancel</a>}</td>
+                    
+                    </tr>
+
+                    lastItem = item.EquipmentName;
+                    lastlabName = (Lab) (Convert.ChangeType(item.LabName, item.LabName.GetTypeCode()));
+                    lastDate = item.DateStr;
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Clear();
+                    bookingIdCache.Clear();
+                    BookingTime.Clear();
+                    @* Console.WriteLine(lastTimeSlot); *@
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                    lastBookingID = item.BookingID;
+                    bookingIdCache.Add(lastBookingID);
+                    BookingTime.Add(lastTimeSlot.ToString(),lastBookingID);
+                }
+                else{
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                    lastBookingID = item.BookingID;
+                    bookingIdCache.Add(lastBookingID);
+                    BookingTime.Add(lastTimeSlot.ToString(),lastBookingID);
+                    
+                    @* Console.WriteLine("====================================");
+                    Console.WriteLine(timeSlotCache.Contains("MORNING")+ "  " +timeSlotCache.Contains("AFTERNOON")+ "  " +timeSlotCache.Contains("EVENING")); *@
+                }
+            }
+            if(item == Model.Last()){
+                <tr class="item-info">
+
+                        <td>@lastItem</td>
+                        <td>@lastlabName</td>
+                        <td>@lastDate</td>
+                        
+                        @* <td>@if(timeSlotCache.Contains("MORNING")) {<span>Morning</span>}</td>
+                        <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
+                        <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td> *@
+                        
+                        <td>@if(BookingTime.ContainsKey("MORNING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("EVENING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">Cancel</a>}</td>
+                    
+                </tr>
+            }
+        }
+    }
+    </tbody>@*Can use asp-route-id="@item.EquipmentID" for Request Back*@
+                @* <td>
                     <div class="tableGridBox">
                         <input type="checkbox"> 
                         <i class="fa fa-trash-o"></i>
@@ -71,21 +164,13 @@
                         <input type="checkbox">
                         <i class="fa fa-trash-o"></i>
                     </div>
-                </td>
-            </tr>
-        }
-    </tbody>
+                </td> *@
     <tfoot>
         <tr>
             <td style="width:55vw;"></td>
             <td style="width:10vw;">
                 <a asp-area="" asp-controller="Equipment" asp-action="Inventory" asp-route-id=@Context.Request.Cookies["CurrentID"]>
                     <button class="light">Back</button>
-                </a>
-            </td>
-            <td style="width:10vw;">
-                <a asp-area="" asp-controller="Student" asp-action="Cancel" asp-route-id=@Context.Request.Cookies["CurrentID"]>
-                    <button class="light">Cancel Book</button>
                 </a>
             </td>
         </tr>

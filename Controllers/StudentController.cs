@@ -168,9 +168,10 @@ namespace ozzy_mvc.Controllers
                     TimeSlot = x.booking.TimeSlot,
                     Date = x.booking.Date,
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
-                    StudentID = x.booking.StudentID
+                    StudentID = x.booking.StudentID,
+                    BookingID = x.booking.BookingID
                 }
-            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now);
+            ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
@@ -195,14 +196,30 @@ namespace ozzy_mvc.Controllers
                     TimeSlot = x.booking.TimeSlot,
                     Date = x.booking.Date,
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
-                    StudentID = x.booking.StudentID
+                    StudentID = x.booking.StudentID,
+                    BookingID = x.booking.BookingID
                 }
-            ).Where(i => i.StudentID == id && i.Date < DateTime.Now);
+            ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
             return View(eq);
         }
 
+        public async Task<IActionResult> DeleteReturn(Guid id)
+        {
+            var booking = await _context.Booking.FindAsync(id);
+            _context.Booking.Remove(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Return), new {id = booking.StudentID});
+        }
+        
+        public async Task<IActionResult> DeleteCancel(Guid id)
+        {
+            var booking = await _context.Booking.FindAsync(id);
+            _context.Booking.Remove(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Cancel), new {id = booking.StudentID});
+        }
     }
 }

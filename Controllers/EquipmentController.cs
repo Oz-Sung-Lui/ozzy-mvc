@@ -44,7 +44,7 @@ namespace ozzy_mvc.Controllers
                     DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
                     StudentID = x.booking.StudentID
                 }
-            ).Where(i => i.StudentID == id);
+            ).Where(i => i.StudentID == id).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
             
             List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
 
@@ -194,5 +194,6 @@ namespace ozzy_mvc.Controllers
         public DateTime Date { get; set; }
         public String DateStr { get; set; }
         public Guid StudentID {get; set; }
+        public Guid BookingID {get; set; }
     }
 }

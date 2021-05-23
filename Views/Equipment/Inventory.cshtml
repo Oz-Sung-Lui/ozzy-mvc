@@ -27,44 +27,94 @@
             <th class='TimeSlot'>
                 @Html.DisplayNameFor(model => model.TimeSlot)
             </th>
-            <th class='Morning'>
-                Morn
-            </th>
-            <th class='Afternoon'>
-                Noon
-            </th>
-            <th class='Evening'>
-                Night
-            </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EquipmentName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LabName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateStr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeSlot)
-                </td>
-                @*Can use asp-route-id="@item.EquipmentID" for Request Back*@
-                <td>
-                    <i class="fa fa-check"></i>
-                </td>
-                <td>
-                    <i class="fa fa-check"></i>
-                </td>
-                <td>
-                    <i class="fa fa-check"></i>
-                </td>
-            </tr>
+        @{
+            int init = 0;
+            string lastItem = "";
+            object lastlabName = null;
+            string lastDate = "";
+            object lastTimeSlot = null;
+            List<string> timeSlotCache = new List<string>();
+            foreach (var item in Model) {
+            if(item.EquipmentName != lastItem){
+                
+                if (init == 0){
+                    lastItem = item.EquipmentName;
+                    lastlabName = (Lab) (Convert.ChangeType(item.LabName, item.LabName.GetTypeCode()));
+                    lastDate = item.DateStr;
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                    init = 1;
+                }
+                else{
+
+                    <tr class="item-info">
+                        <td>@lastItem</td>
+                        <td>@lastlabName</td>
+                        <td>@lastDate</td>
+
+                        <td>@if(timeSlotCache.Contains("MORNING")) {<span>Morning</span>}</td>
+                        <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
+                        <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td>
+
+                    </tr>
+                    
+                    lastItem = item.EquipmentName;
+                    lastlabName = (Lab) (Convert.ChangeType(item.LabName, item.LabName.GetTypeCode()));
+                    lastDate = item.DateStr;
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Clear();
+
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                }
+            }
+            
+            else{
+                if (item.DateStr != lastDate){
+                    <tr class="item-info">
+
+                        <td>@lastItem</td>
+                        <td>@lastlabName</td>
+                        <td>@lastDate</td>
+                        
+                        <td>@if(timeSlotCache.Contains("MORNING")) {<span>Morning</span>}</td>
+                        <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
+                        <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td>
+                    
+                    </tr>
+
+                    lastItem = item.EquipmentName;
+                    lastlabName = (Lab) (Convert.ChangeType(item.LabName, item.LabName.GetTypeCode()));
+                    lastDate = item.DateStr;
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Clear();
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                }
+                else{
+                    lastTimeSlot = (TimeSlot) (Convert.ChangeType(item.TimeSlot, item.TimeSlot.GetTypeCode()));
+                    timeSlotCache.Add(lastTimeSlot.ToString());
+                    
+                    @* Console.WriteLine("====================================");
+                    Console.WriteLine(timeSlotCache.Contains("MORNING")+ "  " +timeSlotCache.Contains("AFTERNOON")+ "  " +timeSlotCache.Contains("EVENING")); *@
+                }
+            }
+            if(item == Model.Last()){
+                <tr class="item-info">
+
+                        <td>@lastItem</td>
+                        <td>@lastlabName</td>
+                        <td>@lastDate</td>
+                        
+                        <td>@if(timeSlotCache.Contains("MORNING")) {<span>Morning</span>}</td>
+                        <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
+                        <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td>
+                    
+                </tr>
+            }
         }
+    }
     </tbody>
     <tfoot>
         <tr>
