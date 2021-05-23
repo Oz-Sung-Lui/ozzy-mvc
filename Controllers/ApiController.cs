@@ -36,5 +36,39 @@ namespace ozzy_mvc.Controllers
             return _context.Student.ToList<Student>();
         }
 
+        [HttpGet]
+        [Route("booking")]
+        public ActionResult<List<Booking>> GetAllBookings()
+        {
+            return _context.Booking.ToList<Booking>();
+        }
+
+        [HttpPost]
+        [Route("booking")]
+        public async Task<IActionResult> CreateNewBooking([FromForm] Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                booking.BookingID = Guid.NewGuid();
+                _context.Add(booking);
+
+                var bookingList = _context.Booking.ToList();
+                var properties = new List<string> { "TimeSlot", "Date" };
+
+                foreach (Booking o in bookingList)
+                {
+                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot 
+                    && booking.StudentID == o.StudentID && booking.EquipmentID == o.EquipmentID)
+                    {
+                        return Json(new {message="Unable to booking"});
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+                return Json(new {message="Created"});
+            }
+            return Json(new {message="Unable to booking"});
+        }
+
     }
 }
