@@ -55,10 +55,10 @@ namespace ozzy_mvc.Controllers
         }
 
         // GET: Booking/Create
-        public IActionResult Create()
+        public IActionResult Create(Guid? id)
         {
             ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
+            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username", id);
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
         }
