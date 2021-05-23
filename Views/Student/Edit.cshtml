@@ -25,7 +25,8 @@
     </div>
 
     <div class="profile-picture">
-        @Context.Request.Cookies["CurrentUsername"].Substring(0,1)
+        @Model.Username.Substring(0,1)
+        @* @Context.Request.Cookies["CurrentUsername"].Substring(0,1) *@
     </div>
 
     @if(Context.Request.Cookies["CurrentUsername"] == "admin"){
@@ -50,15 +51,15 @@
             </label>
             <span asp-validation-for="Lastname" class="error"></span>
 
+            <label>
+                <span>@Html.DisplayNameFor(model => model.IsBlacklisted)</span>
+                <input class="form-check-input" asp-for="IsBlacklisted"/>
+            </label>
+
             <input type="hidden" asp-for="Password"/>
-            
             <input type="hidden" asp-for="StudentID" />
             <input type="hidden" asp-for="ConfirmPassword" />
 
-            <label>
-                @Html.DisplayNameFor(model => model.IsBlacklisted)
-                <input class="form-check-input" asp-for="IsBlacklisted" />
-            </label>
 
             <input type="submit" id="btnEditProfile" value="Save">
 
@@ -120,9 +121,11 @@ function myFunction2() {
         a[1].style.setProperty('--editable', 'none');
         a[2].style.setProperty('--editable', 'none');
         a[3].style.setProperty('--editable', 'none');
+        a[4].style.setProperty('--editable', 'none');
         a[1].style.setProperty('box-shadow', 'none');
         a[2].style.setProperty('box-shadow', 'none');
         a[3].style.setProperty('box-shadow', 'none');
+        a[4].style.setProperty('box-shadow', 'none');
         document.getElementById("editButton").style.setProperty('background-color','inherit');
         document.getElementById("editButton").style.setProperty('color','#db9ba9');
 
@@ -134,9 +137,11 @@ function myFunction2() {
         a[1].style.setProperty('--editable', 'all');
         a[2].style.setProperty('--editable', 'all');
         a[3].style.setProperty('--editable', 'all');
+        a[4].style.setProperty('--editable', 'all');
         a[1].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
         a[2].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
         a[3].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
+        a[4].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
         document.getElementById("editButton").style.setProperty('background-color','#FCE5DF');
         document.getElementById("editButton").style.setProperty('color','#4E2C0D');
 
