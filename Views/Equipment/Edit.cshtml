@@ -3,9 +3,17 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/equipment-edit.css" />
+</head>
 
+<body>
 <div class="edit-cointainer">
-    <h4>Equipment</h4>
+    <h1>Equipment</h1>
 
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -15,29 +23,33 @@
             <input asp-for="EquipmentName" class="form-control" />
         </label>
         <span asp-validation-for="EquipmentName" class="text-danger"></span>
+        <br>
         <label>
             EquipmentType
             <select asp-for="EquipmentType" class ="form-control" asp-items="ViewBag.EquipmentType"></select>
         </label>
+        <br>
         <label>
             Description
             <input asp-for="Description" class="form-control" />
         </label>
         <span asp-validation-for="Description" class="text-danger"></span>
+        <br>
         <label>
             LabName
             <select asp-for="LabName" class ="form-control" asp-items="ViewBag.LabName"></select>
         </label>
-
+        <br>
         <input type="submit" value="Save" class="btn btn-primary" />
 
     </form>
+
+<div class="back">
+    <a asp-action="Index">Back to List</a>
 </div>
 
-<div>
-    <a asp-action="Index">Back to Listaaaaaaaaaa</a>
 </div>
-
+</body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

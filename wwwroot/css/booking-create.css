@@ -1,9 +1,9 @@
-.create-booking-cointainer h1 {
+.create-booking-container h1 {
     margin: 0;
     font-size: 4vmin;
 }
 
-.create-booking-cointainer {
+.create-booking-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,31 +17,32 @@
     padding: 2vh 2vh 3.5vh 2vh;
 }
 
-.create-booking-cointainer form {
+.create-booking-container form {
     display: flex;
     flex-direction: column;
 }
 
-.create-booking-cointainer span {
+.create-booking-container span {
     -webkit-box-decoration-break: clone;
     -o-box-decoration-break: clone;
     box-decoration-break: clone;
 }
 
-.create-booking-cointainer label {
+.create-booking-container label {
     display: flex;
     font-weight: bold;
     justify-content: flex-end;
     text-align: right;
     margin: 3vh 5.2vh 0 0;
-    line-height: 5vh; 
+    line-height: 5vh;
 }
 
-.create-booking-cointainer .inputField {
+.create-booking-container .inputField {
     flex: 0 0 13vw;
     margin: 0% 0% 0% 5%;
     font-size: 2.2vmin;
 }
+
 .inputDateField {
     flex: 0 0 11.2vw;
     margin: 0% 0% 0% 5%;
@@ -51,4 +52,3 @@
 #btnCreateBooking {
     margin: 4vh auto 0 auto;
 }
-

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="~/css/booking-create.css" />
 </head>
 <body>
-<div class="create-booking-cointainer">
+<div class="create-booking-container">
     <h1>Booking</h1>
     
     <form asp-action="Create">
@@ -33,7 +33,6 @@
             <input type="date" dateformat="d M y" asp-for="Date" class="inputDateField" />
         </label>
         <span asp-validation-for="Date" class="text-danger"></span>
-
         <input type="submit" value="Create" id="btnCreateBooking"/>
     </form>
 

@@ -1,9 +1,8 @@
-.create-cointainer h1 {
-    margin: 0;
+.edit-cointainer h1 {
     font-size: 4vmin;
 }
 
-.create-cointainer {
+.edit-cointainer {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,20 +16,19 @@
     padding: 30px;
 }
 
-.create-cointainer .form-group {
+.edit-cointainer label {
     display: block;
-    margin: 20px;
 }
 
-.form-group select {
-    margin: 0px 0px 0px 15px;
+.edit-cointainer select {
+    margin: 0px 0px 0px 10px;
 }
 
-.form-group input {
-    margin: 0px 0px 0px 15px;
+.edit-cointainer input {
+    margin: 0px 0px 0px 10px;
 }
 
-.form-group select {
+.edit-cointainer select {
     font-family: inherit;
     font-size: inherit;
     color: #4E2C0D;
@@ -42,4 +40,8 @@
     padding: 0 5% 0 7%;
     outline: none;
     font-size: 1.8vmin;
+}
+
+.back {
+    margin: 15px 0px 0px 0px;
 }
