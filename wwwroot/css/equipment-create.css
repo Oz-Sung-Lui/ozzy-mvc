@@ -1,0 +1,31 @@
+.create-cointainer h1 {
+    margin: 0;
+    font-size: 4vmin;
+}
+
+.create-cointainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 55vmin;
+    height: fit-content;
+    background-color: #FDF6ED;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    padding: 30px;
+}
+
+.create-cointainer .form-group {
+    display: block;
+    margin: 20px;
+}
+
+.form-group select {
+    margin: 0px 0px 0px 15px;
+}
+
+.form-group input {
+    margin: 0px 0px 0px 15px;
+}
