@@ -47,7 +47,7 @@ button.dark{
 
 /* ======================= INPUT (TextField) ======================= */
 
-input[type=text] ,input[type=password]{
+input[type=text] , input[type=password], input[type=date]{
     font-family: inherit;
     font-size: inherit;
     color: #4E2C0D;
@@ -79,6 +79,22 @@ input:focus {
 /* ------------------ ERROR INPUT ------------------ */
 
 /* ======================= INPUT (TextField) ======================= */
+
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 5vmin;
+    width: 27.5vmin;
+    background: #fff;
+    border-radius: 20vmin;
+    border: 1px solid #fff;
+    padding: 0 5% 0 7%;
+    outline: none;
+    font-size: 1.8vmin;
+}
+
+
 
 html {
     font-family: Kanit;

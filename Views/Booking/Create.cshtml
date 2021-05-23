@@ -3,43 +3,43 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/booking-create.css" />
+</head>
+<body>
+<div class="create-booking-cointainer">
+    <h1>Booking</h1>
+    
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label>
+            StudentID
+            <select asp-for="StudentID" class ="inputField" asp-items="ViewBag.StudentID"></select>
+        </label>
+        <label>
+            EquipmentID
+            <select asp-for="EquipmentID" class ="inputField" asp-items="ViewBag.EquipmentID"></select>
+        </label>
+        <label>
+            TimeSlot
+            <select asp-for="TimeSlot" class ="inputField" asp-items="ViewBag.TimeSlot"></select>
+        </label>
+        <label>
+            Date
+            <input type="date" dateformat="d M y" asp-for="Date" class="inputDateField" />
+        </label>
+        <span asp-validation-for="Date" class="text-danger"></span>
 
-<h1>Create</h1>
+        <input type="submit" value="Create" id="btnCreateBooking"/>
+    </form>
 
-<h4>Booking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="StudentID" class="control-label"></label>
-                <select asp-for="StudentID" class ="form-control" asp-items="ViewBag.StudentID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="EquipmentID" class="control-label"></label>
-                <select asp-for="EquipmentID" class ="form-control" asp-items="ViewBag.EquipmentID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="TimeSlot" class="control-label"></label>
-                <select asp-for="TimeSlot" class ="form-control" asp-items="ViewBag.TimeSlot"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input type="date" dateformat="d M y" asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+</body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

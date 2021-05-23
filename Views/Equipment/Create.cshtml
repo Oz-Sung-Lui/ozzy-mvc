@@ -3,13 +3,19 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/equipment-create.css" />
+</head>
 
-<h1>Create</h1>
 
-<h4>Equipment</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<body>
+<div class="create-cointainer">
+
+<h1>Equipment</h1>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -31,16 +37,14 @@
                 <select asp-for="LabName" class ="form-control" asp-items="ViewBag.LabName"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" id="btncreate" />
             </div>
         </form>
-    </div>
-</div>
-
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+</div>
+</body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
