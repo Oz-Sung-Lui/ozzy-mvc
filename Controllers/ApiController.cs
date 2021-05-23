@@ -43,6 +43,13 @@ namespace ozzy_mvc.Controllers
             return _context.Booking.ToList<Booking>();
         }
 
+        [HttpGet("booking/{guid}")]
+        [Route("booking")]
+        public ActionResult<List<Booking>> GetMyBookings(Guid guid)
+        {
+            return _context.Booking.Where(i => i.StudentID == guid).ToList<Booking>();
+        }
+
         [HttpPost]
         [Route("booking")]
         public async Task<IActionResult> CreateNewBooking([FromForm] Booking booking)
