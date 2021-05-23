@@ -29,5 +29,12 @@ namespace ozzy_mvc.Controllers
             return _context.Equipment.ToList<Equipment>();
         }
 
+        [HttpGet]
+        [Route("student")]
+        public ActionResult<List<Student>> GetAllStudents()
+        {
+            return _context.Student.ToList<Student>();
+        }
+
     }
 }
