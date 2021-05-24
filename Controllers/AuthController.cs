@@ -21,8 +21,9 @@ namespace ozzy_mvc.Controllers
         }
 
         // GET: Auth/Login
-        public IActionResult Login()
-        {
+        public IActionResult Login(string Username)
+        {   
+            ViewData["Username"] = Username;
             return View();
         }
 
