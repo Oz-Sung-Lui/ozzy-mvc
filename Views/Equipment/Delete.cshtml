@@ -32,11 +32,11 @@
                     @Html.DisplayFor(model => model.LabName)
                 </div>
             </div>
-                <form asp-action="Delete">
-                    <input type="hidden" asp-for="EquipmentID" />
-                    <input type="submit" value="Delete" class="btn btn-danger" />
-                    <a asp-action="Index">Back to List</a>
-                </form>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="EquipmentID" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Index">Back to List</a>
+            </form>
 
         </div>
     </div>

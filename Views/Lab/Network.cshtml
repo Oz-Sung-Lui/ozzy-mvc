@@ -47,7 +47,9 @@
         <p><b>การใช้งาน</b> : ใช้สำหรับเชื่อมต่อทางเครือข่าย</p>
         <br>
         <a asp-controller="Booking" asp-action="Create" asp-route-id="18">
-            <span style="display: flex;"><div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!</span>
+            <span style="display: flex;">
+                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
+            </span>
         </a>
     </div>
 </div>
@@ -63,128 +65,12 @@
         <p><b>ยี่ห้อ</b> : LINK</p>
         <p><b>การใช้งาน</b> :ใช้สำหรับการเข้าหัวสายแลน หรือสายโทรศัพท์</p>
         <br>
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="19">
+            <span style="display: flex;">
+                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
+            </span>
+        </a>
 
-        <table class="reserve-table">
-            <thead>
-                <tr>
-                    <th>
-                        Reserved @* Apply If to items booking len *@
-                    </th>
-                </tr>
-            </thead>
-            @* Reserved @* Apply If to items booking len *@
-            <tbody>
-                @* For loop Queries Item here *@
-                <tr>
-                    <td style="width: 15vw;">
-                        No. 1 @* Number of item or UID of item *@
-                    </td>
-                    <td style="width: 10vw;">
-                        22/05/2021 @* Date here *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Sun @* apply if to Timeslot morning *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Sunset @* apply if to Timeslot afternoon *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Moon @* apply if to Timeslot evening *@
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>
-                        <div class="btn-add-reserve collapsible"></div>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        <table class="booking-calendar content" style="--coll:true">
-            <thead>
-                <tr>
-                    <th>
-                        Date
-                    </th>
-                    <th>
-                        All Day
-                    </th>
-                    <th>
-                        Morn
-                    </th>
-                    <th>
-                        Noon
-                    </th>
-                    <th>
-                        Night
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @* For loop 7 days here *@
-                <tr>
-                    <td>
-                        Date @* Display Date form today *@
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td style="width: 25vw; text-align:right;">
-                        Amount :
-                    </td>
-                    <td style="width: 5vw;">
-                        <form id="amount">
-                            <input type="number" id="number" value="1" max="25" min="1">
-                        </form>
-                    </td>
-                    <td style="width: 10vw;">
-                        <input form="amount" class="light" type="submit" value="Confirm">
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
     </div>
 </div>
 
@@ -198,128 +84,11 @@
         <p><b>ยี่ห้อ</b> : Mikrotik (RB4011iGS+5HacQ2HnD-IN)</p>
         <p><b>การใช้งาน</b> : ใช้เป็นอุปกรณ์หาเส้นทางภายในเครือข่าย</p>
         <br>
-        @* เริ่มตรงนี้ *@
-        <table class="reserve-table">
-            <thead>
-                <tr>
-                    <th>
-                        Reserved @* Apply If to items booking len *@
-                    </th>
-                </tr>
-            </thead>
-            @* Reserved @* Apply If to items booking len *@
-            <tbody>
-                @* For loop Queries Item here *@
-                <tr>
-                    <td style="width: 15vw;">
-                        No. 1 @* Number of item or UID of item *@
-                    </td>
-                    <td style="width: 10vw;">
-                        22/05/2021 @* Date here *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Sun @* apply if to Timeslot morning *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Sunset @* apply if to Timeslot afternoon *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Moon @* apply if to Timeslot evening *@
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>
-                        <div class="btn-add-reserve collapsible"></div>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        <table class="booking-calendar content" style="--coll:true">
-            <thead>
-                <tr>
-                    <th>
-                        Date
-                    </th>
-                    <th>
-                        All Day
-                    </th>
-                    <th>
-                        Morn
-                    </th>
-                    <th>
-                        Noon
-                    </th>
-                    <th>
-                        Night
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @* For loop 7 days here *@
-                <tr>
-                    <td>
-                        Date @* Display Date form today *@
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td style="width: 25vw; text-align:right;">
-                        Amount :
-                    </td>
-                    <td style="width: 5vw;">
-                        <form id="amount">
-                            <input type="number" id="number" value="1" max="25" min="1">
-                        </form>
-                    </td>
-                    <td style="width: 10vw;">
-                        <input form="amount" class="light" type="submit" value="Confirm">
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="20">
+            <span style="display: flex;">
+                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
+            </span>
+        </a>
     </div>
 </div>
 
@@ -334,128 +103,11 @@
         <p><b>ความยาว</b> : 3M</p>
         <p><b>การใช้งาน</b> : ใช้เพื่อเป็นอุปกรณ์ขยายการเชื่อมต่อภายในเครือข่าย</p>
         <br>
-        @* เริ่มตรงนี้ *@
-        <table class="reserve-table">
-            <thead>
-                <tr>
-                    <th>
-                        Reserved @* Apply If to items booking len *@
-                    </th>
-                </tr>
-            </thead>
-            @* Reserved @* Apply If to items booking len *@
-            <tbody>
-                @* For loop Queries Item here *@
-                <tr>
-                    <td style="width: 15vw;">
-                        No. 1 @* Number of item or UID of item *@
-                    </td>
-                    <td style="width: 10vw;">
-                        22/05/2021 @* Date here *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Sun @* apply if to Timeslot morning *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Sunset @* apply if to Timeslot afternoon *@
-                    </td>
-                    <td style="width: 5vw;">
-                        Moon @* apply if to Timeslot evening *@
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>
-                        <div class="btn-add-reserve collapsible"></div>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        <table class="booking-calendar content" style="--coll:true">
-            <thead>
-                <tr>
-                    <th>
-                        Date
-                    </th>
-                    <th>
-                        All Day
-                    </th>
-                    <th>
-                        Morn
-                    </th>
-                    <th>
-                        Noon
-                    </th>
-                    <th>
-                        Night
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @* For loop 7 days here *@
-                <tr>
-                    <td>
-                        Date @* Display Date form today *@
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tableGridBox">
-                            <input type="checkbox">
-                            <i class="fa fa-check"></i>
-                            <i class="fa fa-times"></i>
-                            <span class="item-left">
-                                25 left
-                            </span>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td style="width: 25vw; text-align:right;">
-                        Amount :
-                    </td>
-                    <td style="width: 5vw;">
-                        <form id="amount">
-                            <input type="number" id="number" value="1" max="25" min="1">
-                        </form>
-                    </td>
-                    <td style="width: 10vw;">
-                        <input form="amount" class="light" type="submit" value="Confirm">
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="21">
+            <span style="display: flex;">
+                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
+            </span>
+        </a>
     </div>
 </div>
 
