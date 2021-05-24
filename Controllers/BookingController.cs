@@ -58,7 +58,7 @@ namespace ozzy_mvc.Controllers
         public IActionResult Create(int? id)
         {
             
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int) i.LabName == id), "EquipmentID", "EquipmentName");
+            ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int) i.EquipmentType == id), "EquipmentID", "EquipmentName");
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
