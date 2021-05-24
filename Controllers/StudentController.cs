@@ -88,7 +88,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, string su, [Bind("StudentID,Username,Firstname,Lastname,Password")] Student student)
+        public async Task<IActionResult> Edit(Guid id, string su, [Bind("StudentID,Username,Firstname,Lastname,Password,IsBlacklisted")] Student student)
         {
 
             if ((id != student.StudentID) && (su != "admin"))
