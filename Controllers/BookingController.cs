@@ -22,8 +22,24 @@ namespace ozzy_mvc.Controllers
         // GET: Booking
         public async Task<IActionResult> Index()
         {
-            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
-            return View(await ozzyMvcContext.ToListAsync());
+
+            var query = _context.Booking; 
+
+            var data = query.Select(x =>
+                new BookingDisplay { BookingID = x.BookingID,
+                    Equipment = x.Equipment,
+                    Student = x.Student,
+                    EquipmentID = x.EquipmentID,
+                    StudentID = x.StudentID,
+                    Date = x.Date,
+                    DateStr = String.Format("{0:M/d/yyyy}", x.Date),
+                    TimeSlot = x.TimeSlot
+                }
+            );
+            
+            List<BookingDisplay> booking = data.ToList<BookingDisplay>(); 
+
+            return View(booking);
         }
 
         public async Task<IActionResult> ListByEquipmentID(Guid? id)
@@ -191,5 +207,17 @@ namespace ozzy_mvc.Controllers
             return _context.Booking.Any(e => e.BookingID == id);
         }
 
+    }
+
+    public class BookingDisplay
+    {
+        public Guid BookingID { get; set; }
+        public Guid StudentID { get; set; }
+        public Student Student { get; set; }
+        public Guid EquipmentID { get; set; }
+        public Equipment Equipment { get; set; }
+        public TimeSlot TimeSlot { get; set; }
+        public DateTime Date { get; set; }
+        public String DateStr { get; set; }
     }
 }

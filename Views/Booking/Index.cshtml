@@ -1,4 +1,4 @@
-@model IEnumerable<ozzy_mvc.Models.Booking>
+@model IEnumerable<ozzy_mvc.Controllers.BookingDisplay>
 
 @{
     ViewData["Title"] = "Index";
@@ -52,7 +52,7 @@
                         @Html.DisplayFor(modelItem => item.TimeSlot)
                     </td>
                     <td style="width: 6vw;">
-                        @Html.DisplayFor(modelItem => item.Date)
+                        @Html.DisplayFor(modelItem => item.DateStr)
                     </td>
                     <td style="width: 6vw;">
                         @* <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
