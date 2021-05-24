@@ -111,3 +111,15 @@
 #canedit {
     pointer-events: var(--editable);
 }
+
+.test {
+    background-color: red c;
+    color: aqua !important;
+}
+
+#checkbox-admin {
+    height: 4.3vmin;
+    width: 1.8vmin;
+    border: none !important;
+    box-shadow: none !important;
+}

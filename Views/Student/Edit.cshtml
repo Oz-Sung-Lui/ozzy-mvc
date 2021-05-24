@@ -52,8 +52,9 @@
             <span asp-validation-for="Lastname" class="error"></span>
 
             <label>
-                <span>@Html.DisplayNameFor(model => model.IsBlacklisted)</span>
-                <input class="form-check-input" asp-for="IsBlacklisted"/>
+                <input class="form-check-input" asp-for="IsBlacklisted" id="checkbox-admin"/>
+                &nbsp;
+                <span>@Html.DisplayNameFor(model => model.IsBlacklisted)</span>&nbsp;&nbsp;
             </label>
 
             <input type="hidden" asp-for="Password"/>
@@ -96,7 +97,7 @@
             <span asp-validation-for="Password" class="error"></span>
             
             <input type="hidden" asp-for="StudentID" />
-            <input type="hidden" asp-for="IsBlacklisted" />
+            <input type="hidden" asp-for="IsBlacklisted" id="checkbox-student" type="hidden"/>
 
             <input type="submit" id="btnEditProfile" value="Save"/>
     </form>
