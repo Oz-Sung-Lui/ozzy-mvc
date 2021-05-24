@@ -4,41 +4,51 @@
     text-decoration: none;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
 .element-booking-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 55vmin;
+    min-width: 60vmin;
     text-align: center;
+    justify-content: flex-start;
     background-color: #FDF6ED;
     height: fit-content;
     font-size: 2vmin;
     border-radius: 4vmin;
     padding: 3vh 2vh 3vh 2vh;
-}
+    display: inline-block;
+    flex-direction: column;
 
+}
+.element-booking-container div{
+    display: flex;
+    justify-content: flex-start;
+    line-height: 5vmin;
+    
+}
 .element-booking-container form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .element-booking-container label {
     font-weight: bold;
     justify-content: flex-end;
-    text-align: right;
-    margin: 3vh 5.2vh 0 2vh;
+    text-align: left;
+    min-width: 6vw;
     line-height: 5vh;
+    margin-left: 2vw;
 }
 
 .element-booking-container .inputField {
     flex: 0 0 13vw;
     margin: 0% 0% 0% 5%;
     font-size: 2.2vmin;
+}
+
+input{
+    margin: 2vmin auto auto auto;
+
 }
