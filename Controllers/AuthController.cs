@@ -21,8 +21,9 @@ namespace ozzy_mvc.Controllers
         }
 
         // GET: Auth/Login
-        public IActionResult Login()
-        {
+        public IActionResult Login(string Username)
+        {   
+            ViewData["Username"] = Username;
             return View();
         }
 
@@ -39,6 +40,10 @@ namespace ozzy_mvc.Controllers
             if (student == null)
             {
                 return NotFound();
+            }
+
+            if (student.IsBlacklisted) {
+                return View();
             }
 
             if (student.Password != Password) {

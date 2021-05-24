@@ -54,15 +54,18 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentID,Username,Firstname,Lastname,Password,ConfirmPassword")] Student student)
+        public async Task<IActionResult> Create(Guid? id, [Bind("StudentID,Username,Firstname,Lastname,Password,ConfirmPassword")] Student student)
         {
+            var admin = await _context.Student.FindAsync(id);
             if (ModelState.IsValid)
             {
                 student.StudentID = Guid.NewGuid();
                 student.IsBlacklisted = false;
                 _context.Add(student);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if(admin == null) return RedirectToAction("Login","Auth", new { Username = student.Username });
+                else if(admin.Username=="admin") return RedirectToAction(nameof(Index));
+                else return RedirectToAction("Login","Auth", new { Username = student.Username });
             }
             return View(student);
         }
@@ -90,12 +93,11 @@ namespace ozzy_mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, string su, [Bind("StudentID,Username,Firstname,Lastname,Password,IsBlacklisted")] Student student)
         {
-
             if ((id != student.StudentID) && (su != "admin"))
             {
                 return NotFound();
             }
-            
+
             try
             {
                 _context.Update(student);
@@ -112,7 +114,8 @@ namespace ozzy_mvc.Controllers
                     throw;
                 }
             }
-            return RedirectToAction(nameof(Index));
+            if (su == "admin")return RedirectToAction(nameof(Index));
+            else return RedirectToAction("Index","Home", new { id = id });
         }
 
         // GET: Student/Delete/5
