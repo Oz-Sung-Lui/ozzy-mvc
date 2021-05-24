@@ -41,6 +41,10 @@ namespace ozzy_mvc.Controllers
                 return NotFound();
             }
 
+            if (student.IsBlacklisted) {
+                return View();
+            }
+
             if (student.Password != Password) {
                 return View();
             }
