@@ -30,7 +30,7 @@
     </div>
 
     @if(Context.Request.Cookies["CurrentUsername"] == "admin"){
-    <form asp-action="Edit" id="test">
+    <form asp-action="Edit" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-su="@Context.Request.Cookies["CurrentUsername"]" id="test">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
 
             <label>
@@ -58,7 +58,6 @@
 
             <input type="hidden" asp-for="Password"/>
             <input type="hidden" asp-for="StudentID" />
-            <input type="hidden" asp-for="ConfirmPassword" />
 
 
             <input type="submit" id="btnEditProfile" value="Save">
@@ -97,7 +96,6 @@
             <span asp-validation-for="Password" class="error"></span>
             
             <input type="hidden" asp-for="StudentID" />
-            <input type="hidden" asp-for="ConfirmPassword" />
             <input type="hidden" asp-for="IsBlacklisted" />
 
             <input type="submit" id="btnEditProfile" value="Save"/>
