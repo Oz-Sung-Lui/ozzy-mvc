@@ -49,6 +49,12 @@
     font-size: 2.2vmin;
 }
 
+.inputStudentField{
+    flex: 0 0 11.5vw;
+    margin: 0% 0% 0% 5%;
+    font-size: 2.2vmin;
+}
+
 #btnCreateBooking {
     margin: 4vh auto 0 auto;
 }
