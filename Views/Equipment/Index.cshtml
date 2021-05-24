@@ -18,7 +18,7 @@
 </div>
 
 <button style="margin-bottom: 1vw;">
-    <a asp-action="Create">Create Item</a>
+    <a asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]">Create Item</a>
 </button>
 
 <div class="contain-std-table">

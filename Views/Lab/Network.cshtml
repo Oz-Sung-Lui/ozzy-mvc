@@ -13,7 +13,7 @@
 
 
 <div class="banner">
-    Network Labatory
+    Network Laboratory
 </div>
 
 <div class="lab-detail">
@@ -46,7 +46,7 @@
         <p><b>ความยาว</b> : 3M</p>
         <p><b>การใช้งาน</b> : ใช้สำหรับเชื่อมต่อทางเครือข่าย</p>
         <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="18">
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="18">
             <span style="display: flex;">
                 <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
             </span>
@@ -65,7 +65,7 @@
         <p><b>ยี่ห้อ</b> : LINK</p>
         <p><b>การใช้งาน</b> :ใช้สำหรับการเข้าหัวสายแลน หรือสายโทรศัพท์</p>
         <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="19">
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="19">
             <span style="display: flex;">
                 <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
             </span>
@@ -84,7 +84,7 @@
         <p><b>ยี่ห้อ</b> : Mikrotik (RB4011iGS+5HacQ2HnD-IN)</p>
         <p><b>การใช้งาน</b> : ใช้เป็นอุปกรณ์หาเส้นทางภายในเครือข่าย</p>
         <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="20">
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="20">
             <span style="display: flex;">
                 <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
             </span>
@@ -103,7 +103,7 @@
         <p><b>ความยาว</b> : 3M</p>
         <p><b>การใช้งาน</b> : ใช้เพื่อเป็นอุปกรณ์ขยายการเชื่อมต่อภายในเครือข่าย</p>
         <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="21">
+        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="21">
             <span style="display: flex;">
                 <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
             </span>
