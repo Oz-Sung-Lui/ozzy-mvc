@@ -82,7 +82,7 @@ namespace ozzy_mvc.Controllers
                 foreach (Booking o in bookingList)
                 {
                     if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot
-                    && booking.StudentID == o.StudentID && booking.EquipmentID == o.EquipmentID)
+                     && booking.EquipmentID == o.EquipmentID)
                     {
                         ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
                         ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
