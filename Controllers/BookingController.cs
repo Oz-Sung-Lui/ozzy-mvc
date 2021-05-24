@@ -57,16 +57,8 @@ namespace ozzy_mvc.Controllers
         // GET: Booking/Create
         public IActionResult Create(Guid? id, int? eid)
         {
-            if (eid != null)
-            {
-                ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int)i.EquipmentType == eid), "EquipmentID", "EquipmentName");
-
-            }
-            else
-            {
-                ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
-
-            }
+            if (eid != null) ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int)i.EquipmentType == eid), "EquipmentID", "EquipmentName");
+            else ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username", id);
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
@@ -77,7 +69,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date")] Booking booking)
+        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date")] Booking booking, Guid? id, string su)
         {
             if (ModelState.IsValid)
             {
@@ -95,15 +87,18 @@ namespace ozzy_mvc.Controllers
                         ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
                         ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
                         ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
-                        return View(booking);
+                        if (su == "admin") return View(booking);
+                        else return RedirectToAction("Inventory", "Equipment", new { id = id });
                     }
                 }
 
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (su == "admin") return RedirectToAction(nameof(Index));
+                else return RedirectToAction("Inventory", "Equipment", new { id = id });
             }
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-            return View(booking);
+            //ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
+            if (su == "admin") return View(booking);
+            else return RedirectToAction("Inventory", "Equipment", new { id = id });
         }
 
         // GET: Booking/Edit/5

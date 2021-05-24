@@ -95,8 +95,7 @@ namespace ozzy_mvc.Controllers
             {
                 return NotFound();
             }
-
-            Console.WriteLine("Hello");
+            
             try
             {
                 _context.Update(student);
