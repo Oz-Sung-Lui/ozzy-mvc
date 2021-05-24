@@ -1,5 +1,9 @@
 @{
     ViewData["Title"] = "Network Lab";
+    int[,,] results = (int[,,]) ViewData["results"];
+    @*foreach(int[,] i in results){
+         Console.WriteLine(i.Length);
+    } *@
 }
 
 <head>
@@ -45,12 +49,55 @@
         <p><b>ยี่ห้อ</b> : AMP</p>
         <p><b>ความยาว</b> : 3M</p>
         <p><b>การใช้งาน</b> : ใช้สำหรับเชื่อมต่อทางเครือข่าย</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="18">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p> จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา </p>
+         <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728">  @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779">  @* &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(int i = 0; i<6;i++){
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="18">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 

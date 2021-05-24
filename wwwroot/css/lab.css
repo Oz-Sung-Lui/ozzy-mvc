@@ -52,6 +52,7 @@ a {
     position: relative;
     display: flex;
     width: 100%;
+    margin-left: 10vw;
     margin-bottom: 12vh;
     font-size: 1.5vw;
 }
@@ -176,7 +177,7 @@ input[type=number]::-webkit-outer-spin-button{
 .reserve-table {
     border-spacing: 0px;
     position: relative;
-    width: 40vw;
+    width: 25vw;
 }
 
 .reserve-table thead {
@@ -198,7 +199,7 @@ input[type=number]::-webkit-outer-spin-button{
     display: block;
     background-color: #FDF6ED;
     height: fit-content;
-    max-height: 36vmin;
+    max-height: 24vmin;
     overflow-y: scroll;
     overflow-x: hidden;
 }
