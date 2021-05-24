@@ -45,7 +45,6 @@
 }
 
 .edit-profile-cointainer {
-    --editable: none;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -67,7 +66,6 @@
 
 
 #btnEditProfile{
-    display: none;
     margin: 4vh auto 0 auto;
 }
 
@@ -89,7 +87,7 @@
     font-size: 8vh;
 }
 
-#editButton {
+.editButton {
     width: 3vw;
     height: 3vw;
     font-size: 2vw;
@@ -102,19 +100,10 @@
     padding: 0;
 }
 
-#editButton:hover {
+.editButton:hover, .active{
     background-color: #FCE5DF;
     color: #4E2C0D;
     box-shadow: 1px 1px 2px 2px rgb(133, 133, 133);
-}
-
-#canedit {
-    pointer-events: var(--editable);
-}
-
-.test {
-    background-color: red c;
-    color: aqua !important;
 }
 
 #checkbox-admin {
