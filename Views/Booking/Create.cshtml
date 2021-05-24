@@ -20,6 +20,10 @@
             Username
             <select asp-for="StudentID" class ="inputField" asp-items="ViewBag.StudentID" style="-webkit-appearance:none;" disabled></select>
         </label>
+        @* <label>
+            StudentID
+            <input asp-for="StudentID" class ="inputStudentField" value="@Guid.Parse(@Context.Request.Cookies["CurrentUsername"])" readonly></input>
+        </label> *@
         <label>
             Item name
             <select asp-for="EquipmentID" class ="inputField" asp-items="ViewBag.EquipmentID"></select>
@@ -35,7 +39,6 @@
         <span asp-validation-for="Date" class="text-danger"></span>
         <input type="submit" value="Create" id="btnCreateBooking"/>
     </form>
-    <br>
     <a asp-action="Index">Back to List</a>
 </div>
 </body>

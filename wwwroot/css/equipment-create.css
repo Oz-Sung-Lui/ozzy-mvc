@@ -1,9 +1,9 @@
-.create-cointainer h1 {
+.create-equipment-cointainer h1 {
     margin: 0;
     font-size: 4vmin;
 }
 
-.create-cointainer {
+.create-equipment-cointainer {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,32 +14,47 @@
     background-color: #FDF6ED;
     font-size: 2vmin;
     border-radius: 4vmin;
-    padding: 30px;
+    padding: 2vh 2vh 3.5vh 2vh;
 }
 
-.create-cointainer .form-group {
-    display: block;
-    margin: 20px;
+.create-equipment-cointainer form {
+    display: flex;
+    flex-direction: column;
 }
 
-.form-group select {
-    margin: 0px 0px 0px 15px;
+.create-equipment-cointainer span {
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
-.form-group input {
-    margin: 0px 0px 0px 15px;
+.create-equipment-cointainer label {
+    display: flex;
+    font-weight: bold;
+    justify-content: flex-end;
+    text-align: right;
+    margin: 3vh 5.2vh 0 0;
+    line-height: 5vh;
 }
 
-.form-group select {
-    font-family: inherit;
-    font-size: inherit;
-    color: #4E2C0D;
-    height: 5vmin;
-    width: 27.5vmin;
-    background: #fff;
-    border-radius: 20vmin;
-    border: 1px solid #fff;
-    padding: 0 5% 0 7%;
-    outline: none;
-    font-size: 1.8vmin;
+.create-equipment-cointainer .inputField {
+    flex: 0 0 13vw;
+    margin: 0% 0% 0% 5%;
+    font-size: 2.2vmin;
+}
+
+.inputSelectField {
+    flex: 0 0 14.7vw;
+    margin: 0% 0% 0% 5%;
+    font-size: 2.2vmin;
+}
+
+.inputStudentField{
+    flex: 0 0 11.5vw;
+    margin: 0% 0% 0% 5%;
+    font-size: 2.2vmin;
+}
+
+#btnCreateEquipment {
+    margin: 4vh auto 0 auto;
 }
