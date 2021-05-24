@@ -55,9 +55,18 @@ namespace ozzy_mvc.Controllers
         }
 
         // GET: Booking/Create
-        public IActionResult Create(Guid? id ,int? eid)
+        public IActionResult Create(Guid? id, int? eid)
         {
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int) i.EquipmentType == eid), "EquipmentID", "EquipmentName");
+            if (eid != null)
+            {
+                ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int)i.EquipmentType == eid), "EquipmentID", "EquipmentName");
+
+            }
+            else
+            {
+                ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
+
+            }
             ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username", id);
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
@@ -80,7 +89,7 @@ namespace ozzy_mvc.Controllers
 
                 foreach (Booking o in bookingList)
                 {
-                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot 
+                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot
                     && booking.StudentID == o.StudentID && booking.EquipmentID == o.EquipmentID)
                     {
                         ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");

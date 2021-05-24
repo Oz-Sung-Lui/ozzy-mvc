@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Create";
 }
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,55 +11,66 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/booking-create.css" />
 </head>
+
 <body>
-<div class="create-booking-container">
-    <h1>Booking</h1>
-    
-    <form asp-action="Create">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <label>
-            Username
-            <select asp-for="StudentID" class ="inputField" asp-items="ViewBag.StudentID" style="-webkit-appearance:none;" disabled></select>
-        </label>
-        @* <label>
-            StudentID
-            <input asp-for="StudentID" class ="inputStudentField" value="@Guid.Parse(@Context.Request.Cookies["CurrentUsername"])" readonly></input>
-        </label> *@
-        <label>
-            Item name
-            <select asp-for="EquipmentID" class ="inputField" asp-items="ViewBag.EquipmentID"></select>
-        </label>
-        <label>
-            TimeSlot
-            <select asp-for="TimeSlot" class ="inputField" asp-items="ViewBag.TimeSlot"></select>
-        </label>
-        <label>
-            Date
-            <input id="datefield" type="date" dateformat="d M y" asp-for="Date" class="inputDateField" />
-        </label>
-        <span asp-validation-for="Date" class="text-danger"></span>
-        <input type="submit" value="Create" id="btnCreateBooking"/>
-    </form>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="create-booking-container">
+        <h1>Booking</h1>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label>
+                Username
+                @if (@Context.Request.Cookies["CurrentUsername"] == "admin")
+                {
+                    <select asp-for="StudentID" class="inputField" asp-items="ViewBag.StudentID"></select>
+                }
+                else
+                {
+                    <select asp-for="StudentID" class="inputField" asp-items="ViewBag.StudentID"
+                    style="-webkit-appearance:none;" disabled></select>
+                    <input type="hidden" asp-for="StudentID" value="@Context.Request.Cookies["CurrentID"]" />
+                }
+            </label>
+            @* <label>
+                StudentID
+                <input asp-for="StudentID" class ="inputStudentField"
+                value="@Guid.Parse(@Context.Request.Cookies["CurrentUsername"])" readonly></input>
+                </label> *@
+            <label>
+                Item name
+                <select asp-for="EquipmentID" class="inputField" asp-items="ViewBag.EquipmentID"></select>
+            </label>
+            <label>
+                TimeSlot
+                <select asp-for="TimeSlot" class="inputField" asp-items="ViewBag.TimeSlot"></select>
+            </label>
+            <label>
+                Date
+                <input id="datefield" type="date" dateformat="d M y" asp-for="Date" class="inputDateField" />
+            </label>
+            <span asp-validation-for="Date" class="text-danger"></span>
+            <input type="submit" value="Create" id="btnCreateBooking" />
+        </form>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </body>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
 <script>
     var today = new Date();
-    var dd = today.getDate()+1;
-    var mm = today.getMonth()+1;
+    var dd = today.getDate() + 1;
+    var mm = today.getMonth() + 1;
     var yyyy = today.getFullYear();
-    if(dd<10){
-            dd='0'+dd
-        } 
-        if(mm<10){
-            mm='0'+mm
-        } 
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
 
-    today = yyyy+'-'+mm+'-'+dd;
+    today = yyyy + '-' + mm + '-' + dd;
     document.getElementById("datefield").setAttribute("min", today);
 
 </script>
