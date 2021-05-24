@@ -1,65 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-
-body {
-    text-align: center;
-}
-
-.contain-btn {
-    display: flex;
-    justify-content: center;
-}
-
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: inherit;
-    text-decoration: none;
-    font-size: inherit;
-    position: relative;
-    font-weight: 800;
-    background: #FCE5DF;
-    color: #4E2C0D;
-    width: 30vmin;
-    height: 6vmin;
-    font-size: 2vmin;
-    border-radius: 3vmin;
-    border: none;
-    margin: 2vw;
-}
-
-.contain-std-table {
-    display: flex;
-    justify-content: center;
-}
-
-.std-table {
-    /* padding: 2vw; */
-    /* border-radius: 2vmin; */
-    border-collapse: collapse;
-    /* background-color: aquamarine; */
-}
-
-table.std-table {
-    line-height: 2.5vw;
-}
-
-tr:nth-child(even) {
-    background-color: #f3e0c8;
-}
-
-tbody>tr {
-    background-color: #FDF6ED;
-    margin: 1vw;
-}
-
-thead.std-thead {
-    color: white;
-    background-color: #4E2C0D;
-    border-radius: 5px;
-    font-weight: normal;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+    
+    body {
+        text-align: center;
+    }
+    
+    .contain-btn {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        position: relative;
+        font-weight: 800;
+        background: #FCE5DF;
+        color: #4E2C0D;
+        width: 30vmin;
+        height: 6vmin;
+        font-size: 2vmin;
+        border-radius: 3vmin;
+        border: none;
+        margin: 2vw;
+    }
+    
+    .contain-std-table {
+        font-size: 1.7vh;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .std-table {
+        /* padding: 2vw; */
+        /* border-radius: 2vmin; */
+        border-collapse: collapse;
+        /* background-color: aquamarine; */
+    }
+    
+    .std-table tbody {
+        display: block;
+        height: 40vh;
+        overflow-y: scroll;
+    }
+    /* tbody::-webkit-scrollbar {
+        display: none;
+    } */
+    
+    table.std-table {
+        line-height: 2.5vw;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f3e0c8;
+    }
+    
+    tbody>tr {
+        background-color: #FDF6ED;
+        margin: 1vw;
+    }
+    
+    thead.std-thead {
+        display: block;
+        color: white;
+        background-color: #4E2C0D;
+        font-weight: normal;
+    }

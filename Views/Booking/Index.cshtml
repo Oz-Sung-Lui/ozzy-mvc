@@ -35,26 +35,26 @@
                 <th style="width: 6vw;">
                     @Html.DisplayNameFor(model => model.Date)
                 </th>
-                <th></th>
+                <th style="width: 6vw;"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.Student.Username)
                     </td>
-                    <td>
+                    <td style="width: 8vw;">
                         @Html.DisplayFor(modelItem => item.Equipment.EquipmentName)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.TimeSlot)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.Date)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         @* <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.BookingID">Details</a> | *@
                         <a asp-action="Delete" asp-route-id="@item.BookingID">Delete</a>

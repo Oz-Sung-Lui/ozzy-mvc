@@ -22,7 +22,7 @@
     <table class="std-table">
         <thead class="std-thead">
             <tr>
-                <th style="width: 15vw;">
+                <th style="width: 20vw;">
                     @Html.DisplayNameFor(model => model.StudentID)
                 </th>
                 <th style="width: 6vw;">
@@ -34,38 +34,38 @@
                 <th style="width: 7vw;">
                     @Html.DisplayNameFor(model => model.Lastname)
                 </th>
-                <th style="width: 6vw;">
+                <th style="width: 10vw;">
                     @Html.DisplayNameFor(model => model.Password)
                 </th>
-                <th style="width: 6vw;">
+                <th style="width: 8vw;">
                     @Html.DisplayNameFor(model => model.IsBlacklisted)
                 </th>
                 <th style="width: 6vw;"></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="std-tbody">
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td style="width: 20vw;">
                         @Html.DisplayFor(modelItem => item.StudentID)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.Username)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.Firstname)
                     </td>
-                    <td>
+                    <td style="width: 7vw;">
                         @Html.DisplayFor(modelItem => item.Lastname)
                     </td>
-                    <td>
+                    <td style="width: 10vw;">
                         @Html.DisplayFor(modelItem => item.Password)
                     </td>
-                    <td>   
+                    <td style="width: 8vw;">   
                         @Html.DisplayFor(modelItem => item.IsBlacklisted)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
                         <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
                     </td>
