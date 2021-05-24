@@ -1,6 +1,10 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-@font-face { font-family: Kanit; src: url('../font/Kanit/Kanit-Regular.ttf'); } 
+
+@font-face {
+    font-family: Kanit;
+    src: url('../font/Kanit/Kanit-Regular.ttf');
+}
 
 a {
     font-weight: bold;
@@ -10,11 +14,12 @@ a {
 
 /* ============================= BUTTON ============================ */
 
-button , input[type=submit]{
+button,
+input[type=submit] {
     font-family: inherit;
     font-size: inherit;
     position: relative;
-    font-weight:800;
+    font-weight: 800;
     background: #FCE5DF;
     color: #4E2C0D;
     width: 18vmin;
@@ -24,7 +29,7 @@ button , input[type=submit]{
     border: none;
 }
 
-button:hover{
+button:hover {
     box-shadow: 0px 0px 2px 2px #4E2C0D;
 }
 
@@ -33,21 +38,26 @@ button.accept-policy {
     line-height: inherit;
 }
 
-button.light, input.light{
+button.light,
+input.light {
     background: #FDF6ED;
     color: #4E2C0D;
 }
 
-button.dark{
+button.dark {
     background: #4E2C0D;
     color: #FDF6ED;
 }
 
+
 /* ============================= BUTTON ============================ */
+
 
 /* ======================= INPUT (TextField) ======================= */
 
-input[type=text] , input[type=password], input[type=date]{
+input[type=text],
+input[type=password],
+input[type=date] {
     font-family: inherit;
     font-size: inherit;
     color: #4E2C0D;
@@ -65,7 +75,9 @@ input:focus {
     box-shadow: 0px 0px 2px 2px #88490e !important;
 }
 
+
 /* ------------------ ERROR INPUT ------------------ */
+
 .field-validation-error {
     color: red !important;
     font-size: 1.4vmin;
@@ -76,7 +88,10 @@ input:focus {
     font-size: 1.4vmin;
     box-shadow: 0 0 3pt 1pt red !important;
 }
+
+
 /* ------------------ ERROR INPUT ------------------ */
+
 
 /* ======================= INPUT (TextField) ======================= */
 
@@ -93,8 +108,6 @@ select {
     outline: none;
     font-size: 1.8vmin;
 }
-
-
 
 html {
     font-family: Kanit;
@@ -117,7 +130,6 @@ body {
 }
 
 
-
 /* ============================ NAV BAR ============================ */
 
 nav {
@@ -125,7 +137,7 @@ nav {
     z-index: 5;
     position: sticky;
     background-color: #42260c;
-    color: white; 
+    color: white;
     height: 5vmin;
     top: 0;
     width: 100%;
@@ -138,19 +150,21 @@ nav ul {
     padding: 0;
     overflow: hidden;
     color: white;
-    
 }
 
 nav li {
     float: left;
 }
 
-nav li a:hover, #dropdown:hover {
-    background-color: #88490e;  
+nav li a:hover,
+#dropdown:hover {
+    background-color: #88490e;
     height: 5vmin;
 }
 
-nav li a, .dropbtn, .user-button {
+nav li a,
+.dropbtn,
+.user-button {
     cursor: default;
     display: block;
     color: white;
@@ -165,7 +179,9 @@ nav li a, .dropbtn, .user-button {
     line-height: 5vmin;
 }
 
+
 /* -------------- WHEN HOVER DROPDOWN -------------- */
+
 .dropdown:hover[general] .dropdown-content {
     display: block;
 }
@@ -175,7 +191,7 @@ nav li a, .dropbtn, .user-button {
     position: absolute;
     background-color: #FDF6ED;
     min-width: 15vmin;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
@@ -187,14 +203,18 @@ nav li a, .dropbtn, .user-button {
     text-align: left;
     line-height: 2.5vmin;
 }
-  
+
 .dropdown-content a:hover {
     background-color: #f0cc9d;
     height: inherit;
 }
+
+
 /* -------------- WHEN HOVER DROPDOWN -------------- */
 
+
 /* ----------- USER BUTTON (NEED CLICK) ------------ */
+
 .dropdown-content-user-button {
     display: block;
 }
@@ -202,7 +222,7 @@ nav li a, .dropbtn, .user-button {
 .user-button {
     display: flex;
     justify-content: flex-end;
-    margin:  0;
+    margin: 0;
     padding: 0 0 0 5%;
     width: max-content;
     height: 5vmin;
@@ -210,13 +230,14 @@ nav li a, .dropbtn, .user-button {
     border-radius: 5vh 0 0 5vh;
     cursor: pointer;
 }
+
 .user-button:hover {
     background-color: #88490e;
 }
 
 .profile-picture {
     background-position-y: center;
-    margin : 3% 0 0 0;
+    margin: 3% 0 0 0;
     line-height: 4vmin;
     width: 4vmin;
     height: 4vmin;
@@ -231,20 +252,23 @@ nav li a, .dropbtn, .user-button {
     right: 0;
     min-width: 12.5vmin;
 }
+
+
 /* ----------- USER BUTTON (NEED CLICK) ------------ */
+
 
 /* ============================ NAV BAR ============================ */
 
-.banner{
+.banner {
     position: relative;
     text-align: center;
     height: 8vw;
     font-size: 5vw;
     padding: 0;
     margin: auto;
-    color:#4E2C0DD0;
+    color: #4E2C0DD0;
     width: 100%;
-    background-image: radial-gradient(#ffd5cb,#fdccc0, #FDF6ED, #FFFFFF,  #FFFFFF);
+    background-image: radial-gradient(#ffd5cb, #fdccc0, #FDF6ED, #FFFFFF, #FFFFFF);
     /* box-shadow: 0px 0px 5px 5px rgb(190, 190, 190); */
 }
 
@@ -258,18 +282,18 @@ main {
     margin: 0;
 }
 
-main.withfooter{
+main.withfooter {
     min-height: 85vmin;
 }
 
-main.fitscreen{
+main.fitscreen {
     height: 95vmin;
 }
-
 
 tbody::-webkit-scrollbar {
     display: none;
 }
+
 
 /* ============================ FOOTER ============================ */
 
@@ -277,8 +301,8 @@ footer {
     /* background-color: orangered; */
     text-align: center;
     position: relative;
-    color : #4E2C0D;
-    border-color:rgb(194, 194, 194);
+    color: #4E2C0D;
+    border-color: rgb(194, 194, 194);
     border-top-style: solid;
     border-width: 0.2vmin;
     padding: 1.3vmin 0vmin 0vmin 0vmin;
@@ -292,5 +316,6 @@ footer h2 {
     margin: 0;
     padding: 0;
 }
+
 
 /* ============================ FOOTER ============================ */

@@ -52,7 +52,6 @@ a {
     position: relative;
     display: flex;
     width: 100%;
-    margin-left: 10vw;
     margin-bottom: 12vh;
     font-size: 1.5vw;
 }
@@ -131,11 +130,14 @@ figcaption {
 .btn-add-reserve::after {
     content: "+";
 }
+
+
 /*
 .active::after {
     content: "-";
 }
 */
+
 input[type=number] {
     font-family: inherit;
     font-size: inherit;
@@ -152,15 +154,13 @@ input[type=number] {
 }
 
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{
+input[type=number]::-webkit-outer-spin-button {
     opacity: 50%;
     color: #4E2C0D;
     height: 3vmin;
     cursor: pointer;
     margin: 0;
 }
-
-
 
 .btn-reserve-confirm {
     margin: auto;
@@ -171,6 +171,7 @@ input[type=number]::-webkit-outer-spin-button{
     border-radius: 3vmin;
     border: none;
 }
+
 
 /*Test*/
 

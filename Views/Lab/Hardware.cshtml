@@ -1,5 +1,7 @@
 @{
     ViewData["Title"] = "Hardware Lab";
+    int[,,] results = (int[,,])ViewData["results"];
+
 }
 
 <head>
@@ -47,13 +49,58 @@
         <p><b>ความเร็วรอบ</b> : 0-360 / 0-1300 rpm</p>
         <p><b>ฟังก์ชันเพิ่มเติม</b> : มีหลอดไฟ LED ส่องสว่างขณะทำงาน, ปรับซ้าย-ขวาได้</p>
         <p><b>อุปกรณ์ในเซ็ต</b> : แบตเตอรี่ลิเธียม, ที่ชาร์จไฟ, ดอกไขควงและดอกสว่าน, กระดูกงู, ลูกบล็อก</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="0">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="0">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -70,13 +117,58 @@
         <p><b>วัสดุ</b> : Chromium Vanadium 6150</p>
         <p><b>ฟังก์ชันเพิ่มเติม</b> : มีแม่เหล็กสำหรับดูดน็อต, ยางกันลื่น ให้ความรู้สึกนุ่ม ใช้งานสะดวก</p>
         <p><b>อุปกรณ์ในเซ็ต</b> : ไขควงหัวแม่เหล็กต่างขนาดทั้งหมด 42 ชิ้น</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="1">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="1">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -94,13 +186,58 @@
         <p><b>ฟังก์ชันเพิ่มเติม</b> : ปรับกำลังไฟตั้งแต่ 5-60 วัตต์ เร่งอุณหภูมิสูงสุด 480 °C ภายใน 15 วินาที</p>
         <p><b>อุปกรณ์ในเซ็ต</b> : ที่จับชิ้นงาน, หัวเปลี่ยนสำหรับหัวแร้ง 5 รูปแบบ, หัวแร้งพร้อมที่วาง และลวดขัดหัว,
             ตะกั่ว</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="2">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="2">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -117,13 +254,58 @@
         <p><b>ขนาด</b> : 16 Oz</p>
         <p><b>วัสดุ</b> : สแตนเลส 304, ยางกันลื่น (ที่ด้ามจับ)</p>
         <p><b>ฟังก์ชันเพิ่มเติม</b> : มีแม่เหล็กสำหรับดูดน็อต, ยางกันลื่น ให้ความรู้สึกนุ่ม ใช้งานสะดวก</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="3">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[3,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[3,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[3,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="3">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -139,13 +321,58 @@
         <p><b>การใช้งาน</b> : ตัดพลาสติก หรือเหล็ก</p>
         <p><b>ขนาด</b> : ใบเลื่อยยาว 10", 12"</p>
         <p><b>วัสดุ</b> : ด้ามจับเหล็ก</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="4">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[4,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[4,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[4,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="4">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -161,13 +388,58 @@
         <p><b>การใช้งาน</b> : หนีบจับสิ่งของ</p>
         <p><b>วัสดุ</b> : คีมจับเหล็กชุบแข็ง, ด้ามจับหุ้มพลาสติก</p>
         <p><b>ฟังก์ชันเพิ่มเติม</b> : คีมตัดข้าง, คีมปากแหลม, คีมปากขยาย, คีมตัด</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="5">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[5,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[5,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[5,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="5">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -183,13 +455,58 @@
         <p><b>การใช้งาน</b> : เจาะ, ตอก, แซะ, งัดวัตถุชิ้นงาน</p>
         <p><b>วัสดุ</b> : เหล็กกล้าคาร์บอน</p>
         <p><b>ฟังก์ชันเพิ่มเติม</b> : สามารถงัดตะปูได้ที่ปลายชะแลง</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="6">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[6,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[6,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[6,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="6">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -205,13 +522,58 @@
         <p><b>การใช้งาน</b> : ขันเกลียวน็อต, ยึดอุปกรณ์ต่างๆ</p>
         <p><b>ขนาด</b> : 8"</p>
         <p><b>วัสดุ</b> : เหล็กกล้าคาร์บอนเคลืออบนิกเกิล</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="7">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[7,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[7,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[7,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="7">
+                            <span style="display: flex;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                @* Make a book! *@
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
