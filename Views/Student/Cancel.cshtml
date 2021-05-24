@@ -24,8 +24,17 @@
             <th class="Date">
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th class="TimeSlot">
+            @* <th class='TimeSlot'>
                 @Html.DisplayNameFor(model => model.TimeSlot)
+            </th> *@
+            <th class='Morning'>
+                <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728">  @* &#9728; *@
+            </th>
+            <th class='Afternoon'>
+                <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779">  @* &#127779; *@
+            </th>
+            <th class='Evening'>
+                <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
             </th>
         </tr>
     </thead>
@@ -65,9 +74,27 @@
                         <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
                         <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td> *@
 
-                        <td>@if(BookingTime.ContainsKey("MORNING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">Cancel</a>}</td>
-                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">Cancel</a>}</td>
-                        <td>@if(BookingTime.ContainsKey("EVENING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("MORNING")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
+                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
+                        <td>@if(BookingTime.ContainsKey("EVENING")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
                     </tr>
                     
                     lastItem = item.EquipmentName;
@@ -97,9 +124,27 @@
                         <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
                         <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td> *@
 
-                        <td>@if(BookingTime.ContainsKey("MORNING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">Cancel</a>}</td>
-                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">Cancel</a>}</td>
-                        <td>@if(BookingTime.ContainsKey("EVENING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("MORNING")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
+                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
+                        <td>@if(BookingTime.ContainsKey("EVENING")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
                     
                     </tr>
 
@@ -138,9 +183,27 @@
                         <td>@if(timeSlotCache.Contains("AFTERNOON")) {<span>Afternoon</span>}</td>
                         <td>@if(timeSlotCache.Contains("EVENING")) {<span>Evening</span>}</td> *@
                         
-                        <td>@if(BookingTime.ContainsKey("MORNING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">Cancel</a>}</td>
-                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">Cancel</a>}</td>
-                        <td>@if(BookingTime.ContainsKey("EVENING")) {<a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">Cancel</a>}</td>
+                        <td>@if(BookingTime.ContainsKey("MORNING")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["MORNING"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
+                        <td>@if(BookingTime.ContainsKey("AFTERNOON")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["AFTERNOON"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
+                        <td>@if(BookingTime.ContainsKey("EVENING")) {
+                            <a asp-action="DeleteCancel" asp-route-id="@BookingTime["EVENING"]">
+                                <div class="tableGridBox">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </a>
+                        }</td>
                     
                 </tr>
             }

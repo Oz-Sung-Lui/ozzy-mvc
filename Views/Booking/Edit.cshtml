@@ -4,45 +4,49 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/booking-element.css" />
+</head>
 
-<h4>Booking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BookingID" />
-            <div class="form-group">
-                <label asp-for="StudentID" class="control-label"></label>
-                <input asp-for="StudentID" class="form-control" />
-                <span asp-validation-for="StudentID" class="text-danger"></span>
+<body>
+    <div class="container">
+        <div class="element-booking-container">
+            <h1>Edit Booking</h1>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="BookingID" />
+                <label>
+                    <label asp-for="StudentID" class="control-label"></label>
+                    <input asp-for="StudentID" class="form-control" />
+                    <span asp-validation-for="StudentID" class="text-danger"></span>
+                </label>
+                <label>
+                    <label asp-for="EquipmentID" class="control-label"></label>
+                    <select asp-for="EquipmentID" class="form-control" asp-items="ViewBag.EquipmentID"></select>
+                    <span asp-validation-for="EquipmentID" class="text-danger"></span>
+                </label>
+                <label>
+                    <label asp-for="TimeSlot" class="control-label"></label>
+                    <select asp-for="TimeSlot" class="form-control" asp-items="ViewBag.TimeSlot"></select>
+                </label>
+                <label>
+                    <label asp-for="Date" class="control-label"></label>
+                    <input type="date" dateformat="d M y" asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </label>
+                <br>
+            </form>
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <div>
+                <a asp-action="Index">Back to List</a>
             </div>
-            <div class="form-group">
-                <label asp-for="EquipmentID" class="control-label"></label>
-                <select asp-for="EquipmentID" class="form-control" asp-items="ViewBag.EquipmentID"></select>
-                <span asp-validation-for="EquipmentID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TimeSlot" class="control-label"></label>
-                <select asp-for="TimeSlot" class ="form-control" asp-items="ViewBag.TimeSlot"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input type="date" dateformat="d M y" asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+</body>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

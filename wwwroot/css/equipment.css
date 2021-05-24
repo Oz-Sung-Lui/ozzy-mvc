@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 table {
     left: 50%;
     top: 50%;
@@ -62,49 +66,59 @@ td {
 
 th.EquipmentName,
 td:nth-child(1) {
-    width: 20vw;
+    width: 30vw;
 }
 
 th.LabName,
 td:nth-child(2) {
-    width: 15vw;
+    width: 10vw;
 }
 
 th.Date,
 td:nth-child(3) {
-    width: 15vw;
-}
-
-th.TimeSlot,
-td:nth-child(4) {
     width: 10vw;
 }
 
+/* th.TimeSlot,
+td:nth-child(4) {
+    width: 10vw;
+} */
+
 th.Morning,
-td:nth-child(5) {
+td:nth-child(4) {
     width: 5vw;
+}
+th.Morning {
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 th.Afternoon,
-td:nth-child(6) {
+td:nth-child(5) {
     width: 5vw
+}
+th.Afternoon {
+    font-size: xx-large;
 }
 
 th.Evening,
-td:nth-child(7) {
+td:nth-child(6) {
     width: 5vw;
+}
+th.Evening {
+    font-size: xx-large;
 }
 
 th.Blank, td:nth-child(5) {
     width: 5vw;
 }
 
-tfoot td{
+tfoot td {
     /* border-top: 1px solid #4E2C0D; */
     border-bottom: none;
 }
 
-.fa{
+.fa {
     margin: auto;
     position: relative;
     text-align: center;
@@ -113,7 +127,7 @@ tfoot td{
     grid-column: 1;
 }
 
-.tableGridBox{
+.tableGridBox {
     display: grid;
     margin: auto;
     width: 4vmin;
@@ -123,11 +137,11 @@ tfoot td{
 }
 
 
-.tableGridBox:hover{
+.tableGridBox:hover {
     background-color: #4E2C0D;
 }
 
-.tableGridBox:hover .fa{
+.tableGridBox:hover .fa {
     color: #FCE5DF;
 }
 

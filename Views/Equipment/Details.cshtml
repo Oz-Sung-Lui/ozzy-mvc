@@ -4,27 +4,42 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/booking-element.css" />
+</head>
 
-<div>
-    <h4>Equipment</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EquipmentName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EquipmentName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LabName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LabName)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.EquipmentID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<body>
+    <div class="container">
+        <div class="element-booking-container">
+            <h1>Equipment Details</h1>
+            <div>
+                <hr />
+                <br>
+                <div style="text-align: left;">
+                    <div>
+                        <label>
+                            @Html.DisplayNameFor(model => model.EquipmentName)
+                        </label>
+                        @Html.DisplayFor(model => model.EquipmentName)
+                    </div>
+                    <div>
+                        <label>
+                            @Html.DisplayNameFor(model => model.LabName)
+                        </label>
+                        @Html.DisplayFor(model => model.LabName)
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.EquipmentID">Edit</a> |
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+</body>

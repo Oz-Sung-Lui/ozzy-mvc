@@ -21,15 +21,16 @@
 <div class="edit-profile-cointainer" id="editableVariable">
     <div style="display:flex; flex-direction: row; align-items:center;">
         <h1>&emsp; &nbsp; My Profile &nbsp;</h1>
-        <button id="editButton" onclick="myFunction2()">&#x1F589;</button>
+        <button id="disabletoggler" class="editButton">&#x1F589;</button>
     </div>
 
     <div class="profile-picture">
-        @Context.Request.Cookies["CurrentUsername"].Substring(0,1)
+        @Model.Username.Substring(0,1)
+        @* @Context.Request.Cookies["CurrentUsername"].Substring(0,1) *@
     </div>
 
     @if(Context.Request.Cookies["CurrentUsername"] == "admin"){
-    <form asp-action="Edit" id="test">
+    <form asp-action="Edit" asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-su="@Context.Request.Cookies["CurrentUsername"]" id="test">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>  @* WTF THIS LINE*@
 
             <label>
@@ -40,25 +41,25 @@
 
             <label>
                 Firstname
-                <input asp-for="Firstname" class="inputField" id="canedit"/>
+                <input asp-for="Firstname" class="inputFiel disabled" disabled/>
             </label>
             <span asp-validation-for="Firstname" class="error"></span>
 
             <label>
                 Lastname
-                <input asp-for="Lastname" class="inputField tr" id="canedit"/>
+                <input asp-for="Lastname" class="inputField tr disabled" disabled/>
             </label>
             <span asp-validation-for="Lastname" class="error"></span>
 
-            <input type="hidden" asp-for="Password"/>
-            
-            <input type="hidden" asp-for="StudentID" />
-            <input type="hidden" asp-for="ConfirmPassword" />
-
             <label>
-                @Html.DisplayNameFor(model => model.IsBlacklisted)
-                <input class="form-check-input" asp-for="IsBlacklisted" />
+                <input class="form-check-input disabled" asp-for="IsBlacklisted" id="checkbox-admin" disabled/>
+                &nbsp;
+                <span>@Html.DisplayNameFor(model => model.IsBlacklisted)</span>&nbsp;&nbsp;
             </label>
+
+            <input type="hidden" asp-for="Password"/>
+            <input type="hidden" asp-for="StudentID" />
+
 
             <input type="submit" id="btnEditProfile" value="Save">
 
@@ -73,33 +74,32 @@
 
             <label asp-for="Username">
                 Username
-                <input asp-for="Username" class="inputField" readonly="True"/>
+                <input asp-for="Username" class="inputField" readonly="True" />
             </label>
             <span asp-validation-for="Username" class="error"></span>
 
             <label asp-for="Firstname">
                 Firstname
-                <input asp-for="Firstname" class="inputField" id="canedit"/>
+                <input asp-for="Firstname" class="inputField disabled" disabled/>
             </label>
             <span asp-validation-for="Firstname" class="error"></span>
 
             <label asp-for="Lastname">
                 Lastname
-                <input asp-for="Lastname" class="inputField tr" id="canedit"/>
+                <input asp-for="Lastname" class="inputField tr disabled" disabled/>
             </label>
             <span asp-validation-for="Lastname" class="error"></span>
 
             <label asp-for="Password">
                 Password
-                <input type="password" asp-for="Password" placeholder="********" class="inputField" id="canedit"/>
+                <input type="password" asp-for="Password" placeholder="********" class="inputField disabled" disabled/>
             </label>
             <span asp-validation-for="Password" class="error"></span>
             
             <input type="hidden" asp-for="StudentID" />
-            <input type="hidden" asp-for="ConfirmPassword" />
-            <input type="hidden" asp-for="IsBlacklisted" />
+            <input type="hidden" asp-for="IsBlacklisted" id="checkbox-student" type="hidden"/>
 
-            <input type="submit" id="btnEditProfile" value="Save">
+            <input type="submit" id="btnEditProfile" value="Save"/>
     </form>
     }
 
@@ -108,42 +108,20 @@
 </body>
 
 <script>
+ 
+    var disabler = document.getElementsByClassName("disabled");
+    var saveButton = document.getElementById("btnEditProfile");
+    saveButton.style.display = 'none';
+    document.getElementById("disabletoggler").addEventListener("click", function() {
+        this.classList.toggle("active");
+        saveButton.style.display = saveButton.style.display === 'none' ? '' : 'none';
+        for (i = 0; i < disabler.length;i++){
+            disabler[i].toggleAttribute("disabled");
+        }
+    });
 
-function myFunction2() { 
-
-    var a = document.getElementsByTagName("input");
-
-    $(".field-validation-error").empty();
-
-    if (a[1].style.getPropertyValue('--editable')=="all") {
-        @* a[1].style.setProperty('background-color', 'red');  *@
-        a[1].style.setProperty('--editable', 'none');
-        a[2].style.setProperty('--editable', 'none');
-        a[3].style.setProperty('--editable', 'none');
-        a[1].style.setProperty('box-shadow', 'none');
-        a[2].style.setProperty('box-shadow', 'none');
-        a[3].style.setProperty('box-shadow', 'none');
-        document.getElementById("editButton").style.setProperty('background-color','inherit');
-        document.getElementById("editButton").style.setProperty('color','#db9ba9');
-
-        document.getElementById("btnEditProfile").style.setProperty('display','none');
-        document.getElementsByTagName("form").item(0).reset();
-    }
-    else {
-        /* a[1].style.setProperty('background-color', 'green'); */
-        a[1].style.setProperty('--editable', 'all');
-        a[2].style.setProperty('--editable', 'all');
-        a[3].style.setProperty('--editable', 'all');
-        a[1].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
-        a[2].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
-        a[3].style.setProperty('box-shadow', '0 0 2px 2px #4E2C0D');
-        document.getElementById("editButton").style.setProperty('background-color','#FCE5DF');
-        document.getElementById("editButton").style.setProperty('color','#4E2C0D');
-
-        document.getElementById("btnEditProfile").style.setProperty('display','block');
-    }
-}
 </script>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

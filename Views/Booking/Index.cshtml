@@ -1,4 +1,4 @@
-@model IEnumerable<ozzy_mvc.Models.Booking>
+@model IEnumerable<ozzy_mvc.Controllers.BookingDisplay>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,7 +16,7 @@
 
 
 <button style="margin-bottom: 1vw;">
-    <a asp-action="Create">Create Booking</a>
+    <a asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]">Create Booking</a>
 </button>
 
 <div class="contain-std-table">
@@ -35,28 +35,28 @@
                 <th style="width: 6vw;">
                     @Html.DisplayNameFor(model => model.Date)
                 </th>
-                <th></th>
+                <th style="width: 6vw;"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.Student.Username)
                     </td>
-                    <td>
+                    <td style="width: 8vw;">
                         @Html.DisplayFor(modelItem => item.Equipment.EquipmentName)
                     </td>
-                    <td>
+                    <td style="width: 6vw;">
                         @Html.DisplayFor(modelItem => item.TimeSlot)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
+                    <td style="width: 6vw;">
+                        @Html.DisplayFor(modelItem => item.DateStr)
                     </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.BookingID">Details</a> |
+                    <td style="width: 6vw;">
+                        @* <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.BookingID">Details</a> | *@
                         <a asp-action="Delete" asp-route-id="@item.BookingID">Delete</a>
                     </td>
                 </tr>

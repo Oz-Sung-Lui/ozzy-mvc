@@ -18,7 +18,7 @@
 </div>
 
 <button style="margin-bottom: 1vw;">
-    <a asp-action="Create">Create Item</a>
+    <a asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]">Create Item</a>
 </button>
 
 <div class="contain-std-table">
@@ -28,13 +28,13 @@
                 <th style="width: 15vw;">
                     @Html.DisplayNameFor(model => model.EquipmentName)
                 </th>
-                <th style="width: 6vw;">
+                <th style="width: 15vw;">
                     @Html.DisplayNameFor(model => model.EquipmentType)
                 </th>
                 @* <th style="width: 15vw;">
                     @Html.DisplayNameFor(model => model.Description)
-                </th> *@
-                <th style="width: 6vw;">
+                    </th> *@
+                <th style="width: 8vw;">
                     @Html.DisplayNameFor(model => model.LabName)
                 </th>
                 <th style="width: 8vw;"></th>
@@ -44,21 +44,21 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td style="width: 15vw;">
                         @Html.DisplayFor(modelItem => item.EquipmentName)
                     </td>
-                    <td>
+                    <td style="width: 15vw;">
                         @Html.DisplayFor(modelItem => item.EquipmentType)
                     </td>
                     @* <td>
                         @Html.DisplayFor(modelItem => item.Description)
-                    </td> *@
-                    <td>
+                        </td> *@
+                    <td style="width: 8vw;">
                         @Html.DisplayFor(modelItem => item.LabName)
                     </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.EquipmentID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.EquipmentID">Details</a> |
+                    <td style="width: 8vw;">
+                        @* <a asp-action="Edit" asp-route-id="@item.EquipmentID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.EquipmentID">Details</a> | *@
                         <a asp-action="Delete" asp-route-id="@item.EquipmentID">Delete</a>
                     </td>
                 </tr>

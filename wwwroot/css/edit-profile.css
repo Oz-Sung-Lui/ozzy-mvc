@@ -9,7 +9,7 @@
 }
 /* ---------------- ERROR INPUT ---------------- */
 
-.edit-profile-cointainer form{
+.edit-profile-cointainer form {
     display: flex;
     flex-direction: column;
 }
@@ -45,7 +45,6 @@
 }
 
 .edit-profile-cointainer {
-    --editable: none;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -67,9 +66,13 @@
 
 
 #btnEditProfile{
-    display: none;
     margin: 4vh auto 0 auto;
 }
+
+#btnEditProfile:hover {
+    box-shadow: 0px 0px 2px 2px #4E2C0D;
+}
+
 
 .edit-profile-cointainer .profile-picture {
     background-position-y: center;
@@ -84,7 +87,7 @@
     font-size: 8vh;
 }
 
-#editButton {
+.editButton {
     width: 3vw;
     height: 3vw;
     font-size: 2vw;
@@ -97,12 +100,15 @@
     padding: 0;
 }
 
-#editButton:hover {
+.editButton:hover, .active{
     background-color: #FCE5DF;
     color: #4E2C0D;
     box-shadow: 1px 1px 2px 2px rgb(133, 133, 133);
 }
 
-#canedit {
-    pointer-events: var(--editable);
+#checkbox-admin {
+    height: 4.3vmin;
+    width: 1.8vmin;
+    border: none !important;
+    box-shadow: none !important;
 }

@@ -22,8 +22,24 @@ namespace ozzy_mvc.Controllers
         // GET: Booking
         public async Task<IActionResult> Index()
         {
-            var ozzyMvcContext = _context.Booking.Include(b => b.Equipment).Include(b => b.Student);
-            return View(await ozzyMvcContext.ToListAsync());
+
+            var query = _context.Booking; 
+
+            var data = query.Select(x =>
+                new BookingDisplay { BookingID = x.BookingID,
+                    Equipment = x.Equipment,
+                    Student = x.Student,
+                    EquipmentID = x.EquipmentID,
+                    StudentID = x.StudentID,
+                    Date = x.Date,
+                    DateStr = String.Format("{0:M/d/yyyy}", x.Date),
+                    TimeSlot = x.TimeSlot
+                }
+            );
+            
+            List<BookingDisplay> booking = data.ToList<BookingDisplay>(); 
+
+            return View(booking);
         }
 
         public async Task<IActionResult> ListByEquipmentID(Guid? id)
@@ -55,10 +71,11 @@ namespace ozzy_mvc.Controllers
         }
 
         // GET: Booking/Create
-        public IActionResult Create()
+        public IActionResult Create(Guid? id, int? eid)
         {
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
+            if (eid != null) ViewData["EquipmentID"] = new SelectList(_context.Equipment.Where(i => (int)i.EquipmentType == eid), "EquipmentID", "EquipmentName");
+            else ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
+            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username", id);
             ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
             return View();
         }
@@ -68,7 +85,7 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date")] Booking booking)
+        public async Task<IActionResult> Create([Bind("BookingID,StudentID,EquipmentID,TimeSlot,Date")] Booking booking, Guid? id, string su)
         {
             if (ModelState.IsValid)
             {
@@ -80,21 +97,24 @@ namespace ozzy_mvc.Controllers
 
                 foreach (Booking o in bookingList)
                 {
-                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot 
-                    && booking.StudentID == o.StudentID && booking.EquipmentID == o.EquipmentID)
+                    if (booking.Date == o.Date && booking.TimeSlot == o.TimeSlot
+                     && booking.EquipmentID == o.EquipmentID)
                     {
                         ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
                         ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
                         ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
-                        return View(booking);
+                        if (su == "admin") return View(booking);
+                        else return RedirectToAction("Inventory", "Equipment", new { id = id });
                     }
                 }
 
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (su == "admin") return RedirectToAction(nameof(Index));
+                else return RedirectToAction("Inventory", "Equipment", new { id = id });
             }
-            ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
-            return View(booking);
+            //ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentID", booking.EquipmentID);
+            if (su == "admin") return View(booking);
+            else return RedirectToAction("Inventory", "Equipment", new { id = id });
         }
 
         // GET: Booking/Edit/5
@@ -187,5 +207,17 @@ namespace ozzy_mvc.Controllers
             return _context.Booking.Any(e => e.BookingID == id);
         }
 
+    }
+
+    public class BookingDisplay
+    {
+        public Guid BookingID { get; set; }
+        public Guid StudentID { get; set; }
+        public Student Student { get; set; }
+        public Guid EquipmentID { get; set; }
+        public Equipment Equipment { get; set; }
+        public TimeSlot TimeSlot { get; set; }
+        public DateTime Date { get; set; }
+        public String DateStr { get; set; }
     }
 }

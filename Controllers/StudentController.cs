@@ -88,34 +88,31 @@ namespace ozzy_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("StudentID,Username,Firstname,Lastname,Password,ConfirmPassword")] Student student)
+        public async Task<IActionResult> Edit(Guid id, string su, [Bind("StudentID,Username,Firstname,Lastname,Password,IsBlacklisted")] Student student)
         {
-            if (id != student.StudentID)
+
+            if ((id != student.StudentID) && (su != "admin"))
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            
+            try
             {
-                try
-                {
-                    _context.Update(student);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!StudentExists(student.StudentID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(student);
+                await _context.SaveChangesAsync();
             }
-            return View(student);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!StudentExists(student.StudentID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Student/Delete/5
@@ -155,12 +152,14 @@ namespace ozzy_mvc.Controllers
         {
 
             var query = from equipment in _context.Set<Equipment>()
-            join booking in _context.Set<Booking>()
-                on equipment.EquipmentID equals booking.EquipmentID
-            select new { equipment,booking };
+                        join booking in _context.Set<Booking>()
+                            on equipment.EquipmentID equals booking.EquipmentID
+                        select new { equipment, booking };
 
             var data = query.Select(x =>
-                new EquipmentInventory { EquipmentID = x.equipment.EquipmentID,
+                new EquipmentInventory
+                {
+                    EquipmentID = x.equipment.EquipmentID,
                     EquipmentName = x.equipment.EquipmentName,
                     EquipmentType = x.equipment.EquipmentType,
                     Description = x.equipment.Description,
@@ -172,8 +171,8 @@ namespace ozzy_mvc.Controllers
                     BookingID = x.booking.BookingID
                 }
             ).Where(i => i.StudentID == id && i.Date >= DateTime.Now).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
-            
-            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>();
 
             return View(eq);
         }
@@ -182,13 +181,15 @@ namespace ozzy_mvc.Controllers
         {
 
             var query = from equipment in _context.Set<Equipment>()
-            join booking in _context.Set<Booking>()
-                on equipment.EquipmentID equals booking.EquipmentID
-            select new { equipment,booking };
+                        join booking in _context.Set<Booking>()
+                            on equipment.EquipmentID equals booking.EquipmentID
+                        select new { equipment, booking };
 
 
             var data = query.Select(x =>
-                new EquipmentInventory { EquipmentID = x.equipment.EquipmentID,
+                new EquipmentInventory
+                {
+                    EquipmentID = x.equipment.EquipmentID,
                     EquipmentName = x.equipment.EquipmentName,
                     EquipmentType = x.equipment.EquipmentType,
                     Description = x.equipment.Description,
@@ -200,8 +201,8 @@ namespace ozzy_mvc.Controllers
                     BookingID = x.booking.BookingID
                 }
             ).Where(i => i.StudentID == id && i.Date < DateTime.Now).OrderBy(i => i.EquipmentName).ThenBy(i => i.Date);
-            
-            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>(); 
+
+            List<EquipmentInventory> eq = data.ToList<EquipmentInventory>();
 
             return View(eq);
         }
@@ -211,15 +212,15 @@ namespace ozzy_mvc.Controllers
             var booking = await _context.Booking.FindAsync(id);
             _context.Booking.Remove(booking);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Return), new {id = booking.StudentID});
+            return RedirectToAction(nameof(Return), new { id = booking.StudentID });
         }
-        
+
         public async Task<IActionResult> DeleteCancel(Guid id)
         {
             var booking = await _context.Booking.FindAsync(id);
             _context.Booking.Remove(booking);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Cancel), new {id = booking.StudentID});
+            return RedirectToAction(nameof(Cancel), new { id = booking.StudentID });
         }
     }
 }

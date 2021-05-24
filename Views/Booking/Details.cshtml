@@ -4,39 +4,44 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Register</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/booking-element.css" />
+</head>
 
-<div>
-    <h4>Booking</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Equipment)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Equipment.EquipmentID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TimeSlot)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TimeSlot)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.BookingID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<body>
+
+    <div class="container">
+        <div class="element-booking-container">
+            <h1>Booking Details</h1>
+            <br>
+            <div style="text-align: left;">
+                <div>
+                    <label>@Html.DisplayNameFor(model => model.StudentID)</label>
+                    @Html.DisplayFor(model => model.StudentID)
+                </div>
+                <div>
+                    <label>@Html.DisplayNameFor(model => model.Equipment)</label>
+                    @Html.DisplayFor(model => model.Equipment.EquipmentID)
+                </div>
+                <div>
+                    <label>@Html.DisplayNameFor(model => model.TimeSlot)</label>
+                    @Html.DisplayFor(model => model.TimeSlot)
+                </div>
+                <div>
+                    <label>@Html.DisplayNameFor(model => model.Date)</label>
+                    @Html.DisplayFor(model => model.Date)
+                </div>
+            </div>
+            <br>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.BookingID">Edit</a> |
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,47 @@
+.edit-cointainer h1 {
+    font-size: 4vmin;
+}
+
+.edit-cointainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 55vmin;
+    height: fit-content;
+    background-color: #FDF6ED;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    padding: 30px;
+}
+
+.edit-cointainer label {
+    display: block;
+}
+
+.edit-cointainer select {
+    margin: 0px 0px 0px 10px;
+}
+
+.edit-cointainer input {
+    margin: 0px 0px 0px 10px;
+}
+
+.edit-cointainer select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #4E2C0D;
+    height: 5vmin;
+    width: 27.5vmin;
+    background: #fff;
+    border-radius: 20vmin;
+    border: 1px solid #fff;
+    padding: 0 5% 0 7%;
+    outline: none;
+    font-size: 1.8vmin;
+}
+
+.back {
+    margin: 15px 0px 0px 0px;
+}
