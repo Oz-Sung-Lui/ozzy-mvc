@@ -62,7 +62,7 @@ namespace ozzy_mvc.Controllers
                 j=0;
                 foreach (int day in days)
                 {
-                    current_date = current_date.AddDays(day);
+                    current_date = current_date.AddDays(1);
                     k=0;
                     foreach (TimeSlot slot in slots)
                     {
@@ -135,7 +135,7 @@ namespace ozzy_mvc.Controllers
                 j=0;
                 foreach (int day in days)
                 {
-                    current_date = current_date.AddDays(day);
+                    current_date = current_date.AddDays(1);
                     k=0;
                     foreach (TimeSlot slot in slots)
                     {
@@ -212,7 +212,7 @@ namespace ozzy_mvc.Controllers
                 j=0;
                 foreach (int day in days)
                 {
-                    current_date = current_date.AddDays(day);
+                    current_date = current_date.AddDays(1);
                     k=0;
                     foreach (TimeSlot slot in slots)
                     {
@@ -275,7 +275,8 @@ namespace ozzy_mvc.Controllers
 
             foreach (EquipmentType item in items)
             {
-
+                // Console.WriteLine(item);
+                // Console.WriteLine(i);
                 var equipmentTemp = _context.Equipment.Where(i => i.EquipmentType == item);
 
                 List<Equipment> eq = equipmentTemp.ToList<Equipment>();
@@ -303,8 +304,7 @@ namespace ozzy_mvc.Controllers
                                 DateStr = String.Format("{0:M/d/yyyy}", x.booking.Date),
                                 StudentID = x.booking.StudentID
                             }
-                        ).Where(i => i.EquipmentType == item && i.Date == current_date && i.TimeSlot == slot);
-
+                        ).Where(m => m.EquipmentType == item && m.Date == current_date && m.TimeSlot == slot);
                         List<EquipmentInventory> inventory = data.ToList<EquipmentInventory>();
 
                         results[i,j,k] = fullAmount - inventory.Count();
@@ -368,7 +368,7 @@ namespace ozzy_mvc.Controllers
                 j=0;
                 foreach (int day in days)
                 {
-                    current_date = current_date.AddDays(day);
+                    current_date = current_date.AddDays(1);
                     k=0;
                     foreach (TimeSlot slot in slots)
                     {
