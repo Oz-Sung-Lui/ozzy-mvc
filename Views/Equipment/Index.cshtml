@@ -25,16 +25,16 @@
     <table class="std-table">
         <thead class="std-thead">
             <tr>
-                <th style="width: 15vw;">
+                <th style="width: 13vw;">
                     @Html.DisplayNameFor(model => model.EquipmentName)
                 </th>
-                <th style="width: 15vw;">
+                <th style="width: 14vw;">
                     @Html.DisplayNameFor(model => model.EquipmentType)
                 </th>
                 @* <th style="width: 15vw;">
                     @Html.DisplayNameFor(model => model.Description)
                     </th> *@
-                <th style="width: 8vw;">
+                <th style="width: 5vw;">
                     @Html.DisplayNameFor(model => model.LabName)
                 </th>
                 <th style="width: 8vw;"></th>
@@ -44,16 +44,16 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td style="width: 15vw;">
+                    <td style="width: 13vw;">
                         @Html.DisplayFor(modelItem => item.EquipmentName)
                     </td>
-                    <td style="width: 15vw;">
+                    <td style="width: 14vw;">
                         @Html.DisplayFor(modelItem => item.EquipmentType)
                     </td>
                     @* <td>
                         @Html.DisplayFor(modelItem => item.Description)
                         </td> *@
-                    <td style="width: 8vw;">
+                    <td style="width: 5vw;">
                         @Html.DisplayFor(modelItem => item.LabName)
                     </td>
                     <td style="width: 8vw;">

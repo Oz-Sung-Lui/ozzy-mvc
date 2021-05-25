@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "ESL Lab";
+    int[,,] results = (int[,,]) ViewData["results"];
 }
 
 <head>
@@ -44,13 +45,58 @@
     <div class="item-info">
         <p><b>ยี่ห้อ</b> : UNI-T (UTD2102e)</p>
         <p><b>การใช้งาน</b> : วัดความถี่ แรงดัน และเฟสของสัญญาณไฟฟ้าแสดงผลออกมาเป็นกราฟ</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="13">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="13">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -66,13 +112,58 @@
         <p><b>ยี่ห้อ</b> : Aim-tti (TGR2051)</p>
         <p><b>การใช้งาน</b> : ใช้สร้างสัญญาณมาตรฐานที่มีรูปร่างต่าง ๆ ขึ้นมา ซึ่งสามารถควบคุมปรับแต่งได้ทั้งระดับความแรง
             และความถี่</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="14">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="14">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -88,13 +179,58 @@
         <p><b>ยี่ห้อ</b> : UNI-T (UT89XD)</p>
         <p><b>การใช้งาน</b> : วัดปริมาณทางไฟฟ้ากระแสตรง และกระแสสลับ เช่น แรงดันไฟฟ้า กระแสไฟฟ้า ค่าความต้านทาน เป็นต้น
         </p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="15">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="15">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -109,13 +245,58 @@
     <div class="item-info">
         <p><b>ยี่ห้อ</b> : Zhaoxin (PS-305D)</p>
         <p><b>การใช้งาน</b> : ใช้สำหรับเป็นแหล่งจ่ายพลังงานให้กับอุปกรณ์ต่าง ๆ</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="16">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[3,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[3,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[3,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="16">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -130,13 +311,58 @@
     <div class="item-info">
         <p><b>ยี่ห้อ</b> : Global Specialties (PB-503)</p>
         <p><b>การใช้งาน</b> : จำลองวงจรดิจิตอล หรือวงจรอนาล็อก</p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="17">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[4,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[4,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[4,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="17">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 

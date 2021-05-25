@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "Robot & IoT Lab";
+    int[,,] results = (int[,,])ViewData["results"];
 }
 
 <head>
@@ -46,13 +47,58 @@
             Source
             มีวัยยากรการเขียนที่คล้ายกับภาษาซี
         </p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="10">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[0,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="10">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -69,13 +115,58 @@
             NodeMCU เป็นไมโครคอนโทรลเลอร์ทีมีลักษณะการทำงานตามคำสั่งภาษา C คล้าย Arduino แต่มีลักษณะพิเศษกว่าตรงที่
             สามารถเชื่อมต่อกับ WiFi ได้ การควบคุมการทางานสามารถใช้ โปรแกรม Arduino IDE ได้เช่นเดียวกันกับบอร์ด Arduino
         </p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="11">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[1,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="11">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -92,13 +183,58 @@
             บอร์ดคอมพิวเตอร์ขนาดเล็ก (Single-Board Computer หรือ SBC) ที่ถูกพัฒนาขึ้นโดย Raspberry Pi Foundation
             มีคุณสมบัติเด่น คือ ติดต่อ และความคุมอุปกรณ์อิเล็กทรอนิกส์ได้
         </p>
-        <br>
-        <a asp-controller="Booking" asp-action="Create" asp-route-id="@Context.Request.Cookies["CurrentID"]"
-            asp-route-eid="12">
-            <span style="display: flex;">
-                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>Make a book!
-            </span>
-        </a>
+        <p><b>จำนวนอุปกรณ์ที่เหลือให้จองในแต่ละช่วงเวลา</b></p>
+        <table class="reserve-table">
+            <thead>
+                <tr>
+                    <th style="width: 10vw;">
+                        Date
+                    </th>
+                    <th class='Morning' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Sun%20icon.svg" style="width:1.5vw;" alt="&#9728"> @* &#9728; *@
+                    </th>
+                    <th class='Afternoon' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Evening%20icon.svg" style="width:2vw;" alt="&#127779"> @*
+                            &#127779; *@
+                    </th>
+                    <th class='Evening' style="width: 5vw;">
+                        <img src="~/image/Figma_icons/Moon%20icon.svg" style="width:1.5vw;" alt="&#9789"> @* &#9789; *@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <tr>
+                        <td style="width: 10vw;">
+                            @DateTime.Now.AddDays(i+1).ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,0]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,1]
+                        </td>
+                        <td style="width: 5vw;">
+                            @results[2,i,2]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a asp-controller="Booking" asp-action="Create"
+                            asp-route-id="@Context.Request.Cookies["CurrentID"]" asp-route-eid="12">
+                            <span style="display: flex; align-items: center;">
+                                <div class="btn-add-reserve" style="margin-right: 1vw;"></div>
+                                 Make a book!
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
