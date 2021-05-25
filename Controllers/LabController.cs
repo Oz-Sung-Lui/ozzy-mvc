@@ -285,7 +285,7 @@ namespace ozzy_mvc.Controllers
                 j=0;
                 foreach (int day in days)
                 {
-                    current_date = current_date.AddDays(day);
+                    current_date = current_date.AddDays(1);
                     k=0;
                     foreach (TimeSlot slot in slots)
                     {
@@ -315,6 +315,16 @@ namespace ozzy_mvc.Controllers
                 i++;
             }
             
+            // for(int a = 0; a < results.GetLength(0); a++){
+            //     for(int b = 0; b < results.GetLength(1); b++){
+            //         for (int c = 0; c < results.GetLength(2); c++){
+            //             Console.Write(results[a,b,c]);
+            //         }
+            //         Console.WriteLine();
+            //     }
+            //     Console.WriteLine();
+            // }
+
             ViewData["results"] = results;
             
             return View();
