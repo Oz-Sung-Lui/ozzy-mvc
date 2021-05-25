@@ -103,8 +103,7 @@ namespace ozzy_mvc.Controllers
                         ViewData["EquipmentID"] = new SelectList(_context.Equipment, "EquipmentID", "EquipmentName");
                         ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "Username");
                         ViewData["TimeSlot"] = new SelectList(Enum.GetValues(typeof(TimeSlot)));
-                        if (su == "admin") return View(booking);
-                        else return RedirectToAction("Inventory", "Equipment", new { id = id });
+                        return View(booking);
                     }
                 }
 
